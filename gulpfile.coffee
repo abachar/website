@@ -16,7 +16,7 @@ mainBowerFiles = require('main-bower-files')
 ##
 ## Define paths
 sources =
-  styles   : 'public/css/sass/application.scss'
+  styles   : 'public/css/sass/**/*.scss'
   scripts  : 'public/js/scripts/*.js'
   svg_icons: 'public/fonts/svg-icons/*.svg'
 
@@ -35,6 +35,7 @@ gulp.task 'styles', ->
       .pipe gulp.dest destinations.styles
 
   gulp.src sources.styles
+      .pipe filter 'application.scss'
       .pipe (sass({sourcemap: true})).on 'error', (err) -> console.log err.message
       #.pipe sourcemaps.init({loadMaps: true})
       #.pipe autoprefixer { browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'], cascade: false}

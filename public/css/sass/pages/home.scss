@@ -1,6 +1,3 @@
-$hero-background: #6f5499;
-$hero-color: white;
-
 .pg-home {
 
   .hero {
@@ -13,6 +10,7 @@ $hero-color: white;
       @include border-bottom-radius(50%);
       @include border-left-radius(50%);
       @include border-right-radius(50%);
+      width: auto;
       height: 140px;
       margin-bottom: 1rem;
       border: 5px solid $white;
@@ -28,6 +26,58 @@ $hero-color: white;
     p {
       color: $white;
       font-size: 1.2rem;
+    }
+  }
+
+  main {
+    .about-and-projects {
+      margin-bottom: 30px;
+
+      .about {
+        margin-bottom: 2rem;
+
+        .readmore {
+          margin-top: 10px;
+          text-align: right;
+        }
+      }
+
+      .projects {
+        article {
+          figure {
+            position: relative;
+            img {
+              box-shadow: 0 0 3px $blue3;
+              border-radius: 2px;
+            }
+
+            h4 {
+              position: absolute;
+              bottom: 2px;
+              right: 0;
+              left: 0;
+              font-size: 2rem;
+              line-height: 4rem;
+              text-align: center;
+              text-transform: uppercase;
+
+              background: transparentize($blue3, 0.5);
+              border-radius: 0 0 2px 2px;
+            }
+
+            margin-bottom: 1rem;
+          }
+
+
+
+
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .articles {
+
     }
   }
 

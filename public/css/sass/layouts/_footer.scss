@@ -1,0 +1,27 @@
+footer#footer {
+  background: $blue3;
+  font-size: .9em;
+  text-align: center;
+  color: $white;
+  padding: 30px 0;
+
+  a, label {
+    font-weight: 400;
+    color: $red;
+    line-height: 1.3rem;
+    text-decoration: underline;
+  }
+
+  nav {
+    text-align: center;
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      display: inline-block;
+      margin: 0;
+      padding: 0 .5em;
+    }
+  }
+}

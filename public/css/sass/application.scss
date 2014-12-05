@@ -8,13 +8,12 @@
 @import 'base/reset';
 @import 'base/typography';
 
+// Components
+@import "components/buttons";
+
 // Layouts
 @import "layouts/navbar";
-
-// Components
-//@import "partials/base";
-//@import "partials/navbar";
-//@import "partials/footer";
+@import "layouts/footer";
 
 // Pages
 @import "pages/home";
@@ -22,3 +21,11 @@
 //@import "layouts/page-projects";
 //@import "layouts/page-blog";
 //@import "layouts/page-contact";
+
+.wrapper {
+  margin: 0 2rem;;
+}
+
+img {
+  width: 100%;
+}

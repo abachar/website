@@ -9,7 +9,7 @@
     </header>
 
     <main>
-        <section>
+        <section class="about-and-projects">
             <div class="wrapper">
                 <div class="about">
                     <h2>À propos</h2>
@@ -19,7 +19,7 @@
                     <p>Mon métier est une passion et pour rester au niveau, je me tiens toujours au courant des dernières tendances et technologies du web.</p>
 
                     <p>Pour toutes informations complémentaires vous pouvez me contacter à l'aide du formulaire de la page "Contact".</p>
-                    <a class="readmore" href="/profile">Profil détaillé</a>
+                    <p class="readmore"><a class="button" href="/profile">Profil détaillé</a></p>
                 </div>
                 <div class="projects">
                     <h2>Portfolio</h2>
@@ -32,8 +32,8 @@
                                 {{else}}
                                     <img src="/images/project-no-thumbnail.png"/>
                                 {{/if}}
+                              <h4>{{name}}</h4>
                             </figure>
-                            <h4>{{name}}</h4>
                             <p>{{description}}</p>
                         </article>
                     {{/each}}
