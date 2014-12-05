@@ -1,0 +1,30 @@
+.pg-blog {
+  .wrapper {
+    padding: 1em;
+    margin: auto;
+  }
+
+  main {
+
+    article {
+
+
+      figure {
+        margin: 0;
+        padding: 0;
+        img {
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 4px;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  aside {
+    display: none;
+  }
+}

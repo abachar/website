@@ -1,0 +1,61 @@
+//$navbar-background: #fff;
+//$navbar-height: 50px;
+//$navbar-color: #563d7c;
+//$navbar-color-hover: white;
+
+header#navbar {
+  .container {
+    padding: 0 20px;
+  }
+
+  .navbar-header {
+    .logo, .nav-toggle {
+      line-height: 4rem;
+    }
+
+    .logo {
+      font: {
+        size: 1.5rem;
+        weight: 700;
+      }
+    }
+
+    label.nav-toggle {
+      padding: 10px;
+      margin: 8px 0;
+      float: right;
+
+      .bar {
+        background-color: $font-color;
+        display: block;
+        width: 22px;
+        height: 2px;
+      }
+      .bar+.bar {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  nav {
+    overflow: hidden;
+    ul {
+      height: 0;
+      @include transition(height 0.3s);
+
+      a, label {
+        display: block;
+        font-weight: 400;
+        line-height: 1.2rem;
+        padding: .5rem 0;
+      }
+    }
+
+    #navbar-menu-chk {
+      display: none;
+      &:checked + ul {
+        height: 5 * (1.2rem + 1rem);
+      }
+    }
+  }
+}

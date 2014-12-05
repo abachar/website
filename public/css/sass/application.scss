@@ -1,0 +1,24 @@
+@import '_bourbon/bourbon';
+@import '_neat/neat';
+
+// Variables
+@import 'variables';
+
+// Base
+@import 'base/reset';
+@import 'base/typography';
+
+// Layouts
+@import "layouts/navbar";
+
+// Components
+//@import "partials/base";
+//@import "partials/navbar";
+//@import "partials/footer";
+
+// Pages
+@import "pages/home";
+//@import "layouts/page-profile";
+//@import "layouts/page-projects";
+//@import "layouts/page-blog";
+//@import "layouts/page-contact";

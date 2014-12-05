@@ -1,0 +1,9 @@
+.wrapper {
+  @include outer-container;
+  padding: 1em;
+}
+
+main h2 {
+  text-align: center;
+  text-transform: uppercase;
+}

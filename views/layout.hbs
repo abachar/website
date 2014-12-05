@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Abdelhakim Bachar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin" type="text/css" media="all">
+    <link rel="stylesheet" href="/css/icons.css" />
+    <link rel="stylesheet" href="/css/application.min.css" />
+</head>
+<body>
+
+<header id="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <label class="nav-toggle" for="navbar-menu-chk">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+            <a href="/" class="logo">Abdelhakim Bachar</a>
+        </div>
+        <nav>
+            <input id="navbar-menu-chk" type="checkbox" />
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/profile">Profil</a></li>
+                <li><a href="/projects">Projets</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><label for="dialog-contact">Contact</label></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+{{{body}}}
+
+<footer id="footer">
+    <div class="container">
+        <p>Copyright &copy; 2008 <a href="/">abachar.fr</a><br/>
+            Source: <a href="http://github.com/abachar/abachar.fr">http://github.com/abachar/abachar.fr</a>
+        </p>
+        <nav>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/profile">Profil</a></li>
+            <li><a href="/projects">Projets</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><label for="dialog-contact">Contact</label></li>
+          </ul>
+        </nav>
+    </div>
+</footer>
+
+{{> contact/form.modal}}
+
+<script type="text/javascript" src="/js/vendor.min.js"></script>
+<script type="text/javascript" src="/js/application.min.js"></script>
+
+</body>
+</html>

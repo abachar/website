@@ -1,0 +1,159 @@
+<div class="pg-profile wrapper">
+    <main>
+        <!-- h1>Curriculum Vita</h1 -->
+
+        <header>
+            <img src="/images/abachar.jpg">
+            <h4>Abdelhakim Bachar</h4>
+            <h6>Référent Technique, Certifié Java Programmer</h6>
+            <ul>
+                <li><a href="tel:+33620075945" class="icon icon-phone">+33 6 20 07 59 45</a></li>
+                <li><a href="mailto:a.bachar@hotmail.fr" class="icon icon-envelope">a.bachar@hotmail.fr</a></li>
+                <li><a href="mailto:buchir@gmail.com" class="icon icon-envelope">buchir@gmail.com</a></li>
+                <li><a href="mailto:abachar@xebia.fr" class="icon icon-envelope">abachar@xebia.fr</a></li>
+                <li><span class="icon icon-home">81, Avenue Pierre Brossolette 92120 Montrouge</span></li>
+                <li>{{{duration "26/09/1983" null false}}}, Marié</li>
+            </ul>
+        </header>
+
+        <h2 id="experiences">Expériences Professionnelles</h2>
+        <dl>
+            {{#each experiences}}
+                <dt>Du {{start}}<br/>
+                    {{#if end}}Au {{end}}{{else}}Jusqu'à aujourd'hui{{/if}}
+                </dt>
+                <dd>
+                    <p><strong>{{name}}</strong> : {{description}}</p>
+
+                    <p>{{job}}</p>
+                    {{#if roles}}
+                        <ul>
+                            {{#each roles}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    {{/if}}
+                    {{#if methods}}
+                        <p class="methods">Méthodologie de travail :
+                            <ul>
+                                {{#each methods}}
+                                    <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </p>
+                    {{/if}}
+                    {{#if tools}}
+                        <p class="tools">Outils et technologies :
+                            <ul>
+                                {{#each tools}}
+                                    <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </p>
+                    {{/if}}
+                    <p>Durée : {{{duration start end true}}}</p>
+                </dd>
+            {{/each}}
+        </dl>
+
+        <h2 id="projects">Projets Personnels</h2>
+        <dl>
+            {{#each projects}}
+                <dt>{{name}}</dt>
+                <dd>
+                    <p>{{description}}</p>
+                    <p class="tools">Outils et technologies :
+                        <ul>
+                            {{#each tools}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </p>
+                </dd>
+            {{/each}}
+        </dl>
+
+        <h2 id="competences">Compétences</h2>
+        <dl>
+            {{#each competences}}
+                <dt>{{name}}</dt>
+                <dd>
+                    <ul class="list-unstyled">
+                        {{#each skills}}
+                            <li>{{name}} {{#if level}}<span>{{level}}</span>{{/if}}</li>
+                        {{/each}}
+                    </ul>
+                </dd>
+            {{/each}}
+        </dl>
+
+        <h2 id="studies">Formations</h2>
+        <dl>
+            <dt>01/02/2010</dt>
+            <dd>DUESS SI-GESTION DE PROJET à l'université Hassan 1er, la Faculté des Sciences et Technique de Settat, Maroc.</dd>
+            <dt>01/05/2009</dt>
+            <dd>Certification : Sun Certified Java Programmer (SCJP)</dd>
+            <dt>01/11/2008</dt>
+            <dd>Formation Tuning SQL, Amélioration et optimisation des requêtes SQL par étude du plan d'exécution des requêtes.</dd>
+            <dt>01/07/2007</dt>
+            <dd>Maîtrise informatique à l'université Hassan 1er, Faculté des Sciences et Technique de Settat, Maroc.<span class="grade">Bien, Major de promotion.</span></dd>
+            <dt>01/07/2005</dt>
+            <dd>DEUG option mathématique à L'université Hassan 1er, Faculté des Sciences et Techniques de Settat, Maroc.<span class="grade">A bien.</span></dd>
+            <dt>01/02/2002</dt>
+            <dd>Baccalauréat sciences mathématiques à Lycée Errazi de Settat, Maroc.<span class="grade">A bien.</span></dd>
+        </dl>
+
+        <h2 id="languages">Langues</h2>
+        <dl>
+            <dt>Anglais</dt>
+            <dd>Débutant</dd>
+            <dt>Arabe</dt>
+            <dd>Langue maternelle.</dd>
+            <dt>Français</dt>
+            <dd>Courant</dd>
+        </dl>
+
+        <h2 id="interets">Centre d'intérêt &amp; Loisirs</h2>
+        <dl>
+            <dt>Activité parascolaire</dt>
+            <dd>Président du club des informaticiens à la Faculté des Sciences et Technique de Settat entre 2005 et 2007.</dd>
+            <dt>Sport</dt>
+            <dd>Basket-ball, natation, tennis.</dd>
+            <dt>Permis</dt>
+            <dd>B</dd>
+        </dl>
+    </main>
+
+    <!-- aside>
+        <h2>Fiche Personnel</h2>
+        <ul>
+            <li><h4>Abdelhakim Bachar</h4></li>
+            <li><a href="tel:+33620075945" class="icon icon-phone">+33 6 20 07 59 45</a></li>
+            <li><a href="mailto:a.bachar@hotmail.fr" class="icon icon-envelope">a.bachar@hotmail.fr</a></li>
+            <li><a href="mailto:buchir@gmail.com" class="icon icon-envelope">buchir@gmail.com</a></li>
+            <li><a href="mailto:abachar@xebia.fr" class="icon icon-envelope">abachar@xebia.fr</a></li>
+            <li><a href="//www.facebook.com/abachar.net" class="icon icon-facebook">Facebook</a></li>
+            <li><a href="//www.linkedin.com/in/abachar" class="icon icon-linkedin">LinkedIn</a></li>
+            <li><a href="//www.viadeo.com/fr/profile/abdelhakim.bachar" class="icon icon-viadeo">Viadeo</a></li>
+            <li><span class="icon icon-home">81, Avenue Pierre Brossolette 92120 Montrouge</span></li>
+            <li>{{{duration "26/09/1983" null false}}}, Marié</li>
+        </ul>
+
+        <h2>Navigations</h2>
+        <ul>
+            <li><a href="#experiences">Expériences Professionnelles</a></li>
+            <li><a href="#projects">Projets Personnels</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#studies">Formations</a></li>
+            <li><a href="#languages">Langues</a></li>
+            <li><a href="#interets">Centre d'intérêt &amp; Loisirs</a></li>
+        </ul>
+
+        <h2>Impression</h2>
+        <ul>
+            <li><a href="#" class="icon icon-print">Imprimer</a></li>
+            <li><a href="#" class="icon icon-download">Télécharger Format PDF</a></li>
+            <li><a href="#" class="icon icon-download">Télécharger Format Word</a></li>
+        </ul>
+    </aside -->
+</div>

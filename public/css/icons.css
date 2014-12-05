@@ -1,0 +1,109 @@
+@font-face {
+	font-family: "icons";
+	src: url('../fonts/icons.eot');
+	src: url('../fonts/icons.eot?#iefix') format('eot'),
+		url('../fonts/icons.woff') format('woff'),
+		url('../fonts/icons.ttf') format('truetype'),
+		url('../fonts/icons.svg#icons') format('svg');
+}
+
+.icon:before {
+	font-family: "icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.icon-arrow:before {
+	content: "\E001";
+}
+
+.icon-cancel:before {
+	content: "\E002";
+}
+
+.icon-close:before {
+	content: "\E003";
+}
+
+.icon-comments:before {
+	content: "\E004";
+}
+
+.icon-download:before {
+	content: "\E005";
+}
+
+.icon-error:before {
+	content: "\E006";
+}
+
+.icon-facebook:before {
+	content: "\E007";
+}
+
+.icon-github:before {
+	content: "\E008";
+}
+
+.icon-home:before {
+	content: "\E009";
+}
+
+.icon-info:before {
+	content: "\E00A";
+}
+
+.icon-linkedin:before {
+	content: "\E00B";
+}
+
+.icon-mail:before {
+	content: "\E00C";
+}
+
+.icon-menu:before {
+	content: "\E00D";
+}
+
+.icon-phone:before {
+	content: "\E00E";
+}
+
+.icon-print:before {
+	content: "\E00F";
+}
+
+.icon-send:before {
+	content: "\E010";
+}
+
+.icon-success:before {
+	content: "\E011";
+}
+
+.icon-tools:before {
+	content: "\E012";
+}
+
+.icon-twitter:before {
+	content: "\E013";
+}
+
+.icon-viadeo:before {
+	content: "\E014";
+}
+
+.icon-warning:before {
+	content: "\E015";
+}
+
+.icon-zoom:before {
+	content: "\E016";
+}

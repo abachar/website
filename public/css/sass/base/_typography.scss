@@ -1,0 +1,93 @@
+html {
+  font: {
+    family: $font-family;
+    size: $font-size;
+  }
+  line-height: $line-height;
+}
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: {
+    family: $font-family;
+    weight: normal;
+    style: normal;
+  }
+  margin: 0;
+}
+
+h1 {
+  font-size: 2;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: $font-size * 1.5;
+}
+
+h4 {
+  font-size: $font-size * 1.25;
+}
+
+h5 {
+  font-size: $font-size * 1.125;
+}
+
+h6 {
+  font-size: $font-size;
+}
+
+p {
+  margin: 0 0 ($spacing / 2);
+}
+
+a {
+  @include transition(color 0.1s linear);
+  color: $blue3;
+  text-decoration: none;
+
+  &:hover {
+    color: $red;
+  }
+
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+
+/*
+
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 2px solid $base-border-color;
+  color: lighten($base-font-color, 15);
+  margin: $base-spacing 0;
+  padding-left: $base-spacing / 2;
+}
+
+cite {
+  color: lighten($base-font-color, 25);
+  font-style: italic;
+
+  &:before {
+    content: "\2014 \00A0";
+  }
+}
+*/

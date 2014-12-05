@@ -1,0 +1,60 @@
+<div class="pg-home">
+
+    <header class="hero">
+        <div class="wrapper">
+            <img src="/images/abachar.jpg">
+            <h1>Abdelhakim Bachar</h1>
+            <p>Référent Technique, Certifié Java Programmer</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="wrapper">
+                <div class="about">
+                    <h2>À propos</h2>
+
+                    <p>Je m'appelle Abdelhakim Bachar, je suis référent technique dans les technologies web, je conçois et développe des sites internet innovants et originaux.<br />
+                        Je suis autonome, créative et je respecte mes engagements.</p>
+                    <p>Mon métier est une passion et pour rester au niveau, je me tiens toujours au courant des dernières tendances et technologies du web.</p>
+
+                    <p>Pour toutes informations complémentaires vous pouvez me contacter à l'aide du formulaire de la page "Contact".</p>
+                    <a class="readmore" href="/profile">Profil détaillé</a>
+                </div>
+                <div class="projects">
+                    <h2>Portfolio</h2>
+
+                    {{#each projects}}
+                        <article>
+                            <figure>
+                                {{#if thumbnail}}
+                                    <img src="/projects/{{code}}/assets/{{thumbnail}}"/>
+                                {{else}}
+                                    <img src="/images/project-no-thumbnail.png"/>
+                                {{/if}}
+                            </figure>
+                            <h4>{{name}}</h4>
+                            <p>{{description}}</p>
+                        </article>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section class="articles">
+            <div class="wrapper">
+                <h2>Derniers articles</h2>
+
+                {{#each articles}}
+                    <article>
+                        <h4><a href="/blog/{{code}}">{{title}}</a></h4>
+                        <figure>
+                            <a href="/blog/{{code}}"><img src="/blog/{{code}}/assets/{{thumbnail}}" /></a>
+                        </figure>
+                        <p>{{description}}</p>
+                    </article>
+                {{/each}}
+            </div>
+        </section>
+    </main>
+</div>

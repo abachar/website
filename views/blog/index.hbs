@@ -1,0 +1,23 @@
+<div class="pg-blog">
+    <div class="wrapper">
+        <main>
+            <h1>Blog</h1>
+
+            {{#each articles}}
+                <article>
+                    <h3><a href="/blog/{{code}}">{{title}}</a></h3>
+                    <p><time>{{date}}</time> par {{author}}</p>
+
+                    <figure>
+                        <a href="/blog/{{code}}"><img src="/blog/{{code}}/assets/{{thumbnail}}" /></a>
+                    </figure>
+                    <div class="summary">{{description}}</div>
+                    <a href="/blog/{{code}}">Lire la suite</a>
+                </article>
+            {{/each}}
+        </main>
+        <aside>
+
+        </aside>
+    </div>
+</div>

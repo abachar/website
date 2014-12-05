@@ -1,0 +1,35 @@
+<main class="pg-article">
+    <h1>{{article.title}}</h1>
+
+    <p>
+        <small><time>{{article.date}}</time>, {{article.author}}</small>
+        {{#if article.printable}}
+            <a href="#">Imprimer l'article</a>
+        {{/if}}
+    </p>
+
+    {{#if article.draft}}
+        <p class="warning">Cet article est en cours de rédaction, et ne constitue donc pour l’instant qu’une simple introduction.
+            Il fera l’objet d’un redécoupage, d'une refonte et d’un approfondissement conséquent par la suite.</p>
+    {{/if}}
+
+    <section>{{{marked contents}}}</section>
+
+    <section class="comments">
+        {{#each article.comments}}
+            <div>
+                <h4>{{author}}</h4>
+                <p>{{content}}</p>
+                <time>{{created_at}}</time>
+            </div>
+        {{/each}}
+
+        <form>
+            <input name="author" type="text" maxlength="100" placeholder="Nom complet">
+            <input name="email" type="text" maxlength="100" placeholder="Adresse mail">
+            <textarea name="content" rows="5" placeholder="Commentaire..."></textarea>
+
+            <button type="button">Envoyer</button>
+        </form>
+    </section>
+</main>
