@@ -55,7 +55,7 @@ function createApplication() {
     setupHandlebars(app);
 
     // Set port
-    app.set('port', process.env.WEBSITE_PORT);
+    app.set('port', process.env.PORT || 3000);
 
     // Configuration
     app.use(logger('dev'));
