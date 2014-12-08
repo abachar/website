@@ -12,9 +12,9 @@ var express = require('express'),
  */
 router.get('/', function (request, response) {
 
-    project.find({}, function (err, projects) {
+    project.findAll(function (err, projects) {
         if (err) {
-            response.end();
+            response.status(404).end();
         } else {
             response.render('projects/index', {
                 projects: projects
@@ -37,7 +37,7 @@ router.get('/:code/assets/:filename', function (request, response) {
         if (exists) {
             response.sendfile(filename);
         } else {
-            response.end("File: <" + filename + "> not found!");
+            response.status(404).end("File: <" + filename + "> not found!");
         }
     });
 });

@@ -36,13 +36,13 @@ gulp.task 'styles', ->
 
   gulp.src sources.styles
       .pipe filter 'application.scss'
-      .pipe (sass({sourcemap: true})).on 'error', (err) -> console.log err.message
-      #.pipe sourcemaps.init({loadMaps: true})
+      .pipe (sass()).on 'error', (err) -> console.log err.message
+      .pipe sourcemaps.init({loadMaps: true})
       #.pipe autoprefixer { browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'], cascade: false}
-      #.pipe sourcemaps.write()
+      .pipe sourcemaps.write()
       .pipe concat('application.css')
       .pipe rename({suffix: '.min'})
-      .pipe minifyCSS()
+      .pipe minifyCSS { keepBreaks: true }
       .pipe gulp.dest destinations.styles
 
 ##
@@ -51,6 +51,7 @@ gulp.task 'styles', ->
 gulp.task 'scripts', ->
   gulp.src mainBowerFiles()
       .pipe filter('*.js')
+      .pipe uglify()
       .pipe concat('vendor.min.js')
       .pipe gulp.dest destinations.scripts
 

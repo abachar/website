@@ -1,9 +1,9 @@
 html {
   font: {
-    family: $font-family;
-    size: $font-size;
+    family: $base-font-family;
+    size: $base-font-size;
   }
-  line-height: $line-height;
+  line-height: $base-line-height;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font: {
-    family: $font-family;
+    family: $header-font-family;
     weight: normal;
     style: normal;
   }

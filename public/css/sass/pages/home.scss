@@ -44,7 +44,31 @@
 
       .projects {
         article {
+          margin-bottom: 3rem;
+          border-radius: 6px;
+          box-shadow: 0px 3px 0px rgba(0,0,0,0.12);
+          background-color: $blue3;
+
           figure {
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 6px;
+            }
+          }
+
+          .description {
+            padding: 2rem 1rem;
+            border-radius: 0 0 6px 6px;
+            color: $white;
+
+            h4 {
+              margin-bottom: 1.2rem;
+            }
+          }
+
+
+          /*figure {
             position: relative;
             img {
               box-shadow: 0 0 3px $blue3;
@@ -65,13 +89,9 @@
               border-radius: 0 0 2px 2px;
             }
 
-            margin-bottom: 1rem;
-          }
 
+          }*/
 
-
-
-          margin-bottom: 2rem;
         }
       }
     }

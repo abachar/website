@@ -13,14 +13,14 @@ router.get('/', function (request, response) {
 
     async.parallel({
         articles: function (callback) {
-            article.find({}).sort({created_at: 'desc'}).limit(3).exec(callback);
+            article.findLastThree(callback);
         },
         projects: function (callback) {
-            project.find({}).limit(2).exec(callback);
+            project.findLastTwo(callback);
         }
     }, function (errs, results) {
         if (errs) {
-            response.end();
+            response.status(404).end();
         } else {
             response.render('home/index', {
                 articles: results.articles,

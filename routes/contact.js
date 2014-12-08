@@ -13,7 +13,7 @@ var formSchema = validator.object().keys({
   name   : validator.string().required().max(100),
   email  : validator.string().required().max(100).email(),
   subject: validator.string().required().max(200),
-  message: validator.string().required()
+  content: validator.string().required()
 });
 
 /**
@@ -31,12 +31,12 @@ router.post('/', function (request, response) {
             });
         },
         function (form, callback) {
-            var msg = new message();
-            msg.name    = form.name;
-            msg.email   = form.email;
-            msg.subject = form.subject;
-            msg.message = form.message;
-            msg.save(function (err) {
+            message.create({
+                name    : form.name,
+                email   : form.email,
+                subject : form.subject,
+                content : form.content
+            }, function (err) {
                 if (err) {
                     err = "Échec lors de l'envoi de votre message, veuillez essayer plus tard. l'&eacute;quipe abachar.fr s'excuse pour le desagrement";
                 }

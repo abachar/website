@@ -104,10 +104,7 @@ function createApplication() {
     });
 
     return app;
-};
+}
 
 // Create application
-var app = createApplication();
-var server = app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + server.address().port);
-});
+module.exports = createApplication();

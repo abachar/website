@@ -14,17 +14,17 @@ router.get('/', function (request, response) {
 
     async.parallel({
         experiences: function (callback) {
-            experience.find({}).exec(callback);
+            experience.findAll(callback);
         },
         projects: function (callback) {
-            project.find({}).exec(callback);
+            project.findAll(callback);
         },
         competences: function (callback) {
-            competence.find({}).exec(callback);
+            competence.findAll(callback);
         }
     }, function (errs, results) {
         if (errs) {
-            response.end();
+            response.status(404).end();
         } else {
             response.render('profile/index', {
                 experiences: results.experiences,

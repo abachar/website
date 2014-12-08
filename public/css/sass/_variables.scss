@@ -1,52 +1,19 @@
 // Typography
-$font-family: 'Open Sans';
-
-// Font Sizes
-$font-size: 12px;
-
-// Line height
-$line-height: 1.5;
-
-// Other Sizes
-$border-radius: 4px;
-$spacing: $line-height * 1em;
-
-// Colors
-$blue1: #1A2530;
-$blue2: #2C3E50;
-$blue3: #34495E;
-$red  : #E74C3C;
-$white: #FFFFFF;
-
-// Background Color
-$background-color: $white;
-
-// Font Colors
-$font-color: $blue1;
-
-
-
-/*
-
-
-
-
-// Typography
-$sans-serif: 'Open Sans', $helvetica;
-$serif: $georgia;
-$base-font-family: $sans-serif;
+$base-font-family: $helvetica;
 $header-font-family: $base-font-family;
 
 // Font Sizes
-$base-font-size: .9em;
-$h1-font-size: $base-font-size * 2;
-$h2-font-size: $base-font-size * 1.75;
-$h3-font-size: $base-font-size * 1.5;
-$h4-font-size: $base-font-size * 1.25;
-$h5-font-size: $base-font-size * 1.125;
+$base-font-size: 14px;
+$h1-font-size: $base-font-size * 2.25;
+$h2-font-size: $base-font-size * 2;
+$h3-font-size: $base-font-size * 1.75;
+$h4-font-size: $base-font-size * 1.5;
+$h5-font-size: $base-font-size * 1.25;
 $h6-font-size: $base-font-size;
 
-
+// Line height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
 
 // Other Sizes
 $base-border-radius: 3px;
@@ -54,19 +21,10 @@ $base-spacing: $base-line-height * 1em;
 $base-z-index: 0;
 
 // Colors
-$blue1: #1A2530;
-$blue2: #2C3E50;
-$blue3: #34495E;
-$red  : #E74C3C;
-$white: #FFFFFF;
-
 $blue: #477DCA;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #DDD;
-$light-red: #FBE3E4;
-$light-yellow: #FFF6BF;
-$light-green: #E6EFC2;
 
 // Background Color
 $base-background-color: white;
@@ -81,12 +39,6 @@ $hover-link-color: darken($base-accent-color, 15);
 $base-button-color: $base-link-color;
 $hover-button-color: $hover-link-color;
 
-// Flash Colors
-$alert-color: $light-yellow;
-$error-color: $light-red;
-$notice-color: lighten($base-accent-color, 40);
-$success-color: $light-green;
-
 // Border color
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
@@ -100,5 +52,3 @@ $form-box-shadow: inset 0 1px 3px rgba(black,0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
 $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;
-
-*/

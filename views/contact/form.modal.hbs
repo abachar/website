@@ -1,32 +1,27 @@
+<input id="dialog-contact" type="checkbox"/>
 <dialog>
-    <input id="dialog-contact" type="checkbox" />
+	<header>
+		<label class="close" for="dialog-contact"></label>
+		<h1>Me Contacter</h1>
+	</header>
+	<div class="content">
+		<p class="success"></p>
 
-    <div class="dialog-window">
-        <div class="inner">
-            <div class="header">
-                <label class="close" for="modal-contact"></label>
-                <h1>Me Contacter</h1>
-            </div>
-            <div class="body">
-                <p id="success"></p>
+		<form id="contact-form">
+			<p>Pour me contacter, veuillez remplir le formulaire ci-dessous<br/>
+				<small>Les champs marqués d'une * sont obligatoires.</small>
+			</p>
 
-                <form id="contact-form">
-                    <p>Pour me contacter, veuillez remplir le formulaire ci-dessous<br/>
-                        <small>Les champs marqués d'une * sont obligatoires.</small>
-                    </p>
+			<p class="errors"></p>
 
-                    <p id="errors"></p>
-
-                    <input name="name" type="text" maxlength="100" placeholder="Nom complet">
-                    <input name="email" type="text" maxlength="100" placeholder="Adresse mail">
-                    <input name="subject" type="text" maxlength="200" placeholder="Objet">
-                    <textarea name="message" rows="5" placeholder="Message..."></textarea>
-                </form>
-            </div>
-            <div class="footer">
-                <button type="button">Annuler</button>
-                <button type="button" id="js-btn-send">Envoyer</button>
-            </div>
-         </div>
-    </div>
+			<input name="name" type="text" maxlength="100" placeholder="Nom complet">
+			<input name="email" type="text" maxlength="100" placeholder="Adresse mail">
+			<input name="subject" type="text" maxlength="200" placeholder="Objet">
+			<textarea name="message" rows="5" placeholder="Message..."></textarea>
+		</form>
+	</div>
+	<footer>
+		<button type="button">Annuler</button>
+		<button type="button" id="js-btn-send">Envoyer</button>
+	</footer>
 </dialog>

@@ -23,9 +23,9 @@ var formSchema = validator.object().keys({
  */
 router.get('/', function (request, response) {
 
-    article.find({}, function (err, articles) {
+    article.findAll(function (err, articles) {
         if (err) {
-            response.end();
+            response.status(404).end();
         } else {
             response.render('blog/index', {
                 articles: articles
@@ -42,7 +42,7 @@ router.get('/:code', function (request, response) {
 
     async.parallel({
         article: function (callback) {
-            article.findOne({code: request.params.code}, callback);
+            article.findByCode(request.params.code, callback);
         },
         contents: function (callback) {
             var fileName = path.join(__dirname, '../assets/articles/', request.params.code, 'article.md');
@@ -98,14 +98,12 @@ router.post('/:code/comments', function (request, response) {
             });
         },
         function (form, callback) {
-            var comment = {
-                author     : form.author,
-                email      : form.email,
-                created_at : new Date(),
-                content    : form.content
-            };
-
-            article.update({code: request.params.code }, comment, function(err) {
+            article.pushComment(request.params.code, {
+                author: form.author,
+                email: form.email,
+                created_at: new Date(),
+                content: form.content
+            }, function (err) {
                 if (err) {
                     err = "Échec lors de l'ajout du commentaire, veuillez essayer plus tard. l'&eacute;quipe abachar.fr s'excuse pour le desagrement";
                 }
@@ -114,10 +112,7 @@ router.post('/:code/comments', function (request, response) {
         }
     ], function (err) {
         if (err) {
-            response.json({
-                error  : true,
-                message: err
-            });
+            response.json({error: true, message: err});
         } else {
             response.json({success : true});
         }
