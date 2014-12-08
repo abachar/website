@@ -19,6 +19,7 @@ sources =
   styles   : 'public/css/sass/**/*.scss'
   scripts  : 'public/js/scripts/*.js'
   svg_icons: 'public/fonts/svg-icons/*.svg'
+  all_js   : ['server.js', 'app.js', 'routes/*.js', 'models/*.js']
 
 destinations =
   styles : 'public/css'
@@ -32,6 +33,7 @@ gulp.task 'styles', ->
   gulp.src mainBowerFiles()
       .pipe filter('*.css')
       .pipe concat('vendor.min.css')
+      .pipe minifyCSS()
       .pipe gulp.dest destinations.styles
 
   gulp.src sources.styles
@@ -75,14 +77,14 @@ gulp.task 'svg-icons', ->
 gulp.task 'watch', ['server'], ->
   gulp.watch ['bower.json', sources.styles], ['styles']
   gulp.watch ['bower.json', sources.scripts], ['scripts']
-  #gulp.watch(sources.app, ['app']).on 'change', server.restart
+  gulp.watch(sources.all_js).on 'change', server.restart
 
 ##
 ## Task server:
 ##
 gulp.task 'server', ->
   runSequence 'build', ->
-    server.listen {path: 'app.js'}
+    server.listen {path: 'server.js'}
 
 ##
 ## Build tasks

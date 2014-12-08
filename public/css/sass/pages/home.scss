@@ -1,105 +1,107 @@
 .pg-home {
 
   .hero {
+    @include wrapper();
+    padding: {top: 2rem; bottom: 1rem};
     text-align: center;
-    background: $blue2;
-    padding: 20px 0;
+    background: $hero-background;
     margin-bottom: 30px;
 
     img {
-      @include border-bottom-radius(50%);
       @include border-left-radius(50%);
       @include border-right-radius(50%);
       width: auto;
       height: 140px;
       margin-bottom: 1rem;
-      border: 5px solid $white;
-      box-shadow: 0 0 15px 0 $blue1;
+      border: 5px solid white;
+      box-shadow: 0 0 15px 0 blue;
     }
 
     h1 {
-      color: $red;
+      color: red;
       font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     p {
-      color: $white;
+      color: white;
       font-size: 1.2rem;
+      margin-bottom: 1rem;
     }
   }
 
-  main {
-    .about-and-projects {
-      margin-bottom: 30px;
 
-      .about {
-        margin-bottom: 2rem;
-
-        .readmore {
-          margin-top: 10px;
-          text-align: right;
-        }
-      }
-
-      .projects {
-        article {
-          margin-bottom: 3rem;
-          border-radius: 6px;
-          box-shadow: 0px 3px 0px rgba(0,0,0,0.12);
-          background-color: $blue3;
-
-          figure {
-            img {
-              width: 100%;
-              height: auto;
-              border-radius: 6px;
-            }
-          }
-
-          .description {
-            padding: 2rem 1rem;
-            border-radius: 0 0 6px 6px;
-            color: $white;
-
-            h4 {
-              margin-bottom: 1.2rem;
-            }
-          }
-
-
-          /*figure {
-            position: relative;
-            img {
-              box-shadow: 0 0 3px $blue3;
-              border-radius: 2px;
-            }
-
-            h4 {
-              position: absolute;
-              bottom: 2px;
-              right: 0;
-              left: 0;
-              font-size: 2rem;
-              line-height: 4rem;
-              text-align: center;
-              text-transform: uppercase;
-
-              background: transparentize($blue3, 0.5);
-              border-radius: 0 0 2px 2px;
-            }
-
-
-          }*/
-
-        }
-      }
-    }
-
-    .articles {
-
-    }
-  }
+//  main {
+//    .about-and-projects {
+//      margin-bottom: 30px;
+//
+//      .about {
+//        margin-bottom: 2rem;
+//
+//        .readmore {
+//          margin-top: 10px;
+//          text-align: right;
+//        }
+//      }
+//
+//      .projects {
+//        article {
+//          margin-bottom: 3rem;
+//          border-radius: 6px;
+//          box-shadow: 0px 3px 0px rgba(0,0,0,0.12);
+//          background-color: $blue3;
+//
+//          figure {
+//            img {
+//              width: 100%;
+//              height: auto;
+//              border-radius: 6px;
+//            }
+//          }
+//
+//          .description {
+//            padding: 2rem 1rem;
+//            border-radius: 0 0 6px 6px;
+//            color: $white;
+//
+//            h4 {
+//              margin-bottom: 1.2rem;
+//            }
+//          }
+//
+//
+//          /*figure {
+//            position: relative;
+//            img {
+//              box-shadow: 0 0 3px $blue3;
+//              border-radius: 2px;
+//            }
+//
+//            h4 {
+//              position: absolute;
+//              bottom: 2px;
+//              right: 0;
+//              left: 0;
+//              font-size: 2rem;
+//              line-height: 4rem;
+//              text-align: center;
+//              text-transform: uppercase;
+//
+//              background: transparentize($blue3, 0.5);
+//              border-radius: 0 0 2px 2px;
+//            }
+//
+//
+//          }*/
+//
+//        }
+//      }
+//    }
+//
+//    .articles {
+//
+//    }
+//  }
 
   /*
   main {

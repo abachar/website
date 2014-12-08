@@ -3,12 +3,16 @@
 
 // Variables
 @import 'variables';
+@import 'mixins';
 
 // Base
-@import 'base/reset';
 @import 'base/typography';
+@import 'base/lists';
+@import 'base/tables';
+@import 'base/form';
 
 // Components
+@import "components/flashes";
 @import "components/buttons";
 
 // Layouts
@@ -17,15 +21,7 @@
 
 // Pages
 @import "pages/home";
-//@import "layouts/page-profile";
-//@import "layouts/page-projects";
-//@import "layouts/page-blog";
-//@import "layouts/page-contact";
-
-.wrapper {
-  margin: 0 2rem;;
-}
-
-img {
-  width: 100%;
-}
+@import "pages/profile";
+@import "pages/projects";
+@import "pages/blog";
+@import "pages/contact";

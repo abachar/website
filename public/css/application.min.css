@@ -1,1 +1,43 @@
-body:before{white-space:pre;font-family:monospace;content:"Error: Undefined variable: \"$background-color\".\A         on line 10 of /Users/abachar/Documents/website/public/css/sass/base/_typography.scss\A         from line 9 of /var/folders/2_/6652dlg51711_kxhtwg3pnl80000gn/T/gulp-ruby-sass/application.scss\A \A 5: \A 6: \A 7: // Base\A 8: \A 9: \A 10: \A 11: // Components\A 12: \A 13: \A 14: // Layouts\A 15: "}
+html{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+*,:after,:before{-webkit-box-sizing:inherit;-moz-box-sizing:inherit;box-sizing:inherit}
+body,html{font-family:"Open Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:14px;line-height:1.5rem}
+body{-webkit-font-smoothing:antialiased;background-color:#fff;color:#333}
+h1,h2,h3,h4,h5,h6{font-family:"Open Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-weight:400;font-style:normal;margin-top:.2em;margin-bottom:.5em;text-rendering:optimizeLegibility}
+h1{font-size:31.5px}
+h2{font-size:28px}
+h3{font-size:24.5px}
+h4{font-size:21px}
+h5{font-size:17.5px}
+h6{font-size:14px}
+p{margin:0 0 .75rem}
+a{-webkit-transition:color .1s linear;-moz-transition:color .1s linear;transition:color .1s linear;color:#00f;text-decoration:none}
+a:hover{color:#0000b3}
+a:active,a:focus{color:#0000b3;outline:0}
+img{max-width:100%}
+blockquote{border-left:2px solid #DDD;color:#595959;margin:1.5rem 0;padding-left:.75rem}
+cite{color:#737373;font-style:italic}
+cite:before{content:"\2014 \00A0"}
+dl{margin-bottom:.75rem}
+dl dt{font-weight:700;margin-top:.75rem}
+a.button,button.button{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;-webkit-font-smoothing:antialiased;background:#00f;color:#fff;border-radius:2;display:inline-block;font-size:1rem;font-weight:400;line-height:1.5rem;padding:.75em 1em;text-decoration:none;border:none;cursor:pointer;user-select:none;vertical-align:middle;white-space:nowrap}
+a.button:hover,button.button:hover{color:#fff}
+a.button:disabled,button.button:disabled{cursor:not-allowed;opacity:.5}
+header#navbar .wrapper{padding:0 1.5rem}
+header#navbar .navbar-header .logo{line-height:4rem;font-size:1.5rem;font-weight:700}
+header#navbar .navbar-header label.nav-toggle{padding:10px;margin:8px 0;float:right}
+header#navbar .navbar-header label.nav-toggle .bar{background-color:#333;display:block;width:22px;height:2px}
+header#navbar .navbar-header label.nav-toggle .bar+.bar{margin-top:4px}
+header#navbar nav{overflow:hidden}
+header#navbar nav ul{height:0;-webkit-transition:height .3s;-moz-transition:height .3s;transition:height .3s}
+header#navbar nav ul a,header#navbar nav ul label{display:block;font-weight:400;line-height:1.5rem;padding:.5rem 0}
+header#navbar nav #navbar-menu-chk{display:none}
+header#navbar nav #navbar-menu-chk:checked+ul{height:13.3rem}
+footer#footer{background:gray;color:#000;font-size:.9rem;text-align:center;padding:2.5rem 0}
+footer#footer .wrapper{padding:0 1.5rem}
+footer#footer a,footer#footer label{font-weight:400;color:red;line-height:1.3rem;text-decoration:underline}
+footer#footer nav{text-align:center}
+footer#footer nav li{display:inline-block;padding-left:.5em;padding-right:.5em}
+.pg-home .hero{padding:2rem 1.5rem 1rem;text-align:center;background:#477DCA;margin-bottom:30px}
+.pg-home .hero img{border-radius:50%;width:auto;height:140px;margin-bottom:1rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
+.pg-home .hero h1{color:red;font-size:2rem;margin-bottom:1rem}
+.pg-home .hero p{color:#fff;font-size:1.2rem;margin-bottom:1rem}

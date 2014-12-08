@@ -1,14 +1,14 @@
 header#navbar {
+  .wrapper {
+    @include wrapper();
+  }
 
   .navbar-header {
-    .logo, .nav-toggle {
-      line-height: 4rem;
-    }
-
     .logo {
+      line-height: 4rem;
       font: {
         size: 1.5rem;
-        weight: 700;
+        weight: $font-weight-bold;
       }
     }
 
@@ -37,8 +37,8 @@ header#navbar {
 
       a, label {
         display: block;
-        font-weight: 400;
-        line-height: 1.2rem;
+        font-weight: $font-weight-normal;
+        line-height: 1.5rem;
         padding: .5rem 0;
       }
     }
@@ -46,7 +46,7 @@ header#navbar {
     #navbar-menu-chk {
       display: none;
       &:checked + ul {
-        height: 5 * (1.2rem + 1rem);
+        height: 5 * (1.5rem + 1rem) + .8rem; /* 5 Elem * (Elem line-height + Elem padding)*/
       }
     }
   }

@@ -2,12 +2,14 @@ a.button, button.button{
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
 
-  background-color: $red;
+  background: $button-background-color;
+  color: $button-color;
   border-radius: 2;
-  color: $white;
   display: inline-block;
-  font-size: 1rem;
-  font-weight: normal;
+  font: {
+    size: 1rem;
+    weight: normal;
+  }
   line-height: 1.5rem;
   padding: 0.75em 1em;
   text-decoration: none;
@@ -18,8 +20,7 @@ a.button, button.button{
   white-space: nowrap;
 
   &:hover {
-    // background-color: $hover-button-color;
-    color: white;
+    color: $hover-button-color;
   }
 
   &:disabled {
