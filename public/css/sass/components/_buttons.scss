@@ -4,7 +4,7 @@ a.button, button.button{
 
   background: $button-background-color;
   color: $button-color;
-  border-radius: 2;
+  border-radius: $base-border-radius;
   display: inline-block;
   font: {
     size: 1rem;

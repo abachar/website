@@ -16,10 +16,10 @@ mainBowerFiles = require('main-bower-files')
 ##
 ## Define paths
 sources =
-  styles   : 'public/css/sass/**/*.scss'
-  scripts  : 'public/js/scripts/*.js'
-  svg_icons: 'public/fonts/svg-icons/*.svg'
-  all_js   : ['server.js', 'app.js', 'routes/*.js', 'models/*.js']
+  styles     : 'public/css/sass/**/*.scss'
+  scripts    : 'public/js/scripts/*.js'
+  svg_icons  : 'public/fonts/svg-icons/*.svg'
+  need_reload: ['server.js', 'app.js', 'routes/*', 'models/*', 'views/**/*']
 
 destinations =
   styles : 'public/css'
@@ -77,7 +77,7 @@ gulp.task 'svg-icons', ->
 gulp.task 'watch', ['server'], ->
   gulp.watch ['bower.json', sources.styles], ['styles']
   gulp.watch ['bower.json', sources.scripts], ['scripts']
-  gulp.watch(sources.all_js).on 'change', server.restart
+  gulp.watch(sources.need_reload).on 'change', server.restart
 
 ##
 ## Task server:

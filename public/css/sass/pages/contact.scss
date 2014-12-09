@@ -1,6 +1,43 @@
 #dialog-contact {
   display: none;
-}
-dialog {
 
+  &:checked + .dlg-contact {
+    display: block;
+  }
+}
+
+.dlg-contact {
+  display: none;
+
+  .overlay {
+    @include position(fixed, 0 0 0 0);
+    background: transparentize(black, 0.3);
+    z-index: 1000;
+  }
+
+  .dialog {
+    @include position(fixed, 0 0 auto 0);
+    background: white;
+    z-index: 1001;
+    padding: 1.5rem 0;
+
+    header {
+      @include wrapper();
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 2rem;
+        text-transform: uppercase;
+      }
+    }
+
+    .content {
+      @include wrapper();
+    }
+
+    footer {
+      @include wrapper();
+      text-align: right;
+    }
+  }
 }

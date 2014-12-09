@@ -32,6 +32,8 @@ p {
   margin: 0 0 ($base-spacing / 2);
 }
 
+small { font-size: $font-size * 0.8; }
+
 a {
   @include transition(color 0.1s linear);
   color: $link-color;
