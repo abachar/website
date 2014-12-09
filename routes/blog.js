@@ -29,6 +29,7 @@ router.get('/', function (request, response) {
             response.status(404).end();
         } else {
             response.render('blog/index', {
+                isBlog  : true,
                 articles: articles
             });
         }
@@ -54,7 +55,7 @@ router.get('/:code', function (request, response) {
             response.end();
         } else {
             response.render('blog/view', {
-                isBlog: true,
+                isBlog  : true,
                 article : results.article,
                 contents: results.contents
             });

@@ -28,6 +28,7 @@ router.get('/', function (request, response) {
             response.status(404).end();
         } else {
             response.render('profile/index', {
+                isProfile  : true,
                 experiences: results.experiences,
                 projects   : results.projects,
                 competences: results.competences

@@ -15,11 +15,11 @@
 	<div class="wrapper">
 		<div class="navbar-header">
 			<label class="nav-toggle" for="navbar-menu-chk">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
+				{{#if isHome    }}Abdelhakim Bachar{{/if}}
+				{{#if isProfile }}Profil{{/if}}
+				{{#if isProjects}}Projets{{/if}}
+				{{#if isBlog    }}Blog{{/if}}
 			</label>
-			<a href="/" class="logo">Abdelhakim Bachar</a>
 		</div>
 		<nav>
 			<input id="navbar-menu-chk" type="checkbox"/>

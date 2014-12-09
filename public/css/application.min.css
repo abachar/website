@@ -23,10 +23,8 @@ a.button,button.button{-webkit-appearance:none;-moz-appearance:none;-ms-appearan
 a.button:hover,button.button:hover{color:#fff}
 a.button:disabled,button.button:disabled{cursor:not-allowed;opacity:.5}
 header#navbar .wrapper{padding:0 1.5rem}
-header#navbar .navbar-header .logo{line-height:4rem;font-size:1.5rem;font-weight:700}
-header#navbar .navbar-header label.nav-toggle{padding:10px;margin:8px 0;float:right}
-header#navbar .navbar-header label.nav-toggle .bar{background-color:#333;display:block;width:22px;height:2px}
-header#navbar .navbar-header label.nav-toggle .bar+.bar{margin-top:4px}
+header#navbar .navbar-header .nav-toggle{line-height:4rem;font-size:1.8rem;display:block;text-transform:uppercase;position:relative}
+header#navbar .navbar-header .nav-toggle::after{content:"";position:absolute;display:block;height:0;top:50%;margin-top:-.5rem;right:0;box-shadow:0 0 0 1px #333,0 7px 0 1px #333,0 14px 0 1px #333;width:22px}
 header#navbar nav{overflow:hidden}
 header#navbar nav ul{height:0;-webkit-transition:height .3s;-moz-transition:height .3s;transition:height .3s}
 header#navbar nav ul a,header#navbar nav ul label{display:block;font-weight:400;line-height:1.5rem;padding:.5rem 0}
@@ -51,9 +49,19 @@ footer#footer nav li{display:inline-block;padding-left:.5em;padding-right:.5em}
 .pg-home main .articles article h4{padding:0 1.5rem}
 .pg-home main .articles article figure{margin-bottom:1rem}
 .pg-home main .articles article p{padding:0 1.5rem}
+.pg-profile .hero{padding:2rem 1.5rem 1rem;text-align:center;background:#477DCA;margin-bottom:3rem}
+.pg-profile .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
+.pg-profile .hero h1{color:red;font-size:2rem;margin-bottom:1rem}
+.pg-profile .hero h6{color:#fff;margin-bottom:1rem}
+.pg-projects .hero{padding:2rem 1.5rem 1rem;text-align:center;background:#477DCA;margin-bottom:3rem}
+.pg-projects .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
+.pg-projects .hero h1{color:red;font-size:2rem;margin-bottom:1rem}
 .pg-projects article{margin-bottom:2rem}
 .pg-projects article figure{margin-bottom:1rem}
 .pg-projects article .description{padding:0 1.5rem}
+.pg-blog .hero{padding:2rem 1.5rem 1rem;text-align:center;background:#477DCA;margin-bottom:3rem}
+.pg-blog .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
+.pg-blog .hero h1{color:red;font-size:2rem;margin-bottom:1rem}
 .pg-blog article{margin-bottom:2rem}
 .pg-blog article .author,.pg-blog article h4{padding:0 1.5rem}
 .pg-blog article figure{margin-bottom:1rem}

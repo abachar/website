@@ -17,7 +17,8 @@ router.get('/', function (request, response) {
             response.status(404).end();
         } else {
             response.render('projects/index', {
-                projects: projects
+                isProjects: true,
+                projects  : projects
             });
         }
     });

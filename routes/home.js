@@ -24,6 +24,7 @@ router.get('/', function (request, response) {
             response.status(404).end();
         } else {
             response.render('home/index', {
+                isHome  : true,
                 articles: results.articles,
                 projects: results.projects
             });

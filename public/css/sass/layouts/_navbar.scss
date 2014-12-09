@@ -4,27 +4,23 @@ header#navbar {
   }
 
   .navbar-header {
-    .logo {
+    .nav-toggle {
       line-height: 4rem;
-      font: {
-        size: 1.5rem;
-        weight: $font-weight-bold;
-      }
-    }
+      font-size: 1.8rem;
+      display: block;
+      text-transform: uppercase;
+      position: relative;
 
-    label.nav-toggle {
-      padding: 10px;
-      margin: 8px 0;
-      float: right;
-
-      .bar {
-        background-color: $font-color;
+      &::after {
+        content: "";
+        position: absolute;
         display: block;
+        height: 0;
+        top: 50%;
+        margin-top: -0.5rem;
+        right: 0;
+        box-shadow: 0 0px 0 1px $font-color, 0 7px 0 1px $font-color, 0 14px 0 1px $font-color;
         width: 22px;
-        height: 2px;
-      }
-      .bar+.bar {
-        margin-top: 4px;
       }
     }
   }

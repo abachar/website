@@ -1,4 +1,28 @@
 .pg-projects {
+  .hero {
+    @include wrapper();
+    padding: {top: 2rem; bottom: 1rem};
+    text-align: center;
+    background: $hero-background;
+    margin-bottom: 3rem;
+
+    img {
+      @include border-left-radius(50%);
+      @include border-right-radius(50%);
+      width: auto;
+      height: 100px;
+      margin-bottom: 1rem;
+      border: 5px solid white;
+      box-shadow: 0 0 15px 0 blue;
+    }
+
+    h1 {
+      color: red;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+
   article {
     margin-bottom: 2rem;
 
