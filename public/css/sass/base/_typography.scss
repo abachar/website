@@ -18,15 +18,11 @@ h1, h2, h3, h4, h5, h6 {
     weight: normal;
     style: normal;
   }
-  margin: {
-    top: 0.2em;
-    bottom: 0.5em;
-  }
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
 
 h1 { font-size: $h1-font-size; }
-h2 { font-size: $h2-font-size; }
+h2 { font-size: $h2-font-size; margin-bottom: 2rem; display: block; text-align: center; text-transform: uppercase}
 h3 { font-size: $h3-font-size; }
 h4 { font-size: $h4-font-size; }
 h5 { font-size: $h5-font-size; }
