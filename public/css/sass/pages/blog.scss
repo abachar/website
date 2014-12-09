@@ -1,0 +1,29 @@
+.pg-blog {
+  article {
+    margin-bottom: 2rem;
+
+    h4 {
+      @include wrapper();
+    }
+
+    .author {
+      @include wrapper();
+    }
+
+    figure {
+      margin-bottom: 1rem;
+    }
+
+    .summary {
+      @include wrapper();
+      margin-bottom: 1rem;
+    }
+
+    .readmore {
+      @include wrapper();
+      margin-top: 1rem;
+      text-align: right;
+    }
+  }
+
+}

@@ -1,23 +1,16 @@
-<div class="pg-blog">
-    <div class="wrapper">
-        <main>
-            <h1>Blog</h1>
+<main class="pg-blog">
+	<h2>Blog</h2>
 
-            {{#each articles}}
-                <article>
-                    <h3><a href="/blog/{{code}}">{{title}}</a></h3>
-                    <p><time>{{date}}</time> par {{author}}</p>
+	{{#each articles}}
+		<article>
+			<h4><a href="/blog/{{code}}">{{title}}</a></h4>
+			<p class="author"><time>{{formatDate created_at "DD/MM/YYYY"}}</time>, par {{author}}</p>
 
-                    <figure>
-                        <a href="/blog/{{code}}"><img src="/blog/{{code}}/assets/{{thumbnail}}" /></a>
-                    </figure>
-                    <div class="summary">{{description}}</div>
-                    <a href="/blog/{{code}}">Lire la suite</a>
-                </article>
-            {{/each}}
-        </main>
-        <aside>
-
-        </aside>
-    </div>
-</div>
+			<figure>
+				<a href="/blog/{{code}}"><img src="/blog/{{code}}/assets/{{thumbnail}}"/></a>
+			</figure>
+			<div class="summary">{{description}}</div>
+			<div class="readmore"><a class="button" href="/blog/{{code}}">Lire la suite</a></div>
+		</article>
+	{{/each}}
+</main>

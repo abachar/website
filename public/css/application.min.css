@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5,h6{font-family:"Open Sans","Helvetica Neue",Helvetica,Roboto,Aria
 h1{font-size:31.5px}
 h2{font-size:28px;margin-bottom:2rem;display:block;text-align:center;text-transform:uppercase}
 h3{font-size:24.5px}
-h4{font-size:21px}
+h4{font-size:21px;margin-bottom:1rem}
 h5{font-size:17.5px}
 h6{font-size:14px}
 p{margin:0 0 .75rem}
@@ -47,13 +47,16 @@ footer#footer nav li{display:inline-block;padding-left:.5em;padding-right:.5em}
 .pg-home main .projects article{margin-bottom:2rem}
 .pg-home main .projects article figure{margin-bottom:1rem}
 .pg-home main .projects article .description{padding:0 1.5rem}
-.pg-home main .projects article .description h4{margin-bottom:1rem}
 .pg-home main .articles article{margin-bottom:2rem}
-.pg-home main .articles article h4{padding:0 1.5rem;margin-bottom:1rem}
+.pg-home main .articles article h4{padding:0 1.5rem}
 .pg-home main .articles article figure{margin-bottom:1rem}
 .pg-home main .articles article p{padding:0 1.5rem}
 .pg-projects article{margin-bottom:2rem}
 .pg-projects article figure{margin-bottom:1rem}
 .pg-projects article .description{padding:0 1.5rem}
-.pg-projects article .description h3{margin-bottom:1rem}
+.pg-blog article{margin-bottom:2rem}
+.pg-blog article .author,.pg-blog article h4{padding:0 1.5rem}
+.pg-blog article figure{margin-bottom:1rem}
+.pg-blog article .summary{padding:0 1.5rem;margin-bottom:1rem}
+.pg-blog article .readmore{padding:0 1.5rem;margin-top:1rem;text-align:right}
 #dialog-contact{display:none}

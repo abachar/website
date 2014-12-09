@@ -16,6 +16,10 @@ function setupHandlebars(app) {
     // Partials
     hbs.registerPartials(path.join(__dirname, 'views'));
 
+    hbs.registerHelper("formatDate", function (date, format) {
+        return new hbs.SafeString(moment(date).format(format));
+    });
+
     hbs.registerHelper("duration", function (start, end, showMonths) {
         var diff, duration, m, y;
         if (!end) {
