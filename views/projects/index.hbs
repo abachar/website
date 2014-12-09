@@ -1,33 +1,27 @@
 <main class="pg-projects">
-  <div class="wrapper">
-    <main>
-      <h1>Projets</h1>
+	<h2>Projets</h2>
 
-        {{#each projects}}
-          <article>
-            <figure date-code="{{code}}">
-                {{#if images}}
-                    {{#each images}}
-                      <a class="{{#if @index}}hidden{{/if}}" data-gallery="gallery-{{../code}}" href="/projects/assets/{{../code}}/gallery/{{this}}">
-                          {{#unless @index}}
-                            <img src="/projects/assets/{{../../code}}/{{../../thumbnail}}"/>
-                          {{/unless}}
-                      </a>
-                    {{/each}}
-                {{else}}
-                  <img src="/images/project-no-thumbnail.png"/>
-                {{/if}}
-            </figure>
-            <div class="details">
-              <h3>{{name}}</h3>
-              <p>{{description}}</p>
-            </div>
-          </article>
-        {{/each}}
-    </main>
-    <aside>
+	{{#each projects}}
+		<article>
+			<figure date-code="{{code}}">
+				{{#if images}}
 
-    </aside>
-  </div>
-
+					{{#each images}}
+						<a class="{{#if @index}}hidden{{/if}}" data-gallery="gallery-{{../code}}"
+						   href="/projects/assets/{{../code}}/gallery/{{this}}">
+							{{#unless @index}}
+								<img src="/projects/assets/{{../../code}}/{{../../thumbnail}}"/>
+							{{/unless}}
+						</a>
+					{{/each}}
+				{{else}}
+					<img src="/images/project-no-thumbnail.png"/>
+				{{/if}}
+			</figure>
+			<div class="description">
+				<h3>{{name}}</h3>
+				<p>{{description}}</p>
+			</div>
+		</article>
+	{{/each}}
 </main>

@@ -52,4 +52,8 @@ footer#footer nav li{display:inline-block;padding-left:.5em;padding-right:.5em}
 .pg-home main .articles article h4{padding:0 1.5rem;margin-bottom:1rem}
 .pg-home main .articles article figure{margin-bottom:1rem}
 .pg-home main .articles article p{padding:0 1.5rem}
+.pg-projects article{margin-bottom:2rem}
+.pg-projects article figure{margin-bottom:1rem}
+.pg-projects article .description{padding:0 1.5rem}
+.pg-projects article .description h3{margin-bottom:1rem}
 #dialog-contact{display:none}
