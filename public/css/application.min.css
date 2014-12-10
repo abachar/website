@@ -43,7 +43,7 @@ header#navbar .navbar-header .nav-toggle{line-height:4rem;font-size:1.8rem;displ
 header#navbar .navbar-header .nav-toggle::after{content:"";position:absolute;display:block;height:0;top:50%;margin-top:-.5rem;right:0;box-shadow:0 0 0 1px #333,0 7px 0 1px #333,0 14px 0 1px #333;width:22px}
 header#navbar nav{overflow:hidden}
 header#navbar nav ul{height:0;-webkit-transition:height .3s;-moz-transition:height .3s;transition:height .3s}
-header#navbar nav ul a,header#navbar nav ul label{display:block;font-weight:400;line-height:1.5rem;padding:.5rem 0}
+header#navbar nav ul a,header#navbar nav ul label{display:block;font-weight:400;line-height:1.5rem;padding:.5rem 0;color:#00f}
 header#navbar nav #navbar-menu-chk{display:none}
 header#navbar nav #navbar-menu-chk:checked+ul{height:13.3rem}
 footer#footer{background:gray;color:#000;font-size:.9rem;text-align:center;padding:2.5rem 0}

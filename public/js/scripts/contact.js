@@ -1,13 +1,15 @@
 (function ($) {
     $(document).ready(function () {
+        var form    = $('#js-contact-form');
+        var error   = form.find('.error');
+        var success = form.prev('.success')
 
         // Reset contact form
         $('#js-dialog-contact-chk').change(function () {
             if ($(this).is(':checked')) {
-                var form = $('#js-contact-form');
                 form.find('input, textarea').val('');
-                form.find('.errors').hide();
-                form.prev('.success').hide();
+                error.hide();
+                success.hide();
             }
         });
 
@@ -16,22 +18,22 @@
             var form = $('#js-contact-form');
 
             // Hide message, errors
-            form.find('.errors').hide();
-            form.prev('.success').hide();
+            error.hide();
+            success.hide();
 
             // Send message
             $.post("/contact", form.serialize())
                 .done(function (response) {
                     if (response.error) {
-                        form.find('.errors').html(response.message).show();
+                        error.html(response.message).show();
                     }
                     if (response.success) {
                         form.hide();
-                        form.prev('.success').html(response.message).show();
+                        success.html(response.message).show();
                     }
                 })
                 .fail(function () {
-                    form.find('.errors').html('').show();
+                    error.html('').show();
                 })
         });
     });
