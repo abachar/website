@@ -18,6 +18,9 @@ img{max-width:100%}
 blockquote{border-left:2px solid #DDD;color:#595959;margin:1.5rem 0;padding-left:.75rem}
 cite{color:#737373;font-style:italic}
 cite:before{content:"\2014 \00A0"}
+ul{margin-left:2rem;margin-bottom:.75rem;list-style-type:disc}
+ul.inline,ul.unstyled{margin:0;list-style:none}
+ul.inline>li{display:inline-block;padding:0 .5rem}
 dl{margin-bottom:.75rem}
 dl dt{font-weight:700;margin-top:.75rem}
 form input{display:block}
@@ -50,7 +53,6 @@ footer#footer{background:gray;color:#000;font-size:.9rem;text-align:center;paddi
 footer#footer .wrapper{padding:0 1.5rem}
 footer#footer a,footer#footer label{font-weight:400;color:red;line-height:1.3rem;text-decoration:underline}
 footer#footer nav{text-align:center}
-footer#footer nav li{display:inline-block;padding-left:.5em;padding-right:.5em}
 .pg-home .hero{padding:2rem 1.5rem 1rem;text-align:center;background:#477DCA;margin-bottom:3rem}
 .pg-home .hero img{border-radius:50%;width:auto;height:140px;margin-bottom:1rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
 .pg-home .hero h1{color:red;font-size:2rem;margin-bottom:1rem}
@@ -69,6 +71,10 @@ footer#footer nav li{display:inline-block;padding-left:.5em;padding-right:.5em}
 .pg-profile .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
 .pg-profile .hero h1{color:red;font-size:2rem;margin-bottom:1rem}
 .pg-profile .hero h6{color:#fff;margin-bottom:1rem}
+.pg-profile section{padding:0 1.5rem;margin-bottom:3rem}
+.pg-profile section p{margin-bottom:.25rem}
+.pg-profile section p.description{margin-bottom:.75rem}
+.pg-profile #studies .grade{font-size:.8rem;line-height:.8rem;padding:.2rem .5rem .1rem;margin-left:.5rem;color:#fff;white-space:nowrap;vertical-align:baseline;border-radius:.25em;background-color:#777}
 .pg-projects .hero{padding:2rem 1.5rem 1rem;text-align:center;background:#477DCA;margin-bottom:3rem}
 .pg-projects .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
 .pg-projects .hero h1{color:red;font-size:2rem;margin-bottom:1rem}

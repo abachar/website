@@ -27,4 +27,31 @@
       margin-bottom: 1rem;
     }
   }
+
+  section {
+    @include wrapper();
+    margin-bottom: 3rem;
+
+    p { margin-bottom: .25rem; }
+    p.description { margin-bottom: .75rem; }
+  }
+
+  #competences {
+    .level-1, .level-2, .level-3 {
+    }
+  }
+
+  #studies {
+    .grade {
+      font-size: .8rem;
+      line-height: .8rem;
+      padding: .2rem .5rem .1rem;
+      margin-left: .5rem;
+      color: #fff;
+      white-space: nowrap;
+      vertical-align: baseline;
+      border-radius: .25em;
+      background-color: #777;
+    }
+  }
 }

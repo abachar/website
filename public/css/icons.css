@@ -20,27 +20,27 @@
 }
 
 
-.icon-arrow:before {
+.icon-arrow.svgx:before {
 	content: "\E001";
 }
 
-.icon-cancel:before {
+.icon-cancel.svgx:before {
 	content: "\E002";
 }
 
-.icon-close:before {
+.icon-close.svgx:before {
 	content: "\E003";
 }
 
-.icon-comments:before {
+.icon-comments.svgx:before {
 	content: "\E004";
 }
 
-.icon-download:before {
+.icon-download.svgx:before {
 	content: "\E005";
 }
 
-.icon-error:before {
+.icon-error.svgx:before {
 	content: "\E006";
 }
 
@@ -48,62 +48,62 @@
 	content: "\E007";
 }
 
-.icon-github:before {
+.icon-github.svgx:before {
 	content: "\E008";
 }
 
-.icon-home:before {
+.icon-home.svgx:before {
 	content: "\E009";
 }
 
-.icon-info:before {
+.icon-info.svgx:before {
 	content: "\E00A";
 }
 
-.icon-linkedin:before {
+.icon-linkedin.svgx:before {
 	content: "\E00B";
 }
 
-.icon-mail:before {
+.icon-mail.svgx:before {
 	content: "\E00C";
 }
 
-.icon-menu:before {
+.icon-menu.svgx:before {
 	content: "\E00D";
 }
 
-.icon-phone:before {
+.icon-phone.svgx:before {
 	content: "\E00E";
 }
 
-.icon-print:before {
+.icon-print.svgx:before {
 	content: "\E00F";
 }
 
-.icon-send:before {
+.icon-send.svgx:before {
 	content: "\E010";
 }
 
-.icon-success:before {
+.icon-success.svgx:before {
 	content: "\E011";
 }
 
-.icon-tools:before {
+.icon-tools.svgx:before {
 	content: "\E012";
 }
 
-.icon-twitter:before {
+.icon-twitter.svgx:before {
 	content: "\E013";
 }
 
-.icon-viadeo:before {
+.icon-viadeo.svgx:before {
 	content: "\E014";
 }
 
-.icon-warning:before {
+.icon-warning.svgx:before {
 	content: "\E015";
 }
 
-.icon-zoom:before {
+.icon-zoom.svgx:before {
 	content: "\E016";
 }

@@ -2,9 +2,10 @@
 	<header class="hero">
 		<div class="wrapper">
 			<img src="/images/abachar.jpg">
+
 			<h1>Abdelhakim Bachar</h1>
 			<h6>Référent Technique, Certifié Java Programmer</h6>
-			<ul>
+			<ul class="unstyled">
 				<li><a href="tel:+33620075945" class="icon icon-phone">+33 6 20 07 59 45</a></li>
 				<li><a href="mailto:a.bachar@hotmail.fr" class="icon icon-envelope">a.bachar@hotmail.fr</a></li>
 				<!--li><a href="mailto:buchir@gmail.com" class="icon icon-envelope">buchir@gmail.com</a></li -->
@@ -18,121 +19,132 @@
 		</div>
 	</header>
 
-	<h2 id="experiences">Expériences Professionnelles</h2>
-	<dl>
-		{{#each experiences}}
-			<dt>Du {{start}}<br/>
-				{{#if end}}Au {{end}}{{else}}Jusqu'à aujourd'hui{{/if}}
-			</dt>
-			<dd>
-				<p><strong>{{name}}</strong> : {{description}}</p>
+	<section id="experiences">
+		<h2>Expériences Professionnelles</h2>
+		<dl>
+			{{#each experiences}}
+				<dt>Du {{formatDate start 'DD/MM/YYYY'}}
+					{{#if end}}Au {{formatDate end 'DD/MM/YYYY'}}{{else}}Jusqu'à aujourd'hui{{/if}}
+				</dt>
+				<dd>
+					<p class="description"><strong>{{name}} </strong> : {{description}}</p>
 
-				<p>{{job}}</p>
-				{{#if roles}}
-					<ul>
-						{{#each roles}}
-							<li>{{this}}</li>
-						{{/each}}
-					</ul>
-				{{/if}}
-				{{#if methods}}
-					<p class="methods">Méthodologie de travail :
-					<ul>
-						{{#each methods}}
-							<li>{{this}}</li>
-						{{/each}}
-					</ul>
-					</p>
-				{{/if}}
-				{{#if tools}}
-					<p class="tools">Outils et technologies :
+					<p class="job">{{job}} :</p>
+					{{#if roles}}
+						<ul>
+							{{#each roles}}
+								<li>{{this}}</li>
+							{{/each}}
+						</ul>
+					{{/if}}
+
+					{{#if methods}}
+						<p class="methods">Méthodologie de travail :</p>
+						<ul>
+							{{#each methods}}
+								<li>{{this}}</li>
+							{{/each}}
+						</ul>
+					{{/if}}
+					{{#if tools}}
+						<p class="tools">Outils et technologies :</p>
+						<ul>
+							{{#each tools}}
+								<li>{{this}}</li>
+							{{/each}}
+						</ul>
+					{{/if}}
+					<p>Durée : {{{duration start end true}}}</p>
+				</dd>
+			{{/each}}
+		</dl>
+	</section>
+
+	<section id="projects">
+		<h2>Projets Personnels</h2>
+		<dl>
+			{{#each projects}}
+				<dt>{{name}}</dt>
+				<dd>
+					<p>{{description}}</p>
+
+					<p class="tools">Outils et technologies :</p>
 					<ul>
 						{{#each tools}}
 							<li>{{this}}</li>
 						{{/each}}
 					</ul>
-					</p>
-				{{/if}}
-				<p>Durée : {{{duration start end true}}}</p>
+				</dd>
+			{{/each}}
+		</dl>
+	</section>
+
+	<section id="competences">
+		<h2>Compétences</h2>
+		<dl>
+			{{#each competences}}
+				<dt>{{name}}</dt>
+				<dd>
+					<ul>
+						{{#each skills}}
+							<li class="level-{{level}}">{{name}}</li>
+						{{/each}}
+					</ul>
+				</dd>
+			{{/each}}
+		</dl>
+	</section>
+
+	<section id="studies">
+		<h2>Formations</h2>
+		<dl>
+			<dt>01/02/2010</dt>
+			<dd>DUESS SI-GESTION DE PROJET à l'université Hassan 1er, la Faculté des Sciences et Technique de Settat,
+				Maroc.
 			</dd>
-		{{/each}}
-	</dl>
-
-	<h2 id="projects">Projets Personnels</h2>
-	<dl>
-		{{#each projects}}
-			<dt>{{name}}</dt>
-			<dd>
-				<p>{{description}}</p>
-
-				<p class="tools">Outils et technologies :
-				<ul>
-					{{#each tools}}
-						<li>{{this}}</li>
-					{{/each}}
-				</ul>
-				</p>
+			<dt>01/05/2009</dt>
+			<dd>Certification : Sun Certified Java Programmer (SCJP)</dd>
+			<dt>01/11/2008</dt>
+			<dd>Formation Tuning SQL, Amélioration et optimisation des requêtes SQL par étude du plan d'exécution des
+				requêtes.
 			</dd>
-		{{/each}}
-	</dl>
-
-	<h2 id="competences">Compétences</h2>
-	<dl>
-		{{#each competences}}
-			<dt>{{name}}</dt>
-			<dd>
-				<ul class="list-unstyled">
-					{{#each skills}}
-						<li>{{name}} {{#if level}}<span>{{level}}</span>{{/if}}</li>
-					{{/each}}
-				</ul>
+			<dt>01/07/2007</dt>
+			<dd>Maîtrise informatique à l'université Hassan 1er, Faculté des Sciences et Technique de Settat,
+				Maroc.<span class="grade">Bien, Major de promotion</span></dd>
+			<dt>01/07/2005</dt>
+			<dd>DEUG option mathématique à L'université Hassan 1er, Faculté des Sciences et Techniques de Settat,
+				Maroc.<span class="grade">A bien</span></dd>
+			<dt>01/02/2002</dt>
+			<dd>Baccalauréat sciences mathématiques à Lycée Errazi de Settat, Maroc.<span class="grade">A bien</span>
 			</dd>
-		{{/each}}
-	</dl>
+		</dl>
+	</section>
 
-	<h2 id="studies">Formations</h2>
-	<dl>
-		<dt>01/02/2010</dt>
-		<dd>DUESS SI-GESTION DE PROJET à l'université Hassan 1er, la Faculté des Sciences et Technique de Settat,
-			Maroc.
-		</dd>
-		<dt>01/05/2009</dt>
-		<dd>Certification : Sun Certified Java Programmer (SCJP)</dd>
-		<dt>01/11/2008</dt>
-		<dd>Formation Tuning SQL, Amélioration et optimisation des requêtes SQL par étude du plan d'exécution des
-			requêtes.
-		</dd>
-		<dt>01/07/2007</dt>
-		<dd>Maîtrise informatique à l'université Hassan 1er, Faculté des Sciences et Technique de Settat, Maroc.<span
-				class="grade">Bien, Major de promotion.</span></dd>
-		<dt>01/07/2005</dt>
-		<dd>DEUG option mathématique à L'université Hassan 1er, Faculté des Sciences et Techniques de Settat,
-			Maroc.<span class="grade">A bien.</span></dd>
-		<dt>01/02/2002</dt>
-		<dd>Baccalauréat sciences mathématiques à Lycée Errazi de Settat, Maroc.<span class="grade">A bien.</span></dd>
-	</dl>
+	<section id="languages">
+		<h2>Langues</h2>
+		<dl>
+			<dt>Anglais</dt>
+			<dd>Débutant</dd>
+			<dt>Arabe</dt>
+			<dd>Langue maternelle.</dd>
+			<dt>Français</dt>
+			<dd>Courant</dd>
+		</dl>
+	</section>
 
-	<h2 id="languages">Langues</h2>
-	<dl>
-		<dt>Anglais</dt>
-		<dd>Débutant</dd>
-		<dt>Arabe</dt>
-		<dd>Langue maternelle.</dd>
-		<dt>Français</dt>
-		<dd>Courant</dd>
-	</dl>
-
-	<h2 id="interets">Centre d'intérêt &amp; Loisirs</h2>
-	<dl>
-		<dt>Activité parascolaire</dt>
-		<dd>Président du club des informaticiens à la Faculté des Sciences et Technique de Settat entre 2005 et 2007.
-		</dd>
-		<dt>Sport</dt>
-		<dd>Basket-ball, natation, tennis.</dd>
-		<dt>Permis</dt>
-		<dd>B</dd>
-	</dl>
-
+	<section id="interets">
+		<h2>Centre d'intérêt &amp; Loisirs</h2>
+		<dl>
+			<dt>Activité parascolaire</dt>
+			<dd>Président du club des informaticiens à la Faculté des Sciences et Technique de Settat entre 2005 et
+				2007.
+			</dd>
+			<dt>Sport</dt>
+			<dd>Basket-ball, natation, tennis.</dd>
+			<dt>Permis</dt>
+			<dd>B</dd>
+		</dl>
+	</section>
 	<!-- aside>
         <h2>Fiche Personnel</h2>
         <ul>
