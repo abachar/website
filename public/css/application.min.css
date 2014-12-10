@@ -83,6 +83,9 @@ footer#footer nav li{display:inline-block;padding-left:.5em;padding-right:.5em}
 .pg-blog article figure{margin-bottom:1rem}
 .pg-blog article .summary{padding:0 1.5rem;margin-bottom:1rem}
 .pg-blog article .readmore{padding:0 1.5rem;margin-top:1rem;text-align:right}
+.pg-article{padding:0 1.5rem;margin-top:2rem}
+.pg-article .content,.pg-article header{margin-bottom:2rem}
+.pg-article .content object{max-width:100%;height:auto}
 #js-dialog-contact-chk{display:none}
 #js-dialog-contact-chk:checked+.dlg-contact{opacity:1;visibility:visible}
 .dlg-contact{-webkit-transition:opacity .25s ease;-moz-transition:opacity .25s ease;transition:opacity .25s ease;opacity:0;visibility:hidden}

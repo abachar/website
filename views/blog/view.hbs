@@ -1,19 +1,20 @@
 <main class="pg-article">
-    <h1>{{article.title}}</h1>
+	<header>
+		<h2>{{article.title}}</h2>
+		<p>
+			<small><time>{{formatDate article.created_at "DD/MM/YYYY"}}</time>, par {{article.author}}</small>
+			{{#if article.printable}}
+				<a href="#">Imprimer l'article</a>
+			{{/if}}
+		</p>
 
-    <p>
-        <small><time>{{article.date}}</time>, {{article.author}}</small>
-        {{#if article.printable}}
-            <a href="#">Imprimer l'article</a>
-        {{/if}}
-    </p>
+		{{#if article.draft}}
+			<p class="notice">Cet article est en cours de rédaction, et ne constitue donc pour l’instant qu’une simple introduction.
+				Il fera l’objet d’un redécoupage, d'une refonte et d’un approfondissement conséquent par la suite.</p>
+		{{/if}}
+	</header>
 
-    {{#if article.draft}}
-        <p class="warning">Cet article est en cours de rédaction, et ne constitue donc pour l’instant qu’une simple introduction.
-            Il fera l’objet d’un redécoupage, d'une refonte et d’un approfondissement conséquent par la suite.</p>
-    {{/if}}
-
-    <section>{{{marked contents}}}</section>
+    <section class="content">{{{marked contents}}}</section>
 
     <section class="comments">
         {{#each article.comments}}
@@ -29,7 +30,7 @@
             <input name="email" type="text" maxlength="100" placeholder="Adresse mail">
             <textarea name="content" rows="5" placeholder="Commentaire..."></textarea>
 
-            <button type="button">Envoyer</button>
+            <button type="button" class="button">Envoyer</button>
         </form>
     </section>
 </main>
