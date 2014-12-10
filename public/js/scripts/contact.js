@@ -1,34 +1,39 @@
-(function($) {
-    $(document).ready(function() {
+(function ($) {
+    $(document).ready(function () {
 
-        // Block not available links
-        $('a.feature-not-available').click(function(event) {
-            alert('Fonctionnalité non disponible: Ceci est une version Bêta du site');
-            event.preventDefault();
+        // Reset contact form
+        $('#js-dialog-contact-chk').change(function () {
+            if ($(this).is(':checked')) {
+                var form = $('#js-contact-form');
+                form.find('input, textarea').val('');
+                form.find('.errors').hide();
+                form.prev('.success').hide();
+            }
         });
 
-        /* Configure zoom
-        $('figure.zoom').each(function() {
+        // Send message
+        $("#js-btn-send").click(function () {
+            var form = $('#js-contact-form');
 
-            var zoomLink = $(this).find("a:first");
+            // Hide message, errors
+            form.find('.errors').hide();
+            form.prev('.success').hide();
 
-            // Add zoom image
-            var zoomImg = $("<img src='/assets/images/zoom.svg' />")
-                .css({position: "absolute", top: 50, left: 90})
-                .hide();
-
-            // Zoom image animation
-            zoomLink
-                .append(zoomImg)
-                .mouseenter(function() {zoomImg.fadeIn();})
-                .mouseleave(function() {zoomImg.fadeOut();});
-        });*/
-
-        // Initialize the gallery
-        // $('figure.touchTouch a').touchTouch();
-
-        // Init pretty print
-        // prettyPrint();
+            // Send message
+            $.post("/contact", form.serialize())
+                .done(function (response) {
+                    if (response.error) {
+                        form.find('.errors').html(response.message).show();
+                    }
+                    if (response.success) {
+                        form.hide();
+                        form.prev('.success').html(response.message).show();
+                    }
+                })
+                .fail(function () {
+                    form.find('.errors').html('').show();
+                })
+        });
     });
 
 })(jQuery);

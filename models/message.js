@@ -8,7 +8,7 @@ var Message = function () {
         name   : { type: String, required: true },
         email  : { type: String, required: true },
         subject: { type: String, required: true },
-        message: { type: String, required: true },
+        content: { type: String, required: true },
         sent_at: { type: Date, default: Date.now }
     }));
 
@@ -18,7 +18,7 @@ var Message = function () {
         entity.name    = message.name;
         entity.email   = message.email;
         entity.subject = message.subject;
-        entity.message = message.message;
+        entity.content = message.content;
         entity.save(callback);
     };
 

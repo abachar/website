@@ -1,29 +1,29 @@
-<input id="dialog-contact" type="checkbox"/>
+<input id="js-dialog-contact-chk" type="checkbox"/>
 <div class="dlg-contact">
 	<div class="overlay"></div>
 	<div class="dialog">
 		<header>
-			<label class="close" for="dialog-contact"></label>
+			<label class="close" for="js-dialog-contact-chk"></label>
 			<h1>Me Contacter</h1>
 		</header>
 		<div class="content">
 			<p class="success"></p>
 
-			<form id="contact-form">
+			<form id="js-contact-form">
 				<p>Pour me contacter, veuillez remplir le formulaire ci-dessous<br/>
 					<small>Les champs marqués d'une * sont obligatoires.</small>
 				</p>
 
-				<p class="errors"></p>
+				<p class="error"></p>
 
 				<input name="name" type="text" maxlength="100" placeholder="Nom complet">
 				<input name="email" type="email" maxlength="100" placeholder="Adresse mail">
 				<input name="subject" type="text" maxlength="200" placeholder="Objet">
-				<textarea name="message" rows="5" placeholder="Message..."></textarea>
+				<textarea name="content" rows="5" placeholder="Message..."></textarea>
 			</form>
 		</div>
 		<footer>
-			<button type="button" class="button">Annuler</button>
+			<label class="button" for="js-dialog-contact-chk">Annuler</label>
 			<button type="button" class="button" id="js-btn-send">Envoyer</button>
 		</footer>
 	</div>

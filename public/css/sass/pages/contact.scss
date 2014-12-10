@@ -1,17 +1,22 @@
-#dialog-contact {
+$modal-padding: 1.5rem;
+
+#js-dialog-contact-chk {
   display: none;
 
   &:checked + .dlg-contact {
-    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 }
 
 .dlg-contact {
-  display: none;
+  @include transition(opacity .25s ease);
+  opacity: 0;
+  visibility: hidden;
 
   .overlay {
     @include position(fixed, 0 0 0 0);
-    background: transparentize(black, 0.3);
+    background: transparentize(black, 0.15);
     z-index: 1000;
   }
 
@@ -19,7 +24,7 @@
     @include position(fixed, 0 0 auto 0);
     background: white;
     z-index: 1001;
-    padding: 1.5rem 0;
+    padding: $modal-padding 0;
 
     header {
       @include wrapper();
@@ -28,6 +33,31 @@
       h1 {
         font-size: 2rem;
         text-transform: uppercase;
+      }
+
+      .close {
+        @include position(absolute, $modal-padding $modal-padding null null);
+        @include size(1.5rem);
+        cursor: pointer;
+        background: white;
+
+        &:after, &:before {
+          @include position(absolute, 3px 3px 0 50%);
+          @include transform(rotate(45deg));
+          @include size(.15rem 1.5rem);
+          background: black;
+          content: '';
+          display: block;
+          margin: -3px 0 0 -1px;
+        }
+
+        &:before {
+          @include transform(rotate(-45deg));
+        }
+
+//        &:hover:after, &:hover:before {
+//          background: darken(black, 10);
+//        }
       }
     }
 

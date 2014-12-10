@@ -45,6 +45,11 @@ $button-background-color: blue;
 $footer-font-color: black;
 $footer-link-color: red;
 
+// Flash Colors
+$error-color: #FBE3E4;
+$notice-color: lighten($base-accent-color, 40);
+$success-color: #E6EFC2;
+
 // Border color
 $border-color: #DDD;
 //$base-border: 1px solid $base-border-color;
