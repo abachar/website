@@ -13,8 +13,11 @@ Le framework contient notamment les fonctionnalités suivantes :
 - Fonctions utilitaires
 
 <div class="powerpoint">
-    <object width="970" height="764" type="application/x-shockwave-flash" data="/blog/jquery/assets/jquery.swf">
-    </object>
+	<iframe src="//www.slideshare.net/slideshow/embed_code/42572641" 
+		 width="425" height="355" 
+		frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+		webkitallowfullscreen mozallowfullscreen allowfullscreen>
+	</iframe>
 </div>
 
-[<i class="icon download"></i> Télécharger la présentation](/blog/jquery/assets/jquery.zip)
+<a class="download" href="/blog/jquery/assets/jquery.zip">Télécharger la présentation</a>

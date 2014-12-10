@@ -4,11 +4,14 @@ Ce n'est pas un framework événementiel comme pourraient l'être jsf, wicket, t
 d'extensions et utilisé avec Spring Web Flow il devient un framework très puissant.
 
 <div class="powerpoint">
-    <object width="970" height="764" type="application/x-shockwave-flash" data="/blog/spring-mvc/assets/spring-mvc.swf">
-    </object>
+	<iframe src="//www.slideshare.net/slideshow/embed_code/42572736" 
+		width="425" height="355"
+		frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+		webkitallowfullscreen mozallowfullscreen allowfullscreen>
+	</iframe>
 </div>
 
-[<i class="icon download"></i> Télécharger la présentation](/blog/spring-mvc/assets/spring-mvc.zip)
+<a class="download" href="/blog/spring-mvc/assets/spring-mvc.zip">Télécharger la présentation</a>
 
 
 

@@ -8,7 +8,8 @@ cherche à atteindre un but, comme c'est le cas en rugby pour avancer avec le ba
 <div class="powerpoint">
 	<iframe src="//www.slideshare.net/slideshow/embed_code/42570308" 
 		width="476" height="400" 
-		frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+		frameborder="0" marginwidth="0" marginheight="0" scrolling="no"
+		webkitallowfullscreen mozallowfullscreen allowfullscreen>
 	</iframe>
 </div>
 
