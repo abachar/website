@@ -17,20 +17,24 @@
     <section class="content">{{{marked contents}}}</section>
 
     <section class="comments">
+		<h4>Commentaires</h4>
         {{#each article.comments}}
-            <div>
-                <h4>{{author}}</h4>
+            <article>
+                <h5>{{author}}<small>{{formatDate created_at 'DD/MM/YYYY'}}</small></h5>
+
                 <p>{{content}}</p>
-                <time>{{created_at}}</time>
-            </div>
+            </article>
         {{/each}}
 
-        <form>
+		<h4>Laisser un commentaire</h4>
+        <form id="js-comment-form" action="/blog/{{article.code}}/comments">
+			<p class="error"></p>
+
             <input name="author" type="text" maxlength="100" placeholder="Nom complet">
             <input name="email" type="text" maxlength="100" placeholder="Adresse mail">
             <textarea name="content" rows="5" placeholder="Commentaire..."></textarea>
 
-            <button type="button" class="button">Envoyer</button>
+            <button type="button" class="button js-btn-send">Envoyer</button>
         </form>
     </section>
 </main>

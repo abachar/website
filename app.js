@@ -41,6 +41,12 @@ function setupHandlebars(app) {
         return new hbs.SafeString(duration);
     });
 
+    marked.setOptions({
+        highlight: function (code) {
+            return require('highlight.js').highlightAuto(code).value;
+        }
+    });
+
     hbs.registerHelper("marked", function (source) {
         return new hbs.SafeString(marked(source));
     });

@@ -6,7 +6,8 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "lightbox": "~2.7.1",
-    "reset-css": "~2.0.20110126"
+    "reset-css": "~2.0.20110126",
+    "highlightjs": "~8.4.0"
   },
   "devDependencies": {}
 }

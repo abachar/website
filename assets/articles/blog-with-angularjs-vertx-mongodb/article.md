@@ -17,7 +17,7 @@ et de nombreuses personnes contribuent à ce projet, voici les fonctionnalités 
 
 Nous allons commencer par créer l'arborescence de notre projet :
 
-~~~{.prettyprint}
+```
 [webapp]
     [assets]
         [js]
@@ -27,7 +27,7 @@ Nous allons commencer par créer l'arborescence de notre projet :
             [jquery]
     index.html
     server.js
-~~~
+```
 
 Commencer par télécharger la librairie jQuery sur le site [http://jquery.com](http://jquery.com),
 placez votre fichier jquery-x.y.z.js dans le dossier webapp/assets/libs/jquery, l’utilisation de jQuery n’est
@@ -41,7 +41,7 @@ webapp/assets/angular/i18n.
 
 Dans la page index.html copier ce code :
 
-~~~{.prettyprint .linenums}
+```html
 <!doctype html>
 <html lang="fr" ng-app="blog">
 <head>
@@ -55,13 +55,13 @@ Dans la page index.html copier ce code :
     <script src="assets/js/blog.js"></script>
 </body>
 </html>
-~~~
+```
 
 Et dans le fichier blog.js
 
-~~~{.prettyprint .linenums}
+```js
 var blog = angular.module('blog', []);
-~~~
+```
 
 Tester dans votre navigateur, de préférence google chrome car vous pouvez y installer un plugin AngularJS utile lors 
 du développement.
@@ -70,15 +70,15 @@ Voila votre application est maintenant bien configurer :) mais c’est quoi le n
 fichier app.js ?
 
 - **angular.module** : Elle permet de déclarer un module Angular qui à son tour permet de déclarer : des directives, des 
-                       controleurs, des filtres, des constantes et des services.
+controleurs, des filtres, des constantes et des services.
 - **ng-app**: La directive ng-app (ngApp) initialise automatiquement l’application. L’affectation d’une valeur contenant
-              un identifiant implique le chargement du module déclaré précédemment avec angular.module
+un identifiant implique le chargement du module déclaré précédemment avec angular.module
 
 ## 2- Liste des articles
 
 Avant d'utiliser une vrai base de données, nous commencerons par une liste javascript qui jouera le rôle de notre DB.
 
-~~~{.prettyprint .linenums}
+```js
 // db.blog.js
 var listOfPosts = [
     {
@@ -121,11 +121,10 @@ function getPostByCode(code) {
     });
     return post;
 }
-~~~
+```
 
 
-
-~~~{.prettyprint .linenums}
+```js
 var blog = angular.module('blog', []);
 
 /**
@@ -143,7 +142,7 @@ blog.config(['$routeProvider', function($routeProvider) {
 var listController = function($scope) {
     $scope.posts = listOfPosts;
 }
-~~~
+```
 
 - Dependency Injection
 - config
@@ -152,7 +151,7 @@ var listController = function($scope) {
 - controller
 - $scope
 
-~~~{.prettyprint .linenums}
+```html
 <!doctype html>
 <html lang="fr" ng-app="blog">
 <head>
@@ -169,12 +168,13 @@ var listController = function($scope) {
     <script src="assets/js/blog.js"></script>
 </body>
 </html>
-~~~
+```
 
 ng-view
 
 Et en fin le code HTML de la page de liste des articles 
-~~~{.prettyprint .linenums}
+
+```html
 <h2>Liste des articles</h2>
 
 <section id="posts">
@@ -185,7 +185,7 @@ Et en fin le code HTML de la page de liste des articles
         <small>Il y a {{post.nbComments}} commentaires sur ce post, <a ng-href="#/post/{{post.code}}">Lire la suite</a></small>
     </article>
 </section>
-~~~
+```
 
 - Tow way data binding
 - {{ }}
@@ -195,7 +195,7 @@ Et en fin le code HTML de la page de liste des articles
 
 ## 3- Affichage du post
 
-~~~{.prettyprint .linenums}
+```js
 /**
  * Configure routes
  */
@@ -214,20 +214,20 @@ var showController = function($routeParams, $scope) {
     $scope.postCode = $routeParams.code;
     $scope.post     = getPostByCode($scope.postCode);
 }
-~~~
+```
 
-~~~{.prettyprint .linenums}
+```html
 <h2>{{post.title}}</h2>
 
 <section>
     <small>Le <time>{{post.date | date:'dd MMMM yyyy'}}</time> par <strong>{{post.author}}</strong></small>
     <p>{{post.text}}</p>
 </section>
-~~~
+```
 
 ## 4- Liste de commentaires
 
-~~~{.prettyprint .linenums}
+```js
 /**
  *
  */
@@ -236,12 +236,12 @@ var showController = function($routeParams, $scope) {
     $scope.post     = getPostByCode($scope.postCode);
     $scope.comments = $scope.post.comments;
 }
-~~~
+```
 
 > Je sais bien que les commentaires sont accessible directement via l'objet _$scope.post_ mais je garde la séparation qui 
 > me sera utile quand j'utiliserais Ajax.
 
-~~~{.prettyprint .linenums}
+```html
 <h2>{{post.title}}</h2>
 
 <section>
@@ -257,11 +257,11 @@ var showController = function($routeParams, $scope) {
         <p>{{comment.text}}</p>
     </article>
 </section>
-~~~
+```
 
 ## 5- Formulaire de saisie de commentaire
 
-~~~{.prettyprint .linenums}
+```html
 <h2>{{post.title}}</h2>
 
 <section>
@@ -298,13 +298,13 @@ var showController = function($routeParams, $scope) {
        </fieldset>
     </form>
 </section>
-~~~
+```
 
 - ng-show
 - ng-model
 - ng-click
 
-~~~{.prettyprint .linenums}
+```js
 /**
  *
  */
@@ -326,7 +326,7 @@ var showController = function($routeParams, $scope) {
         $scope.post.nbComments++;
     }
 }
-~~~
+```
 
 # 2- Twitter bootstrap
 
@@ -349,7 +349,7 @@ Quand vous téléchargez la librairie vous obtenez un fichier zippé contenant u
 
 Pour que bootstrap fonctionne Il faut ensuite déclarer au minimum le fichier bootstrap.min.css (ou bootstrap.css) dans l'en-tête de la page web :
 
-~~~{.prettyprint .linenums}
+```html
 <!doctype html>
 <html lang="fr" ng-app="blog">
 <head>
@@ -379,14 +379,14 @@ Pour que bootstrap fonctionne Il faut ensuite déclarer au minimum le fichier bo
     <script src="assets/js/blog.js"></script>
 </body>
 </html>
-~~~
+```
 
 - navigation bar
 - container
 
 ## 2- Styling avec Twitter bootstrap
 
-~~~{.prettyprint .linenums}
+```html
 <h2>Liste des articles</h2>
 
 <section id="posts">
@@ -397,11 +397,11 @@ Pour que bootstrap fonctionne Il faut ensuite déclarer au minimum le fichier bo
         <small>Il y a <span class="badge badge-info">{{post.nbComments}}</span> commentaires sur ce post, <a ng-href="#/post/{{post.code}}">Lire la suite</a></small>
     </article>
 </section>
-~~~
+```
 
 badge
 
-~~~{.prettyprint .linenums}
+```html
 <h2>{{post.title}}</h2>
 
 <section>
@@ -452,14 +452,14 @@ badge
     </form>
 
 </section>
-~~~
+```
 - label
 - alert
 - form-horizontal, control-group, control-label, controls
 
 Costom style
 
-~~~{.prettyprint .linenums}
+```css
 body {
     // Ceci est une recommendation bootstrap: Quand vous utilisez .navbar-fixed-top il ne faut pas oublier d'ajouter 
     // au moins 40px de padding-top au body
@@ -489,7 +489,7 @@ h3 {
 #comments article {
     margin: 0 50px 50px 40px;
 }
-~~~
+```
 
 # 3- Vert.x
 ## 1- Installation de Vert.x
@@ -524,7 +524,7 @@ You should see output something like the above.
 - request
 - request.response.end
 
-~~~{.prettyprint .linenums}
+```js
 load('vertx.js');
 
 // Constants
@@ -538,14 +538,14 @@ vertx.createHttpServer().requestHandler(function(request) {
     logger.info('Traitement de la requête : ' + request.path);
 }).listen(PORT);
 logger.info('Serveur démarré sur le port ' + PORT);
-~~~
+```
 
 ## 3- Servir les fichiers statiques
 
 - request.path.indexOf
 - request.response.sendFile
 
-~~~{.prettyprint .linenums}
+```js
 load('vertx.js');
 
 // Constants
@@ -570,13 +570,13 @@ vertx.createHttpServer().requestHandler(function(request) {
     }
 }).listen(PORT);
 logger.info('Serveur démarré sur le port ' + PORT);
-~~~
+```
 
 ## 4- Liste des post en json
 
 Angular ajax request
 
-~~~{.prettyprint .linenums}
+```js
 /**
  *
  */
@@ -585,24 +585,24 @@ var listController = function($scope, $http) {
         $scope.posts = data;
     });
 }
-~~~
+```
 
 N'oubliez de supprimer la ligne <code><script src="assets/js/db.blog.js"></script></code> du fichier index.html
 
-~~~{.prettyprint .linenums}
+```js
 var listOfPosts = [
 ];
 
 var listOfComments = [
 ];
-~~~
+```
 
 handle ajax requests
 JSON.stringify
 Module postService
 getPosts
 
-~~~{.prettyprint .linenums}
+```js
 // Service namespace
 var Service = {
 
@@ -610,9 +610,9 @@ var Service = {
         return listOfPosts;
     }
 };
-~~~
+```
 
-~~~{.prettyprint .linenums}
+```js
 load('vertx.js');
 load('blog.db.js');
 load('blog.service.js');
@@ -651,11 +651,11 @@ vertx.createHttpServer().requestHandler(function(request) {
     }
 }).listen(PORT);
 logger.info('Serveur démarré sur le port ' + PORT);
-~~~
+```
 
 ## 5- Détail du post en json
 
-~~~{.prettyprint .linenums}
+```js
 /**
  *
  */
@@ -666,13 +666,13 @@ function detailPostController($scope, $routeParams, $http) {
         $scope.post = data;
     });
 }
-~~~
+```
 
 - getPost
 - request.params().code
 - post sans comments
 
-~~~{.prettyprint .linenums}
+```js
 // ...
 var Service = {
 
@@ -719,11 +719,11 @@ vertx.createHttpServer().requestHandler(function(request) {
     }
 
 // ...
-~~~
+```
 
 ## 6- Liste des commentaires en json
 
-~~~{.prettyprint .linenums}
+```js
 /**
  *
  */
@@ -738,9 +738,9 @@ function detailPostController($scope, $routeParams, $http) {
         $scope.comments = data;
     });
 }
-~~~
+```
 
-~~~{.prettyprint .linenums}
+```js
 // ...
 var Service = {
 
@@ -791,11 +791,11 @@ vertx.createHttpServer().requestHandler(function(request) {
     }
 
 // ...
-~~~
+```
 
 ## 7- Sauvegarde du commentaire
 
-~~~{.prettyprint .linenums}
+```js
 /**
  *
  */
@@ -826,11 +826,11 @@ function detailPostController($scope, $routeParams, $http) {
         });
     }
 }
-~~~
+```
 
 request.dataHandler
 
-~~~{.prettyprint .linenums}
+```js
 // ...
 var Service = {
 
@@ -885,7 +885,7 @@ vertx.createHttpServer().requestHandler(function(request) {
     }
 
 // ...
-~~~
+```
 # 4- Mongo DB
 ## 1- Installation de Mongo DB sur linux Ubuntu
 
@@ -932,7 +932,7 @@ Si votre distribution n'est pas mentionnée ci-dessus, vous trouverez les inform
 
 ## 4- Récupération de la liste de posts
 
-~~~{.prettyprint .linenums}
+```js
 vertx.mongopersistor
 vertx.deployModule
 vertx.eventBus
@@ -999,13 +999,13 @@ vertx.createHttpServer().requestHandler(function(request) {
 
             case '/ajax/post.json':
 // ...
-~~~
+```
 
 ## 5- Récupération d'un post par code-post
 
 mongodb : findone in mongodb shell and vertx
 
-~~~{.prettyprint .linenums}
+```js
 // ...
 
     getPost: function(code, handler) { // TODO Construire le post dans le service
@@ -1029,11 +1029,11 @@ mongodb : findone in mongodb shell and vertx
                 });
                 break;
 // ...
-~~~
+```
 
 ## 6- Récupération de la liste des commentaires
 
-~~~{.prettyprint .linenums}
+```js
 // ...
 
     getComments: function(code, handler) { TODO Construire la liste des com dans le srv
@@ -1057,13 +1057,13 @@ mongodb : findone in mongodb shell and vertx
                 });
                 break;
 // ...
-~~~
+```
 
 ## 7- Sauvegarde d'un commentaire
 
 mongodb : update in mongodb shell and vertx
 
-~~~{.prettyprint .linenums}
+```js
 // ...
 
     saveComment: function(code, comment, handler) {
@@ -1081,4 +1081,4 @@ mongodb : update in mongodb shell and vertx
                 });
                 break;
 // ...
-~~~
+```

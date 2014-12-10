@@ -1,40 +1,31 @@
 (function ($) {
     $(document).ready(function () {
-        var form    = $('#js-contact-form');
-        var error   = form.find('.error');
-        var success = form.prev('.success')
-
-        // Reset contact form
-        $('#js-dialog-contact-chk').change(function () {
-            if ($(this).is(':checked')) {
-                form.find('input, textarea').val('');
-                error.hide();
-                success.hide();
-            }
-        });
+        var form  = $('#js-comment-form');
+        var code  = form.find('.error');
+        var error = form.find('.error');
 
         // Send message
         form.find(".js-btn-send").click(function () {
-
             // Hide message, errors
             error.hide();
-            success.hide();
 
             // Send message
-            $.post("/contact", form.serialize())
+            $.post(form.attr("action"), form.serialize())
                 .done(function (response) {
                     if (response.error) {
                         error.html(response.message).show();
                     }
                     if (response.success) {
-                        form.hide();
-                        success.html(response.message).show();
+                        location.reload();
                     }
                 })
                 .fail(function () {
                     error.html('').show();
                 })
         });
+
+        // Hide errors
+        error.hide();
     });
 
 })(jQuery);

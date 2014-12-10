@@ -5,7 +5,7 @@ body{-webkit-font-smoothing:antialiased;background-color:#fff;color:#333}
 h1,h2,h3,h4,h5,h6{font-family:"Open Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-weight:400;font-style:normal;text-rendering:optimizeLegibility}
 h1{font-size:31.5px}
 h2{font-size:28px;margin-bottom:2rem;display:block;text-align:center;text-transform:uppercase}
-h3{font-size:24.5px}
+h3{font-size:24.5px;margin-bottom:1.5rem}
 h4{font-size:21px;margin-bottom:1rem}
 h5{font-size:17.5px}
 h6{font-size:14px}
@@ -18,6 +18,8 @@ img{max-width:100%}
 blockquote{border-left:2px solid #DDD;color:#595959;margin:1.5rem 0;padding-left:.75rem}
 cite{color:#737373;font-style:italic}
 cite:before{content:"\2014 \00A0"}
+code,pre{font-family:Menlo,Monaco,Consolas,"Courier New",monospace;font-size:.85rem}
+pre{overflow:auto;margin:0 0 .75rem;padding:1rem}
 ul{margin-left:2rem;margin-bottom:.75rem;list-style-type:disc}
 ul.inline,ul.unstyled{margin:0;list-style:none}
 ul.inline>li{display:inline-block;padding:0 .5rem}
@@ -91,7 +93,20 @@ footer#footer nav{text-align:center}
 .pg-blog article .readmore{padding:0 1.5rem;margin-top:1rem;text-align:right}
 .pg-article{padding:0 1.5rem;margin-top:2rem}
 .pg-article .content,.pg-article header{margin-bottom:2rem}
+.pg-article .content h1,.pg-article .content h2,.pg-article .content h3,.pg-article .content h4,.pg-article .content h5,.pg-article .content h6{display:block;text-align:left;text-transform:none}
+.pg-article .content h1{font-size:21px;margin:1rem 0 2rem}
+.pg-article .content h2{font-size:17.5px;margin:1rem 0}
+.pg-article .content h3{font-size:17.5px;margin-bottom:.75rem}
+.pg-article .content h4,.pg-article .content h5,.pg-article .content h6{font-size:14px;margin-bottom:.75rem}
 .pg-article .content object{max-width:100%;height:auto}
+.pg-article .content pre{background-color:#f7f7f9;border-radius:3px;border:1px solid #e1e1e8}
+.pg-article .content .powerpoint{position:relative;padding-bottom:89%;margin:1rem 0 2rem;height:0;overflow:hidden}
+.pg-article .content .powerpoint>iframe,.pg-article .content .powerpoint>object{position:absolute;top:0;left:0;width:100%;height:100%}
+.pg-article .comments{margin-bottom:3rem}
+.pg-article .comments h4{line-height:3rem;border-bottom:1px solid #e6e6e6}
+.pg-article .comments article{margin-bottom:1.75rem}
+.pg-article .comments article h5 small{margin-left:1rem;color:#999}
+.pg-article .comments article p{margin-left:1rem}
 #js-dialog-contact-chk{display:none}
 #js-dialog-contact-chk:checked+.dlg-contact{opacity:1;visibility:visible}
 .dlg-contact{-webkit-transition:opacity .25s ease;-moz-transition:opacity .25s ease;transition:opacity .25s ease;opacity:0;visibility:hidden}

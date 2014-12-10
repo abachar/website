@@ -6,8 +6,10 @@ Le terme Scrum est emprunté au rugby à XV et signifie mêlée. Ce processus s'
 cherche à atteindre un but, comme c'est le cas en rugby pour avancer avec le ballon pendant une mêlée.
 
 <div class="powerpoint">
-    <object width="970" height="764" type="application/x-shockwave-flash" data="/blog/scrum-xp/assets/scrum-xp.swf">
-    </object>
+	<iframe src="//www.slideshare.net/slideshow/embed_code/42570308" 
+		width="476" height="400" 
+		frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+	</iframe>
 </div>
 
-[<i class="icon download"></i> Télécharger la présentation](/blog/scrum-xp/assets/scrum-xp.zip)
+<a class="download" href="/blog/scrum-xp/assets/scrum-xp.zip">Télécharger la présentation</a>

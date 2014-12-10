@@ -35,7 +35,7 @@ module.exports = function () {
     };
 
     var _pushComment = function (code, comment, callback) {
-        model.update({code: code}, comment, callback);
+        model.update({code: code},  { $push: { comments: comment} }, callback);
     };
 
     return {
