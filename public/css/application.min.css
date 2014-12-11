@@ -80,7 +80,8 @@ footer#footer nav{text-align:center}
 .pg-projects .hero{padding:2rem 1.5rem 1rem;text-align:center;background:#477DCA;margin-bottom:3rem}
 .pg-projects .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
 .pg-projects .hero h1{color:red;font-size:2rem;margin-bottom:1rem}
-.pg-projects article{margin-bottom:2rem}
+.pg-projects article{margin-bottom:3rem}
+.pg-projects article h4{padding:0 1.5rem}
 .pg-projects article figure{margin-bottom:1rem}
 .pg-projects article .description{padding:0 1.5rem}
 .pg-blog .hero{padding:2rem 1.5rem 1rem;text-align:center;background:#477DCA;margin-bottom:3rem}

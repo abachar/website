@@ -6,7 +6,7 @@ module.exports = function () {
     // private schema
     var model = mongoose.model('articles', new mongoose.Schema({
         code        : { type: String, required: true, unique: true },
-        created_at  : { type: Date   , default: Date.now },
+        created_at  : { type: Date},
         printable   : { type: Boolean, default: false },
         draft       : { type: Boolean, default: true },
         author      : String,

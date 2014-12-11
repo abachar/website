@@ -8,12 +8,9 @@
 // Base
 @import 'base/typography';
 @import 'base/lists';
-@import 'base/tables';
 @import 'base/form';
-
-// Components
-@import "components/flashes";
-@import "components/buttons";
+@import "base/flashes";
+@import "base/buttons";
 
 // Layouts
 @import "layouts/navbar";
