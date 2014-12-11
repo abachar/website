@@ -1,0 +1,21 @@
+.pg-profile {
+  section {
+    @include wrapper();
+    margin-bottom: 2 * $base-spacing;
+
+    p {
+      margin-bottom: $pg-profile-text-spacing;
+
+      &.description {
+        margin-bottom: $pg-profile-text-spacing * 3;
+      }
+    }
+  }
+
+//  #competences {
+//    .level-1, .level-2, .level-3 {
+//    }
+//  }
+//
+//  #studies { }
+}

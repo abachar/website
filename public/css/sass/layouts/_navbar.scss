@@ -5,8 +5,8 @@ header#navbar {
 
   .navbar-header {
     .nav-toggle {
-      line-height: 4rem;
-      font-size: 1.8rem;
+      line-height: $header-line-height;
+      font-size: $header-font-size;
       display: block;
       text-transform: uppercase;
       position: relative;
@@ -19,7 +19,7 @@ header#navbar {
         top: 50%;
         margin-top: -0.5rem;
         right: 0;
-        box-shadow: 0 0px 0 1px $font-color, 0 7px 0 1px $font-color, 0 14px 0 1px $font-color;
+        box-shadow: 0 0px 0 1px $header-font-color, 0 7px 0 1px $header-font-color, 0 14px 0 1px $header-font-color;
         width: 22px;
       }
     }
@@ -33,17 +33,17 @@ header#navbar {
 
       a, label {
         display: block;
-        font-weight: $font-weight-normal;
-        line-height: 1.5rem;
-        padding: .5rem 0;
-        color: $link-color;
+        font-weight: $header-link-font-weight;
+        line-height: $header-link-line-height;
+        padding    : $header-link-spacing 0;
+        color      : $header-link-color;
       }
     }
 
     #navbar-menu-chk {
       display: none;
       &:checked + ul {
-        height: 5 * (1.5rem + 1rem) + .8rem; /* 5 Elem * (Elem line-height + Elem padding)*/
+        height: 5 * ($header-link-line-height + 2 * $header-link-spacing) + ($header-link-line-height / 2);
       }
     }
   }

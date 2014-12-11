@@ -1,33 +1,14 @@
-@mixin flash($color) {
-  background: $color;
-  color: darken($color, 60);
-
-  a {
-    color: darken($color, 70);
-
-    &:hover {
-      color: darken($color, 90);
-    }
-  }
-}
-
-%flash-base {
-  border-radius: $base-border-radius;
+.error, .warning, .success {
+  border-radius: $flash-border-radius;
   margin-bottom: $base-spacing / 2;
   padding: $base-spacing / 2;
 }
 
-.error {
-  @extend %flash-base;
-  @include flash($error-color);
+@mixin flash($background-color) {
+  background: $background-color;
+  color: darken($background-color, 60);
 }
 
-.notice {
-  @extend %flash-base;
-  @include flash($notice-color);
-}
-
-.success {
-  @extend %flash-base;
-  @include flash($success-color);
-}
+.error   { @include flash($flash-error-color); }
+.warning { @include flash($flash-warning-color); }
+.success { @include flash($flash-success-color); }

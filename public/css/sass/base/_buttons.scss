@@ -4,14 +4,15 @@
 
   background: $button-background-color;
   color: $button-color;
-  border-radius: $base-border-radius;
+  border-radius: $button-border-radius;
   display: inline-block;
   font: {
-    size: 1rem;
-    weight: normal;
+    family: $button-font-family;
+    size: $button-font-size;
+    weight: $button-font-weight;
   }
-  line-height: 1.5rem;
-  padding: 0.75em 1em;
+  line-height: $button-line-height;
+  padding: $base-spacing / 2 ($base-spacing * 2) / 3;
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -20,7 +21,8 @@
   white-space: nowrap;
 
   &:hover {
-    color: $hover-button-color;
+    color: $button-color-hover;
+    background: $button-background-color-hover;
   }
 
   &:disabled {

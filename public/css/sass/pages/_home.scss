@@ -1,0 +1,58 @@
+.pg-home {
+
+  .hero {
+    @include wrapper();
+
+    img {
+      height: 10rem;
+    }
+  }
+
+  main {
+    .about {
+      @include wrapper();
+      margin-bottom: $base-spacing * 2;
+
+      .readmore {
+        margin-top: ($base-spacing * 2) / 3;
+        text-align: right;
+      }
+    }
+
+    .projects {
+      margin-bottom: $base-spacing * 2;
+
+      article {
+        margin-bottom: 2rem;
+
+        figure {
+          margin-bottom: 1rem;
+        }
+
+        .description {
+          @include wrapper();
+        }
+      }
+    }
+
+    .articles {
+      margin-bottom: $base-spacing * 2;
+
+      article {
+        margin-bottom: ($base-spacing * 4) / 3;
+
+        h4 {
+          @include wrapper();
+        }
+
+        figure {
+          margin-bottom: ($base-spacing * 2) / 3;
+        }
+
+        p {
+          @include wrapper();
+        }
+      }
+    }
+  }
+}

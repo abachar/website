@@ -1,50 +1,53 @@
 html, body {
   font: {
-    family: $font-family;
-    size: $font-size;
+    family: $base-font-family;
+    size: $base-font-size;
   }
   line-height: $base-line-height;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
-  background-color: $background-color;
-  color: $font-color;
+  background-color: $base-background-color;
+  color: $base-font-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font: {
     family: $header-font-family;
-    weight: normal;
+    weight: $header-font-weight;
     style: normal;
   }
+  display: block;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
 
-h1 { font-size: $h1-font-size; }
-h2 { font-size: $h2-font-size; margin-bottom: 2rem; display: block; text-align: center; text-transform: uppercase}
-h3 { font-size: $h3-font-size; margin-bottom: 1.5rem; }
-h4 { font-size: $h4-font-size; margin-bottom: 1rem; }
-h5 { font-size: $h5-font-size; }
-h6 { font-size: $h6-font-size; }
+h1 { font-size: $header-font-size-h1; }
+h2 { font-size: $header-font-size-h2; margin-bottom: ($base-spacing * 4) / 3; text-align: center; text-transform: uppercase}
+h3 { font-size: $header-font-size-h3; margin-bottom:  $base-spacing; }
+h4 { font-size: $header-font-size-h4; margin-bottom:  $base-spacing; }
+h5 { font-size: $header-font-size-h5; margin-bottom: ($base-spacing * 3) / 2; }
+h6 { font-size: $header-font-size-h6; margin-bottom:  $base-spacing / 2; }
 
 p {
   margin: 0 0 ($base-spacing / 2);
 }
 
-small { font-size: $font-size * 0.8; }
+small {
+  font-size: $small-font-size;
+}
 
 a {
   @include transition(color 0.1s linear);
-  color: $link-color;
+  color: $base-link-color;
   text-decoration: none;
 
   &:hover {
-    color: $hover-link-color;
+    color: $base-link-color-hover;
   }
 
   &:active, &:focus {
-    color: $hover-link-color;
+    color: $base-link-color-hover;
     outline: none;
   }
 }
@@ -54,14 +57,14 @@ img {
 }
 
 blockquote {
-  border-left: 2px solid $border-color;
-  color: lighten($font-color, 15);
+  border-left: 2px solid $blockquote-border-color;
+  color: $blockquote-font-color;
   margin: $base-spacing 0;
   padding-left: $base-spacing / 2;
 }
 
 cite {
-  color: lighten($font-color, 25);
+  color: $cite-font-color;
   font-style: italic;
 
   &:before {
@@ -71,13 +74,13 @@ cite {
 
 pre, code {
   font: {
-    family: $mono-font-family;
-    size: .85rem;
+    family: $code-font-family;
+    size: $code-font-sizey;
   }
 }
 
 pre {
   overflow: auto;
-  margin: 0 0 .75rem;
-  padding: 1rem;
+  margin: 0 0 ($base-spacing / 2);
+  padding: 2 * $base-spacing / 3;
 }

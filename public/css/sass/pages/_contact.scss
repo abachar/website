@@ -1,5 +1,3 @@
-$modal-padding: 1.5rem;
-
 #js-dialog-contact-chk {
   display: none;
 
@@ -16,36 +14,36 @@ $modal-padding: 1.5rem;
 
   .overlay {
     @include position(fixed, 0 0 0 0);
-    background: transparentize(black, 0.15);
+    background: $modal-overlay-background-color;
     z-index: 1000;
   }
 
   .dialog {
     @include position(fixed, 0 0 auto 0);
-    background: white;
+    background: $modal-background-color;
     z-index: 1001;
     padding: $modal-padding 0;
 
     header {
       @include wrapper();
-      margin-bottom: 2rem;
+      margin-bottom: ($base-spacing * 4) / 3;
 
       h1 {
-        font-size: 2rem;
+        font-size: $modal-header-font-size;
         text-transform: uppercase;
       }
 
       .close {
         @include position(absolute, $modal-padding $modal-padding null null);
-        @include size(1.5rem);
+        @include size($modal-close-size);
         cursor: pointer;
-        background: white;
+        background: $modal-background-color;
 
         &:after, &:before {
           @include position(absolute, 3px 3px 0 50%);
           @include transform(rotate(45deg));
           @include size(.15rem 1.5rem);
-          background: black;
+          background: $modal-close-color;
           content: '';
           display: block;
           margin: -3px 0 0 -1px;
@@ -54,10 +52,6 @@ $modal-padding: 1.5rem;
         &:before {
           @include transform(rotate(-45deg));
         }
-
-//        &:hover:after, &:hover:before {
-//          background: darken(black, 10);
-//        }
       }
     }
 

@@ -1,18 +1,18 @@
 footer#footer {
   background: $footer-background-color;
   color: $footer-font-color;
-  font-size: .9rem;
+  font-size: $footer-font-size;
   text-align: center;
-  padding: 2.5rem 0;
+  padding: 2 * $base-spacing 0;
 
   .wrapper {
     @include wrapper();
   }
 
   a, label {
-    font-weight: $font-weight-normal;
+    font-weight: $footer-font-weight;
     color: $footer-link-color;
-    line-height: 1.3rem;
+    line-height: $footer-line-height;
     text-decoration: underline;
   }
 

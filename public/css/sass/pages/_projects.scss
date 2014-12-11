@@ -1,0 +1,17 @@
+.pg-projects {
+  article {
+    margin-bottom: 2 * $base-spacing;
+
+    h4 {
+      @include wrapper();
+    }
+
+    figure {
+      margin-bottom: $base-spacing;
+    }
+
+    .description {
+      @include wrapper();
+    }
+  }
+}
