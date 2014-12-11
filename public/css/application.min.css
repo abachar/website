@@ -53,7 +53,6 @@ footer#footer nav{text-align:center}
 .pg-blog .hero img,.pg-home .hero img,.pg-profile .hero img,.pg-projects .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1.5rem;border:5px solid #fff;box-shadow:0 0 15px 0 #00f}
 .pg-blog .hero h1,.pg-home .hero h1,.pg-profile .hero h1,.pg-projects .hero h1{color:red;font-size:2rem;margin-bottom:1rem}
 .pg-blog .hero p,.pg-home .hero p,.pg-profile .hero p,.pg-projects .hero p{color:#fff;font-size:1.2rem;margin-bottom:1rem}
-.pg-home .hero{padding:0 1.5rem}
 .pg-home .hero img{height:10rem}
 .pg-home main .about{padding:0 1.5rem;margin-bottom:3rem}
 .pg-home main .about .readmore{margin-top:1rem;text-align:right}
