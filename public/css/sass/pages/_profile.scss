@@ -1,20 +1,22 @@
 .pg-profile {
   .hero {
+    $size: 4rem;
+
     a.icon {
       display: inline-block;
       overflow: hidden;
-      width: 6rem;
-      height: 6rem;
+      width: $size;
+      height: $size;
       color: transparent;
 
       &:before {
         display: inline-block;
         background: $hero-text-font-color;
         color: $hero-background-color;
-        width: 6rem;
-        height: 6rem;
-        font-size: 4rem;
-        line-height: 6rem;
+        width: $size;
+        height: $size;
+        font-size: 2rem;
+        line-height: $size;
         border-radius: 50%;
       }
     }

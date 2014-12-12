@@ -6,7 +6,6 @@ var express = require('express'),
     path    = require('path'),
     project = require("../models/project");
 
-
 /**
  * GET /projects
  */

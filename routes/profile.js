@@ -7,7 +7,6 @@ var express    = require('express'),
     project    = require("../models/project"),
     competence = require("../models/competence");
 
-
 /**
  * GET /profile
  */

@@ -1,3 +1,5 @@
+'use strict';
+
 // Get application
 var app = require('./app');
 

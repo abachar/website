@@ -6,7 +6,6 @@ var express = require('express'),
     article = require("../models/article"),
     project = require("../models/project");
 
-
 /**
  * GET /
  */

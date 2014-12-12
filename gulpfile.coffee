@@ -12,6 +12,7 @@ rename         = require('gulp-rename')
 sourcemaps     = require('gulp-sourcemaps')
 uglify         = require('gulp-uglify')
 mainBowerFiles = require('main-bower-files')
+jshint         = require('gulp-jshint')
 
 ##
 ## Define paths
@@ -73,6 +74,14 @@ gulp.task 'svg-icons', ->
       .pipe gulp.dest destinations.fonts
 
 ##
+## Task JSHint
+##
+gulp.task 'jshint', ->
+  gulp.src ['server.js', 'app.js', 'routes/*', 'models/*']
+      .pipe jshint '.jshintrc'
+      .pipe jshint.reporter 'jshint-stylish'
+
+##
 ## Task watch
 ##
 gulp.task 'watch', ['server'], ->
@@ -90,7 +99,7 @@ gulp.task 'server', ->
 ##
 ## Build tasks
 ##
-gulp.task 'build', ['styles', 'scripts', 'svg-icons']
+gulp.task 'build', ['jshint', 'styles', 'scripts', 'svg-icons']
 
 ##
 ## Create default task

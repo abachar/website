@@ -1,5 +1,6 @@
-var mongoose = require('mongoose');
+'use strict';
 
+var mongoose = require('mongoose');
 
 module.exports = function () {
 
