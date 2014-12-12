@@ -68,6 +68,8 @@ footer#footer nav{text-align:center}
 .pg-home main .articles article h4{padding:0 1.5rem}
 .pg-home main .articles article figure{margin-bottom:1rem}
 .pg-home main .articles article p{padding:0 1.5rem}
+.pg-profile .hero a.icon{display:inline-block;overflow:hidden;width:6rem;height:6rem;color:transparent}
+.pg-profile .hero a.icon:before{display:inline-block;background:#eee;color:#30324d;width:6rem;height:6rem;font-size:4rem;line-height:6rem;border-radius:50%}
 .pg-profile section{padding:0 1.5rem;margin-bottom:3rem}
 .pg-profile section p{margin-bottom:.25rem}
 .pg-profile section p.description{margin-bottom:.75rem}

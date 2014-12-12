@@ -18,7 +18,7 @@ mainBowerFiles = require('main-bower-files')
 sources =
   styles     : 'public/css/sass/**/*.scss'
   scripts    : 'public/js/scripts/*.js'
-  svg_icons  : 'public/fonts/svg-icons/*.svg'
+  svg_icons  : 'public/fonts/svg-icons/*'
   need_reload: ['server.js', 'app.js', 'routes/*', 'models/*', 'views/**/*']
 
 destinations =
@@ -67,8 +67,9 @@ gulp.task 'scripts', ->
 ##
 gulp.task 'svg-icons', ->
   gulp.src sources.svg_icons
+      .pipe filter('*.svg')
       .pipe iconfontCss {fontName: 'icons', targetPath: '../css/icons.css', fontPath: '../fonts/'}
-      .pipe iconfont {fontName: 'icons'}
+      .pipe iconfont {fontName: 'icons', normalize: true}
       .pipe gulp.dest destinations.fonts
 
 ##

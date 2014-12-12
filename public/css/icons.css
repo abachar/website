@@ -40,70 +40,86 @@
 	content: "\E005";
 }
 
-.icon-error.svgx:before {
+.icon-envelope:before {
 	content: "\E006";
 }
 
-.icon-facebook:before {
+.icon-error.svgx:before {
 	content: "\E007";
 }
 
-.icon-github.svgx:before {
+.icon-facebook:before {
 	content: "\E008";
 }
 
-.icon-home.svgx:before {
+.icon-facebook.svgx:before {
 	content: "\E009";
 }
 
-.icon-info.svgx:before {
+.icon-github.svgx:before {
 	content: "\E00A";
 }
 
-.icon-linkedin.svgx:before {
+.icon-home.svgx:before {
 	content: "\E00B";
 }
 
-.icon-mail.svgx:before {
+.icon-info.svgx:before {
 	content: "\E00C";
 }
 
-.icon-menu.svgx:before {
+.icon-linkedin:before {
 	content: "\E00D";
 }
 
-.icon-phone.svgx:before {
+.icon-linkedin.svgx:before {
 	content: "\E00E";
 }
 
-.icon-print.svgx:before {
+.icon-mail.svgx:before {
 	content: "\E00F";
 }
 
-.icon-send.svgx:before {
+.icon-menu.svgx:before {
 	content: "\E010";
 }
 
-.icon-success.svgx:before {
+.icon-phone:before {
 	content: "\E011";
 }
 
-.icon-tools.svgx:before {
+.icon-phone.svgx:before {
 	content: "\E012";
 }
 
-.icon-twitter.svgx:before {
+.icon-print.svgx:before {
 	content: "\E013";
 }
 
-.icon-viadeo.svgx:before {
+.icon-send.svgx:before {
 	content: "\E014";
 }
 
-.icon-warning.svgx:before {
+.icon-success.svgx:before {
 	content: "\E015";
 }
 
-.icon-zoom.svgx:before {
+.icon-tools.svgx:before {
 	content: "\E016";
+}
+
+.icon-twitter.svgx:before {
+	content: "\E017";
+}
+
+.icon-viadeo.svgx:before {
+	content: "\E018";
+}
+
+.icon-warning.svgx:before {
+	content: "\E019";
+}
+
+.icon-zoom.svgx:before {
+	content: "\E01A";
 }
