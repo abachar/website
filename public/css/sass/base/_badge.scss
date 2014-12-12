@@ -1,12 +1,14 @@
 .badge {
-  display: inline-block;
+  display: inline;
   background: $badge-background-color;
   color: $badge-font-color;
-  font-size: $badge-font-size;
-  border-radius: $badge-border-radius;
-  font-weight: $badge-font-weight;
   line-height: $badge-line-height;
-  padding: .25em 1em;
+  font-weight: $badge-font-weight;
+  font-size: $badge-font-size;
   text-align: center;
+  border-radius: $badge-border-radius;
+  padding: .2em .6em .3em;
+  white-space: nowrap;
+  vertical-align: baseline;
 }
 

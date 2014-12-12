@@ -44,10 +44,10 @@
       text-transform: none
     }
 
-    h1 { font-size: $header-font-size-h4; margin: 1rem 0 2rem;}
-    h2 { font-size: $header-font-size-h5; margin: 1rem 0;}
-    h3 { font-size: $header-font-size-h5; margin-bottom: .75rem;}
-    h4, h5, h6 { font-size: $header-font-size-h6; margin-bottom: .75rem;}
+    h1 { font-size: $heading-font-size-h4; margin: 1rem 0 2rem;}
+    h2 { font-size: $heading-font-size-h5; margin: 1rem 0;}
+    h3 { font-size: $heading-font-size-h5; margin-bottom: .75rem;}
+    h4, h5, h6 { font-size: 100%; margin-bottom: .75rem;}
 
     object {
       max-width: 100%;

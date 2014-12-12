@@ -13,7 +13,13 @@ footer#footer {
     font-weight: $footer-font-weight;
     color: $footer-link-color;
     line-height: $footer-line-height;
-    text-decoration: underline;
+    border-bottom: 1px solid $footer-link-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $footer-link-color-hover;
+      border-bottom: 1px solid $footer-link-color-hover;
+    }
   }
 
   nav {

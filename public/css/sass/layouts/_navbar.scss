@@ -35,8 +35,9 @@ header#navbar {
         display: block;
         font-weight: $header-link-font-weight;
         line-height: $header-link-line-height;
-        padding    : $header-link-spacing 0;
-        color      : $header-link-color;
+        padding: $header-link-spacing 0;
+        color: $header-link-color;
+        cursor: pointer;
       }
     }
 

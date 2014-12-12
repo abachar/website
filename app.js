@@ -6,6 +6,7 @@ var express      = require('express'),
     hbs          = require('hbs'),
     moment       = require('moment'),
     marked       = require('marked'),
+    highlightjs  = require('highlight.js'),
     mongoose     = require('mongoose');
 
 /**
@@ -43,7 +44,7 @@ function setupHandlebars(app) {
 
     marked.setOptions({
         highlight: function (code) {
-            return require('highlight.js').highlightAuto(code).value;
+            return highlightjs.highlightAuto(code).value;
         }
     });
 

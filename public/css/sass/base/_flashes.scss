@@ -6,7 +6,8 @@
 
 @mixin flash($background-color) {
   background: $background-color;
-  color: darken($background-color, 60);
+  color: darken($background-color, 65);
+  border: 1px solid darken($background-color, 5);
 }
 
 .error   { @include flash($flash-error-color); }

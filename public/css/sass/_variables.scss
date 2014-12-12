@@ -1,129 +1,121 @@
 //
 // Base
-//
 $base-font-family: 'Open Sans', $helvetica;
 $base-font-family-mono: Menlo, Monaco, Consolas, "Courier New", monospace;
 $base-font-size: 14px;
-$base-font-color: black;
+  $base-font-color: #30324d;
+  $base-background-color: #f7f7f7;
 
 $base-line-height: 1.5rem;
 $base-spacing: $base-line-height;
 $base-border-radius: 3px;
 
-$base-background-color: white;
-
-$base-link-color: blue;
-$base-link-color-hover: darken($base-link-color, 15);
+  $base-link-color: #30324d;
+  $base-link-color-hover: #fe5d55;
 
 //
-// Headers
+// Heading
 //
-$header-font-family: $base-font-family;
-$header-font-weight: 300;
-$header-font-size-h1: $base-font-size * 2.25;
-$header-font-size-h2: $base-font-size * 2;
-$header-font-size-h3: $base-font-size * 1.75;
-$header-font-size-h4: $base-font-size * 1.5;
-$header-font-size-h5: $base-font-size * 1.25;
-$header-font-size-h6: $base-font-size;
-
-//
-// Forms
-//
-$form-font-family: $base-font-family;
-$form-font-size: $base-font-size;
-$form-background-color: white;
-$form-border-radius: $base-border-radius;
-$form-border-color: black;
-$form-border-color-hover: black;
-$form-border-color-focus: black;
-$form-box-shadow: inset 0 1px 3px rgba(black,0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+$heading-font-family: $base-font-family;
+$heading-font-weight: 300;
+$heading-font-size-h1: 400%;
+$heading-font-size-h2: 250%;
+$heading-font-size-h3: 200%;
+$heading-font-size-h4: 180%;
+$heading-font-size-h5: 130%;
 
 //
 // Buttons
-//
 $button-font-family: $base-font-family;
 $button-font-size: $base-font-size;
 $button-font-weight: 400;
-$button-background-color: blue;
-$button-background-color-hover: blue;
-$button-color: white;
-$button-color-hover: white;
+  $button-background-color: #fe5d55;
+  $button-background-color-hover: #31323a;
+  $button-color: #fff;
+  $button-color-hover: #fff;
 $button-border-radius: $base-border-radius;
 $button-line-height: 1.5rem;
 
 //
-// Flash
+// Code
 //
+$code-font-family: $base-font-family-mono;
+$code-font-size: .85rem;
+$small-font-size: .8rem;
+  $blockquote-border-color: lighten($base-font-color, 15);
+  $blockquote-font-color: lighten($base-font-color, 15);
+  $cite-font-color: lighten($base-font-color, 25);
+
+//
+// Forms
+$form-font-family: $base-font-family;
+$form-font-size: $base-font-size;
+$form-border-radius: $base-border-radius;
+  $form-background-color: #fff;
+  $form-border-color: #ccc;
+  $form-border-color-hover: #66afe9;
+  $form-border-color-focus: #66afe9;
+  $form-box-shadow: inset 0 1px 3px transparentize(black, 0.94);
+  $form-box-shadow-focus: $form-box-shadow, 0 0 5px transparentize(darken($form-border-color-focus, 5), 0.3);
+
+//
+// Flash
 $flash-border-radius: $base-border-radius;
-$flash-error-color: #FBE3E4;
-$flash-warning-color: #FFF6BF;
-$flash-success-color: #E6EFC2;
+  $flash-error-color: #FBE3E4;
+  $flash-warning-color: #FCF8DB;
+  $flash-success-color: #E6EFC2;
 
 //
 // Badge
-//
-$badge-background-color: #999;
-$badge-font-color: #fff;
-$badge-font-size: $base-font-size * .75;
-$badge-border-radius: 1px;
+  $badge-background-color: #999;
+  $badge-font-color: #fff;
+$badge-font-size: .75rem;
+$badge-border-radius: 0.25em;
 $badge-font-weight: 400;
 $badge-line-height: 1rem;
 
 //
-//
-//
-$code-font-family: $base-font-family-mono;
-$code-font-sizey: .85rem;
-$blockquote-border-color: lighten($base-font-color, 15);
-$blockquote-font-color: lighten($base-font-color, 15);
-$small-font-size: .8rem;
-$cite-font-color: lighten($base-font-color, 25);
-
-//
 // Footer
-//
-$footer-background-color: gray;
-$footer-font-color: white;
+  $footer-background-color: #31323a;
+  $footer-font-color: #B7B9DA;
 $footer-font-size: .9rem;
 $footer-font-weight: 400;
-$footer-link-color: red;
+  $footer-link-color: #b7b9da;
+  $footer-link-color-hover: #fe5d55;
 $footer-line-height: $base-line-height * .9;
 
 //
 // Header
-//
+  $header-font-color: $base-link-color;
+  $header-link-color: $base-link-color;
 $header-line-height: 4rem;
 $header-font-size: 1.8rem;
-$header-font-color: blue;
-$header-link-color: blue;
 $header-link-font-weight: 400;
 $header-link-line-height: $base-line-height;
 $header-link-spacing: $base-spacing / 2;
 
 //
 // Hero
-//
-$hero-background-color: blue;
+  $hero-background-color: #30324d;
+  $hero-text-font-color: #eeeeee;
+  $hero-img-border-color: $hero-text-font-color;
+  $hero-img-box-shadow-color: #30324D;
+  $hero-h1-font-color: #fe5d55;
 $hero-img-height: 100px;
 $hero-img-border-size: 5px;
-$hero-img-border-color: white;
 $hero-img-box-shadow-blur: 15px;
-$hero-img-box-shadow-color: blue;
-$hero-h1-font-color: red;
 $hero-h1-font-size: 2rem;
-$hero-text-font-color: white;
 $hero-text-font-size: 1.2rem;
 
 //
 // Pages
-//
 $pg-profile-text-spacing: .25rem;
 
-$modal-background-color: white;
-$modal-overlay-background-color: transparentize(black, 0.15);
+//
+// Modal
+  $modal-background-color: $base-background-color;
+  $modal-overlay-background-color: transparentize($base-font-color, 0.15);
+  $modal-close-color: $base-font-color;
 $modal-header-font-size: 2rem;
 $modal-close-size: 1.5rem;
-$modal-close-color: black;
 $modal-padding: 1.5rem;

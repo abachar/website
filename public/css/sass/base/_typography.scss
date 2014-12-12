@@ -14,20 +14,28 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font: {
-    family: $header-font-family;
-    weight: $header-font-weight;
+    family: $heading-font-family;
+    weight: $heading-font-weight;
     style: normal;
   }
   display: block;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
 }
 
-h1 { font-size: $header-font-size-h1; }
-h2 { font-size: $header-font-size-h2; margin-bottom: ($base-spacing * 4) / 3; text-align: center; text-transform: uppercase}
-h3 { font-size: $header-font-size-h3; margin-bottom:  $base-spacing; }
-h4 { font-size: $header-font-size-h4; margin-bottom:  $base-spacing; }
-h5 { font-size: $header-font-size-h5; margin-bottom: ($base-spacing * 3) / 2; }
-h6 { font-size: $header-font-size-h6; margin-bottom:  $base-spacing / 2; }
+@mixin heading($font-size, $margin, $align, $transform) {
+  font-size: $font-size;
+  margin-bottom: $margin;
+  text-align: $align;
+  text-transform: $transform;
+}
+
+h1, h2 { line-height: 1.1; }
+h3, h4 { line-height: 1.3; }
+h1 { @include heading($heading-font-size-h1, 0, left, none); }
+h2 { @include heading($heading-font-size-h2, ($base-spacing * 4) / 3, center, uppercase); }
+h3 { @include heading($heading-font-size-h3, $base-spacing, left, none); }
+h4 { @include heading($heading-font-size-h4, $base-spacing, left, none); }
+h5 { @include heading($heading-font-size-h5, ($base-spacing * 3) / 2, left, none); }
 
 p {
   margin: 0 0 ($base-spacing / 2);
@@ -75,7 +83,7 @@ cite {
 pre, code {
   font: {
     family: $code-font-family;
-    size: $code-font-sizey;
+    size: $code-font-size;
   }
 }
 
