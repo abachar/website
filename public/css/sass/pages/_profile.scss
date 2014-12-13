@@ -1,6 +1,6 @@
 .pg-profile {
   .hero {
-    $size: 4rem;
+    $size: 2rem;
 
     a.icon {
       display: inline-block;
@@ -8,6 +8,7 @@
       width: $size;
       height: $size;
       color: transparent;
+      margin: 0 .2rem;
 
       &:before {
         display: inline-block;
@@ -15,7 +16,7 @@
         color: $hero-background-color;
         width: $size;
         height: $size;
-        font-size: 2rem;
+        font-size: $size/2;
         line-height: $size;
         border-radius: 50%;
       }

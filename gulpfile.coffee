@@ -28,9 +28,19 @@ destinations =
   fonts  : 'public/fonts'
 
 ##
+## Task fonts
+##
+gulp.task 'svg-icons', ->
+  gulp.src sources.svg_icons
+      .pipe filter('*.svg')
+      .pipe iconfontCss {fontName: 'icons', targetPath: '../css/icons.css', fontPath: '../fonts/'}
+      .pipe iconfont {fontName: 'icons', normalize: true}
+      .pipe gulp.dest destinations.fonts
+
+##
 ## Task styles:
 ##
-gulp.task 'styles', ->
+gulp.task 'styles', ['svg-icons'], ->
   gulp.src mainBowerFiles()
       .pipe filter('*.css')
       .pipe concat('vendor.min.css')
@@ -64,16 +74,6 @@ gulp.task 'scripts', ->
       .pipe gulp.dest destinations.scripts
 
 ##
-## Task fonts
-##
-gulp.task 'svg-icons', ->
-  gulp.src sources.svg_icons
-      .pipe filter('*.svg')
-      .pipe iconfontCss {fontName: 'icons', targetPath: '../css/icons.css', fontPath: '../fonts/'}
-      .pipe iconfont {fontName: 'icons', normalize: true}
-      .pipe gulp.dest destinations.fonts
-
-##
 ## Task JSHint
 ##
 gulp.task 'jshint', ->
@@ -99,7 +99,7 @@ gulp.task 'server', ->
 ##
 ## Build tasks
 ##
-gulp.task 'build', ['jshint', 'styles', 'scripts', 'svg-icons']
+gulp.task 'build', ['jshint', 'styles', 'scripts']
 
 ##
 ## Create default task
