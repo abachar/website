@@ -28,7 +28,7 @@ module.exports = function () {
     };
 
     var _findAll = function (callback) {
-        model.find({}, callback);
+        model.find({}).sort({created_at: 'desc'}).exec(callback);
     };
 
     var _findByCode = function (code, callback) {
