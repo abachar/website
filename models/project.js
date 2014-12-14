@@ -2,10 +2,10 @@
 
 var mongoose = require('mongoose');
 
-module.exports = function () {
+module.exports = (function () {
 
     // private schema
-    var model = mongoose.model('projects', new mongoose.Schema({
+    var Project = mongoose.model('projects', new mongoose.Schema({
         code        : { type: String, required: true, unique: true },
         name        : { type: String, required: true },
         description : String,
@@ -16,15 +16,15 @@ module.exports = function () {
 
     // API
     var _findLastTwo = function (callback) {
-        model.find({}).limit(2).exec(callback);
+        Project.find({}).limit(2).exec(callback);
     };
 
     var _findAll = function (callback) {
-        model.find({}, callback);
+        Project.find({}, callback);
     };
 
     return {
         findLastTwo: _findLastTwo,
         findAll    : _findAll
     };
-}();
+}());

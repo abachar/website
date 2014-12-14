@@ -2,10 +2,10 @@
 
 var mongoose = require('mongoose');
 
-module.exports = function () {
+module.exports = (function () {
 
     // private schema
-    var model = mongoose.model('competences', new mongoose.Schema({
+    var Competence = mongoose.model('competences', new mongoose.Schema({
         name   : { type: String, required: true, unique: true },
         level  : String,
         skills : [new mongoose.Schema({
@@ -16,10 +16,10 @@ module.exports = function () {
 
     // API
     var _findAll = function (callback) {
-        model.find({}, callback);
+        Competence.find({}, callback);
     };
 
     return {
         findAll: _findAll
     };
-}();
+}());

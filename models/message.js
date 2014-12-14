@@ -2,10 +2,10 @@
 
 var mongoose = require('mongoose');
 
-var Message = function () {
+module.exports = (function () {
 
     // private schema
-    var model = mongoose.model('messages', new mongoose.Schema({
+    var Message = mongoose.model('messages', new mongoose.Schema({
         name   : { type: String, required: true },
         email  : { type: String, required: true },
         subject: { type: String, required: true },
@@ -15,20 +15,10 @@ var Message = function () {
 
     // API
     var _create = function (message, callback) {
-        var entity = new model();
-        entity.name    = message.name;
-        entity.email   = message.email;
-        entity.subject = message.subject;
-        entity.content = message.content;
-        entity.save(callback);
+        Message.create(message, callback);
     };
 
     return {
         create: _create
-    }
-}();
-
-/**
- * Export Message model
- */
-module.exports = Message;
+    };
+}());

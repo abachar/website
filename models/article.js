@@ -2,10 +2,10 @@
 
 var mongoose = require('mongoose');
 
-module.exports = function () {
+module.exports = (function () {
 
     // private schema
-    var model = mongoose.model('articles', new mongoose.Schema({
+    var Article = mongoose.model('articles', new mongoose.Schema({
         code        : { type: String, required: true, unique: true },
         created_at  : { type: Date},
         printable   : { type: Boolean, default: false },
@@ -24,19 +24,19 @@ module.exports = function () {
 
     // API
     var _findLastThree = function (callback) {
-        model.find({}).sort({created_at: 'desc'}).limit(3).exec(callback);
+        Article.find({}).sort({created_at: 'desc'}).limit(3).exec(callback);
     };
 
     var _findAll = function (callback) {
-        model.find({}).sort({created_at: 'desc'}).exec(callback);
+        Article.find({}).sort({created_at: 'desc'}).exec(callback);
     };
 
     var _findByCode = function (code, callback) {
-        model.findOne({code: code}, callback);
+        Article.findOne({code: code}, callback);
     };
 
     var _pushComment = function (code, comment, callback) {
-        model.update({code: code},  { $push: { comments: comment} }, callback);
+        Article.update({code: code},  { $push: { comments: comment} }, callback);
     };
 
     return {
@@ -45,4 +45,4 @@ module.exports = function () {
         findByCode   : _findByCode,
         pushComment  : _pushComment
     };
-}();
+}());
