@@ -28,10 +28,10 @@
     margin-bottom: 2 * $base-spacing;
 
     p {
-      margin-bottom: $pg-profile-text-spacing;
+      margin-bottom: $base-spacing / 6;
 
       &.description {
-        margin-bottom: $pg-profile-text-spacing * 3;
+        margin-bottom: $base-spacing / 2;
       }
     }
   }

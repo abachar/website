@@ -16,7 +16,7 @@
 
     .summary {
       @include wrapper();
-      margin-bottom: 1rem;
+      margin-bottom: ($base-spacing * 2) / 3;
     }
 
     .readmore {

@@ -21,10 +21,10 @@
       margin-bottom: $base-spacing * 2;
 
       article {
-        margin-bottom: 2rem;
+        margin-bottom: ($base-spacing * 4) / 3;
 
         figure {
-          margin-bottom: 1rem;
+          margin-bottom: ($base-spacing * 2) / 3;
         }
 
         .description {
