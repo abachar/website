@@ -14,6 +14,17 @@ $base-border-radius: 3px;
   $base-link-color-hover: #fe5d55;
 
 //
+// Margin
+$new-base-line-height: 1.5;
+$base-margin    : ($new-base-line-height / 6) * 1rem;
+$margin-xx-small: $base-margin;
+$margin-x-small : 3  * $base-margin;
+$margin-small   : 4  * $base-margin;
+$margin-medium  : 6  * $base-margin;
+$margin-large   : 8  * $base-margin;
+$margin-x-large : 12 * $base-margin;
+
+//
 // Heading
 //
 $heading-font-family: $base-font-family;
@@ -119,3 +130,5 @@ $pg-profile-text-spacing: .25rem;
 $modal-header-font-size: 2rem;
 $modal-close-size: 1.5rem;
 $modal-padding: 1.5rem;
+
+

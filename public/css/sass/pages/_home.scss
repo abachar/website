@@ -9,22 +9,25 @@
   main {
     .about {
       @include wrapper();
-      margin-bottom: $base-spacing * 2;
+      margin-bottom: $margin-x-large;
+
+      .summary {
+        margin-bottom: $margin-medium;
+      }
 
       .readmore {
-        margin-top: ($base-spacing * 2) / 3;
         text-align: right;
       }
     }
 
     .projects {
-      margin-bottom: $base-spacing * 2;
+      margin-bottom: $margin-x-large;
 
       article {
-        margin-bottom: ($base-spacing * 4) / 3;
+        margin-bottom: $margin-large;
 
         figure {
-          margin-bottom: ($base-spacing * 2) / 3;
+          margin-bottom: $margin-medium;
         }
 
         .description {
@@ -34,17 +37,17 @@
     }
 
     .articles {
-      margin-bottom: $base-spacing * 2;
+      margin-bottom: $margin-x-large;
 
       article {
-        margin-bottom: ($base-spacing * 4) / 3;
+        margin-bottom: $margin-large;
 
         h4 {
           @include wrapper();
         }
 
         figure {
-          margin-bottom: ($base-spacing * 2) / 3;
+          margin-bottom: $margin-medium;
         }
 
         p {

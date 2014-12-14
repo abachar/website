@@ -1,7 +1,7 @@
 ul {
   margin: {
     left: ($base-spacing * 4) / 3;
-    bottom: $base-spacing / 2;
+    bottom: $margin-x-small;
   }
 
   list-style-type: disc;
@@ -23,7 +23,7 @@ ul.inline {
 }
 
 dl {
-  margin-bottom: $base-spacing / 2;
+  margin-bottom: $margin-x-small;
 
   dt {
     font-weight: bold;

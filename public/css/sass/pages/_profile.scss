@@ -25,13 +25,13 @@
 
   section {
     @include wrapper();
-    margin-bottom: 2 * $base-spacing;
+    margin-bottom: $margin-x-large;
 
     p {
-      margin-bottom: $base-spacing / 6;
+      margin-bottom: $margin-xx-small;
 
       &.description {
-        margin-bottom: $base-spacing / 2;
+        margin-bottom: $margin-x-small;
       }
     }
   }

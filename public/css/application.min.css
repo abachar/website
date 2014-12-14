@@ -14,11 +14,12 @@ body{-webkit-font-smoothing:antialiased;background-color:#f7f7f7;color:#30324d}
 h1,h2,h3,h4,h5,h6{font-family:"Open Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-weight:300;font-style:normal;display:block;text-rendering:optimizeLegibility}
 h1,h2{line-height:1.1}
 h3,h4{line-height:1.3}
-h1{font-size:400%;margin-bottom:0;text-align:left;text-transform:none}
-h2{font-size:250%;margin-bottom:2rem;text-align:center;text-transform:uppercase}
+h1{font-size:400%;margin-bottom:2rem;text-align:left;text-transform:none}
+h2{font-size:250%;margin-bottom:1.5rem;text-align:center;text-transform:uppercase}
 h3{font-size:200%;margin-bottom:1.5rem;text-align:left;text-transform:none}
-h4{font-size:180%;margin-bottom:1.5rem;text-align:left;text-transform:none}
-h5{font-size:130%;margin-bottom:2.25rem;text-align:left;text-transform:none}
+h4{font-size:180%;margin-bottom:1rem;text-align:left;text-transform:none}
+h5{font-size:130%;margin-bottom:1rem;text-align:left;text-transform:none}
+h6{margin-bottom:.75rem}
 p{margin:0 0 .75rem}
 small{font-size:.8rem}
 a{-webkit-transition:color .1s linear;-moz-transition:color .1s linear;transition:color .1s linear;color:#30324d;text-decoration:none}
@@ -61,21 +62,23 @@ footer#footer .wrapper{padding:0 1.5rem}
 footer#footer a,footer#footer label{font-weight:400;color:#b7b9da;line-height:1.35rem;border-bottom:1px solid #b7b9da;cursor:pointer}
 footer#footer a:hover,footer#footer label:hover{color:#fe5d55;border-bottom:1px solid #fe5d55}
 footer#footer nav{text-align:center}
+.pg-blog,.pg-home,.pg-profile,.pg-projects{margin-bottom:3rem}
 .pg-blog .hero,.pg-home .hero,.pg-profile .hero,.pg-projects .hero{padding:2rem 1.5rem 1rem;background:#30324d;margin-bottom:3rem;text-align:center}
 .pg-blog .hero img,.pg-home .hero img,.pg-profile .hero img,.pg-projects .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1.5rem;border:5px solid #eee;box-shadow:0 0 15px 0 #30324D}
 .pg-blog .hero h1,.pg-home .hero h1,.pg-profile .hero h1,.pg-projects .hero h1{color:#fe5d55;font-size:2rem;margin-bottom:1rem;text-align:center}
 .pg-blog .hero p,.pg-home .hero p,.pg-profile .hero p,.pg-projects .hero p{color:#eee;font-size:1.2rem;margin-bottom:1rem}
 .pg-home .hero img{height:10rem}
 .pg-home main .about{padding:0 1.5rem;margin-bottom:3rem}
-.pg-home main .about .readmore{margin-top:1rem;text-align:right}
+.pg-home main .about .summary{margin-bottom:1.5rem}
+.pg-home main .about .readmore{text-align:right}
 .pg-home main .projects{margin-bottom:3rem}
 .pg-home main .projects article{margin-bottom:2rem}
-.pg-home main .projects article figure{margin-bottom:1rem}
+.pg-home main .projects article figure{margin-bottom:1.5rem}
 .pg-home main .projects article .description{padding:0 1.5rem}
 .pg-home main .articles{margin-bottom:3rem}
 .pg-home main .articles article{margin-bottom:2rem}
 .pg-home main .articles article h4{padding:0 1.5rem}
-.pg-home main .articles article figure{margin-bottom:1rem}
+.pg-home main .articles article figure{margin-bottom:1.5rem}
 .pg-home main .articles article p{padding:0 1.5rem}
 .pg-profile .hero a.icon{display:inline-block;overflow:hidden;width:2rem;height:2rem;color:transparent;margin:0 .2rem}
 .pg-profile .hero a.icon:before{display:inline-block;background:#eee;color:#30324d;width:2rem;height:2rem;font-size:1rem;line-height:2rem;border-radius:50%}
@@ -83,15 +86,13 @@ footer#footer nav{text-align:center}
 .pg-profile section p{margin-bottom:.25rem}
 .pg-profile section p.description{margin-bottom:.75rem}
 .pg-projects article{margin-bottom:3rem}
-.pg-projects article h4{padding:0 1.5rem}
+.pg-projects article .description,.pg-projects article h4{padding:0 1.5rem}
 .pg-projects article figure{margin-bottom:1.5rem}
-.pg-projects article .description{padding:0 1.5rem}
-.pg-blog article{margin-bottom:2rem}
-.pg-blog article .author,.pg-blog article h4{padding:0 1.5rem}
-.pg-blog article figure{margin-bottom:1rem}
-.pg-blog article .summary{padding:0 1.5rem;margin-bottom:1rem}
-.pg-blog article .readmore{padding:0 1.5rem;margin-top:1rem;text-align:right}
-.pg-article{padding:0 1.5rem;margin-bottom:2rem}
+.pg-blog article{margin-bottom:3rem}
+.pg-blog article .author,.pg-blog article .readmore,.pg-blog article .summary,.pg-blog article h4{padding:0 1.5rem}
+.pg-blog article .summary,.pg-blog article figure{margin-bottom:1.5rem}
+.pg-blog article .readmore{text-align:right}
+.pg-article{padding:0 1.5rem}
 .pg-article .content,.pg-article header{margin-bottom:2rem}
 .pg-article .content h1,.pg-article .content h2,.pg-article .content h3,.pg-article .content h4,.pg-article .content h5,.pg-article .content h6{display:block;text-align:left;text-transform:none}
 .pg-article .content h1{font-size:180%;margin:1rem 0 2rem}
@@ -104,8 +105,9 @@ footer#footer nav{text-align:center}
 .pg-article .content .powerpoint>iframe,.pg-article .content .powerpoint>object{position:absolute;top:0;left:0;width:100%;height:100%}
 .pg-article .comments{margin-bottom:3rem}
 .pg-article .comments h4{line-height:3rem;border-bottom:1px solid #eeeef4}
-.pg-article .comments article{margin-bottom:1.5rem}
-.pg-article .comments article h5 small{margin-left:1.5rem;color:#9092b9}
+.pg-article .comments article{margin-bottom:2rem}
+.pg-article .comments article h5{position:relative}
+.pg-article .comments article h5 small{position:absolute;right:0;color:#9092b9}
 .pg-article .comments article p{margin-left:1.5rem}
 #js-dialog-contact-chk{display:none}
 #js-dialog-contact-chk:checked+.dlg-contact{opacity:1;visibility:visible}

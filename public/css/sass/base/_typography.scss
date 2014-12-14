@@ -31,14 +31,15 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, h2 { line-height: 1.1; }
 h3, h4 { line-height: 1.3; }
-h1 { @include heading($heading-font-size-h1, 0, left, none); }
-h2 { @include heading($heading-font-size-h2, ($base-spacing * 4) / 3, center, uppercase); }
-h3 { @include heading($heading-font-size-h3, $base-spacing, left, none); }
-h4 { @include heading($heading-font-size-h4, $base-spacing, left, none); }
-h5 { @include heading($heading-font-size-h5, ($base-spacing * 3) / 2, left, none); }
+h1 { @include heading($heading-font-size-h1, $margin-large, left, none); }
+h2 { @include heading($heading-font-size-h2, $margin-medium, center, uppercase); }
+h3 { @include heading($heading-font-size-h3, $margin-medium, left, none); }
+h4 { @include heading($heading-font-size-h4, $margin-small, left, none); }
+h5 { @include heading($heading-font-size-h5, $margin-small, left, none); }
+h6 { margin-bottom: $margin-x-small; }
 
 p {
-  margin: 0 0 ($base-spacing / 2);
+  margin: 0 0 $margin-x-small;
 }
 
 small {
@@ -89,6 +90,6 @@ pre, code {
 
 pre {
   overflow: auto;
-  margin: 0 0 ($base-spacing / 2);
+  margin: 0 0 $margin-x-small;
   padding: 2 * $base-spacing / 3;
 }
