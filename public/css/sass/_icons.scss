@@ -20,30 +20,58 @@
 }
 
 
-.icon-envelope:before {
+.icon-close:before {
 	content: "\E001";
 }
 
-.icon-facebook:before {
+.icon-comment:before {
 	content: "\E002";
 }
 
-.icon-github:before {
+.icon-download:before {
 	content: "\E003";
 }
 
-.icon-google:before {
+.icon-envelope:before {
 	content: "\E004";
 }
 
-.icon-linkedin:before {
+.icon-error:before {
 	content: "\E005";
 }
 
-.icon-phone:before {
+.icon-facebook:before {
 	content: "\E006";
 }
 
-.icon-twitter:before {
+.icon-github:before {
 	content: "\E007";
+}
+
+.icon-google:before {
+	content: "\E008";
+}
+
+.icon-linkedin:before {
+	content: "\E009";
+}
+
+.icon-phone:before {
+	content: "\E00A";
+}
+
+.icon-success:before {
+	content: "\E00B";
+}
+
+.icon-time:before {
+	content: "\E00C";
+}
+
+.icon-twitter:before {
+	content: "\E00D";
+}
+
+.icon-warning:before {
+	content: "\E00E";
 }

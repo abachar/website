@@ -2,6 +2,10 @@
   article {
     margin-bottom: $margin-x-large;
 
+//    @include media($desktop) {
+//      @include span-columns(4);
+//    }
+
     h4, .description {
       @include wrapper();
     }

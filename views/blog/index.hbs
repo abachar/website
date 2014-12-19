@@ -9,7 +9,7 @@
 	{{#each articles}}
 		<article>
 			<h1><a href="/blog/{{code}}">{{title}}</a></h1>
-			<p class="author"><time>{{formatDate created_at "DD/MM/YYYY"}}</time>, par {{author}}</p>
+			<p class="author"><time>{{formatDate created_at "DD MMMM YYYY"}}</time>, par {{author}}</p>
 			<figure>
 				<a href="/blog/{{code}}"><img src="/blog/{{code}}/assets/{{thumbnail}}"/></a>
 			</figure>

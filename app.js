@@ -19,6 +19,8 @@ function setupHandlebars(app) {
     // Partials
     hbs.registerPartials(path.join(__dirname, 'views'));
 
+    moment.locale('fr');
+
     hbs.registerHelper("formatDate", function (date, format) {
         return new hbs.SafeString(moment(date).format(format));
     });

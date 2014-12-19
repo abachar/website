@@ -2,7 +2,7 @@
 	<header>
 		<h1>{{article.title}}</h1>
 		<p>
-			<small><time>{{formatDate article.created_at "DD/MM/YYYY"}}</time>, par {{article.author}}</small>
+			<small><time>{{formatDate article.created_at "DD MMMM YYYY"}}</time>, par {{article.author}}</small>
 			{{#if article.printable}}
 				<a href="#">Imprimer l'article</a>
 			{{/if}}
@@ -17,10 +17,10 @@
     <section class="content">{{{marked contents}}}</section>
 
     <section class="comments">
-		<h4>Commentaires</h4>
+		<h4>Commentaires ({{article.comments.length}})</h4>
         {{#each article.comments}}
             <article>
-                <h5>{{author}}<small>{{formatDate created_at 'DD/MM/YYYY'}}</small></h5>
+                <h5>{{author}}<small><time>{{formatDate created_at 'DD/MM/YYYY'}}</time></small></h5>
 
                 <p>{{content}}</p>
             </article>
@@ -34,7 +34,7 @@
             <input name="email" type="text" maxlength="100" placeholder="Adresse mail">
             <textarea name="content" rows="5" placeholder="Commentaire..."></textarea>
 
-            <button type="button" class="button js-btn-send">Envoyer</button>
+            <button type="button" class="button js-btn-send">Ajouter</button>
         </form>
     </section>
 </main>

@@ -42,16 +42,12 @@
       article {
         margin-bottom: $margin-large;
 
-        h4 {
+        h3, p {
           @include wrapper();
         }
 
         figure {
           margin-bottom: $margin-medium;
-        }
-
-        p {
-          @include wrapper();
         }
       }
     }
