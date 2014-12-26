@@ -1,7 +1,6 @@
 <input id="js-dialog-contact-chk" type="checkbox"/>
 <div class="dlg-contact">
-	<div class="overlay"></div>
-	<div class="dialog">
+	<div class="dialog" id="js-contact-dialog">
 		<header>
 			<label class="icon icon-close close" for="js-dialog-contact-chk"></label>
 			<h1>Me Contacter</h1>
@@ -9,11 +8,10 @@
 		<div class="content">
 			<p class="success"></p>
 
-			<form id="js-contact-form">
+			<form>
 				<p>Pour me contacter, veuillez remplir le formulaire ci-dessous<br/>
 					<small>Tous les champs sont obligatoires.</small>
 				</p>
-
 				<p class="error"></p>
 
 				<input name="name" type="text" maxlength="100" placeholder="Nom complet">

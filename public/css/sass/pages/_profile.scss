@@ -1,24 +1,38 @@
 .pg-profile {
+  margin-bottom: $margin-x-large;
+
   .hero {
-    $size: 2rem;
+    $desktop-coefficient: 1.6;
 
     a.icon {
       display: inline-block;
+      white-space: nowrap;
       overflow: hidden;
-      width: $size;
-      height: $size;
-      color: transparent;
-      margin: 0 .2rem;
+      width: $pg-profile-hero-icons-size;
+      height: $pg-profile-hero-icons-size;
+      margin: 0 $pg-profile-hero-icons-size / 10;
+      @include media($desktop) {
+        width: $desktop-coefficient * $pg-profile-hero-icons-size;
+        height: $desktop-coefficient * $pg-profile-hero-icons-size;
+        margin: 0 $desktop-coefficient * $pg-profile-hero-icons-size / 10;
+      }
 
       &:before {
         display: inline-block;
         background: $hero-text-font-color;
         color: $hero-background-color;
-        width: $size;
-        height: $size;
-        font-size: $size/2;
-        line-height: $size;
-        border-radius: 50%;
+        border-radius: 100%;
+        width: $pg-profile-hero-icons-size;
+        height: $pg-profile-hero-icons-size;
+        font-size: $pg-profile-hero-icons-size / 2;
+        line-height: $pg-profile-hero-icons-size;
+
+        @include media($desktop) {
+          width: $desktop-coefficient * $pg-profile-hero-icons-size;
+          height: $desktop-coefficient * $pg-profile-hero-icons-size;
+          font-size: $desktop-coefficient * $pg-profile-hero-icons-size / 2;
+          line-height: $desktop-coefficient * $pg-profile-hero-icons-size;
+        }
       }
     }
   }
@@ -36,10 +50,10 @@
     }
   }
 
-//  #competences {
-//    .level-1, .level-2, .level-3 {
-//    }
-//  }
-//
-//  #studies { }
+  //  #competences {
+  //    .level-1, .level-2, .level-3 {
+  //    }
+  //  }
+  //
+  //  #studies { }
 }

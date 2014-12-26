@@ -4,47 +4,91 @@ header#navbar {
   }
 
   .navbar-header {
+    @include media($desktop) {
+      float: left;
+    }
+
     .nav-toggle {
       line-height: $header-line-height;
       font-size: $header-font-size;
-      display: block;
       text-transform: uppercase;
-      position: relative;
 
-      &::after {
-        content: "";
-        position: absolute;
+      @include media($mobile) {
         display: block;
-        height: 0;
-        top: 50%;
-        margin-top: -0.5rem;
-        right: 0;
-        box-shadow: 0 0px 0 1px $header-font-color, 0 7px 0 1px $header-font-color, 0 14px 0 1px $header-font-color;
-        width: 22px;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 0;
+          top: 50%;
+          margin-top: -0.5rem;
+          right: 0;
+          box-shadow: 0 0px 0 1px $header-font-color, 0 7px 0 1px $header-font-color, 0 14px 0 1px $header-font-color;
+          width: 22px;
+        }
+      }
+
+      @include media($desktop) {
+        display: inline-block;
       }
     }
   }
 
   nav {
     overflow: hidden;
+    @include media($desktop) {
+      float: right;
+    }
+
     ul {
-      height: 0;
-      @include transition(height 0.3s);
+      @include media($mobile) {
+        height: 0;
+        @include transition(height 0.3s);
+      }
+
+      @include media($desktop) {
+        display: block;
+
+        li {
+          display: inline;
+          border-left: 1px solid darken($base-background-color, 5);
+          margin-left: 1.5rem;
+          padding-left: 1.7rem;
+
+          &:first-child {
+            border-left: 0;
+            margin-left: 0;
+            padding-left: 0;
+          }
+        }
+      }
 
       a, label {
-        display: block;
         font-weight: $header-link-font-weight;
-        line-height: $header-link-line-height;
-        padding: $header-link-spacing 0;
         color: $header-link-color;
         cursor: pointer;
+
+        @include media($mobile) {
+          line-height: $header-link-line-height;
+          padding: $header-link-spacing 0;
+          display: block;
+        }
+
+        @include media($desktop) {
+          display: inline-block;
+          line-height: $header-line-height;
+        }
       }
     }
 
     #navbar-menu-chk {
       display: none;
-      &:checked + ul {
-        height: 5 * ($header-link-line-height + 2 * $header-link-spacing) + ($header-link-line-height / 2);
+      @include media($mobile) {
+        &:checked + ul {
+          height: 5 * ($header-link-line-height + 2 * $header-link-spacing) + ($header-link-line-height / 2);
+        }
       }
     }
   }

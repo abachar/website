@@ -8,26 +8,26 @@
 }
 
 .dlg-contact {
+  @include position(fixed, 0 0 0 0);
   @include transition(opacity .25s ease);
-  opacity: 0;
+  background: $modal-overlay-background-color;
   visibility: hidden;
-
-  .overlay {
-    @include position(fixed, 0 0 0 0);
-    background: $modal-overlay-background-color;
-    z-index: 1000;
-  }
+  opacity: 0;
+  z-index: 1000;
 
   .dialog {
-    @include position(fixed, 0 0 auto 0);
     background: $modal-background-color;
-    z-index: 1001;
     padding: $modal-padding 0;
+
+    @include media($desktop) {
+      max-width: 50rem;
+      margin: 0 auto;
+      @include border-bottom-radius(2 * $base-border-radius);
+    }
 
     header {
       @include wrapper();
       position: relative;
-      margin-bottom: $margin-large;
 
       h1 {
         font-size: $modal-header-font-size;

@@ -1,8 +1,9 @@
 (function ($) {
     $(document).ready(function () {
-        var form    = $('#js-contact-form');
-        var error   = form.find('.error');
-        var success = form.prev('.success')
+        var dialog = $('#js-contact-dialog');
+        var form = dialog.find('form');
+        var error = dialog.find('.error');
+        var success = dialog.find('.success')
 
         // Reset contact form
         $('#js-dialog-contact-chk').change(function () {
@@ -14,7 +15,7 @@
         });
 
         // Send message
-        form.find(".js-btn-send").click(function () {
+        dialog.find(".js-btn-send").click(function () {
 
             // Hide message, errors
             error.hide();
@@ -36,5 +37,4 @@
                 })
         });
     });
-
 })(jQuery);

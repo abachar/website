@@ -1,17 +1,32 @@
 .pg-projects {
-  article {
-    margin-bottom: $margin-x-large;
+  margin-bottom: $margin-x-large;
 
-//    @include media($desktop) {
-//      @include span-columns(4);
-//    }
-
-    h4, .description {
+  .projects {
+    @include media($desktop) {
       @include wrapper();
     }
 
-    figure {
-      margin-bottom: $margin-medium;
+    article {
+      margin-bottom: $margin-x-large;
+
+      @include media($desktop) {
+        @include span-columns(6);
+        @include omega(2n);
+      }
+
+      h4, .description {
+        @include wrapper();
+      }
+
+      figure {
+        margin-bottom: $margin-medium;
+
+        @include media($desktop) {
+          img {
+            border-radius: 2 * $base-border-radius;
+          }
+        }
+      }
     }
   }
 }

@@ -68,8 +68,8 @@ gulp.task 'scripts', ->
       .pipe gulp.dest destinations.scripts
 
   gulp.src sources.scripts
-      .pipe uglify()
       .pipe concat('application.min.js')
+      .pipe uglify()
       .pipe gulp.dest destinations.scripts
 
 ##

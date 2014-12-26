@@ -6,8 +6,8 @@
 //$visual-grid-index: front;
 //$visual-grid-opacity: 0.1;
 //$max-width: 1170px;
-//$mobile: new-breakpoint(max-width 480px);
-//$desktop: new-breakpoint(min-width 850px);
+$mobile : new-breakpoint(max-width 768px);
+$desktop: new-breakpoint(min-width 768px);
 @import '_neat/neat';
 
 // Variables
@@ -28,9 +28,9 @@
 // Layouts
 @import "layouts/navbar";
 @import "layouts/footer";
+@import "layouts/hero";
 
 // Pages
-@import "pages/common";
 @import "pages/home";
 @import "pages/profile";
 @import "pages/projects";

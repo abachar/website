@@ -92,6 +92,7 @@ td {
 
 
 .pg-article {
+  margin-bottom: $margin-x-large;
   @include wrapper();
 
   header {

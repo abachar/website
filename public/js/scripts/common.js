@@ -1,5 +1,5 @@
-(function($) {
-    $(document).ready(function() {
+// (function($) {
+//    $(document).ready(function() {
 
         // Block not available links
 //        $('a.feature-not-available').click(function(event) {
@@ -29,6 +29,6 @@
 
         // Init pretty print
         // prettyPrint();
-    });
+//    });
 
-})(jQuery);
+//})(jQuery);

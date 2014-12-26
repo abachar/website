@@ -6,24 +6,26 @@
 		</div>
 	</header>
 
-	{{#each projects}}
-		<article>
-			<h1>{{name}}</h1>
-			<figure date-code="{{code}}">
-				{{#if images}}
-					{{#each images}}
-						<a class="{{#if @index}}hidden{{/if}}" data-gallery="gallery-{{../code}}"
-						   href="/projects/assets/{{../code}}/gallery/{{this}}">
-							{{#unless @index}}
-								<img src="/projects/assets/{{../../code}}/{{../../thumbnail}}"/>
-							{{/unless}}
-						</a>
-					{{/each}}
-				{{else}}
-					<img src="/images/project-no-thumbnail.png"/>
-				{{/if}}
-			</figure>
-			<p class="description">{{description}}</p>
-		</article>
-	{{/each}}
+	<div class="projects">
+		{{#each projects}}
+            <article>
+                <h1>{{name}}</h1>
+                <figure date-code="{{code}}">
+					{{#if images}}
+						{{#each images}}
+                            <a class="{{#if @index}}hidden{{/if}}" data-gallery="gallery-{{../code}}"
+                               href="/projects/assets/{{../code}}/gallery/{{this}}">
+								{{#unless @index}}
+                                    <img src="/projects/assets/{{../../code}}/{{../../thumbnail}}"/>
+								{{/unless}}
+                            </a>
+						{{/each}}
+					{{else}}
+                        <img src="/images/project-no-thumbnail.png"/>
+					{{/if}}
+                </figure>
+                <p class="description">{{description}}</p>
+            </article>
+		{{/each}}
+	</div>
 </main>

@@ -1,0 +1,37 @@
+.hero {
+  .wrapper {
+    @include wrapper();
+  }
+
+  padding: {
+    top: (4 * $base-spacing) / 3;
+    bottom: (2 * $base-spacing) / 3;
+  }
+  background: $hero-background-color;
+  margin-bottom: $margin-x-large;
+  text-align: center;
+
+  img {
+    @include border-left-radius(50%);
+    @include border-right-radius(50%);
+    width: auto;
+    height: $hero-img-height;
+    margin-bottom: $margin-medium;
+    border: $hero-img-border-size solid $hero-img-border-color;
+    box-shadow: 0 0 $hero-img-box-shadow-blur 0 $hero-img-box-shadow-color;
+  }
+
+  h1 {
+    color: $hero-h1-font-color;
+    font-size: $hero-h1-font-size;
+    margin-bottom: $margin-small;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  p {
+    color: $hero-text-font-color;
+    font-size: $hero-text-font-size;
+    margin-bottom: $margin-small;
+  }
+}
