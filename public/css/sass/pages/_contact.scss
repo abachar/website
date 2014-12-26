@@ -36,8 +36,8 @@
       }
 
       .close {
-        @include position(absolute, 0 1rem null null);
-        font-size: 2rem;
+        @include position(absolute, 0 1.2rem null null);
+        font-size: 1.6rem;
         line-height: 1.1;
         cursor: pointer;
         background: $modal-background-color;
