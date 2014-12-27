@@ -20,4 +20,4 @@ Le framework contient notamment les fonctionnalités suivantes :
 	</iframe>
 </div>
 
-<a class="download" href="/blog/jquery/assets/jquery.zip">Télécharger la présentation</a>
+<a class="icon icon-download" href="/blog/jquery/assets/jquery.zip">Télécharger la présentation</a>

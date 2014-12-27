@@ -11,7 +11,7 @@ d'extensions et utilisé avec Spring Web Flow il devient un framework très puis
 	</iframe>
 </div>
 
-<a class="download" href="/blog/spring-mvc/assets/spring-mvc.zip">Télécharger la présentation</a>
+<a class="icon icon-download" href="/blog/spring-mvc/assets/spring-mvc.zip">Télécharger la présentation</a>
 
 
 

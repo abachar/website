@@ -1,102 +1,12 @@
-/*p {
-  margin: 1em 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1em;
-}
-
-h4, h5, h6 { font-weight: bold; }
-
-h1 { font-size: 2.5em; }
-h2 { font-size: 2em; }
-h3 { font-size: 1.5em; }
-h4 { font-size: 1.2em; }
-h5 { font-size: 1em; }
-h6 { font-size: 0.9em; }
-
-blockquote {
-  color: #666666;
-  margin: 0;
-  padding-left: 3em;
-  border-left: 0.5em #EEE solid;
-}
-
-hr {
-  display: block;
-  height: 2px;
-  border: 0;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #eee;
-  margin: 1em 0;
-  padding: 0;
-}
-
-pre, code, kbd, samp {
-  color: #000;
-  font-family: monospace, monospace;
-  _font-family: 'courier new', monospace;
-  font-size: 0.98em;
-}
-
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-b, strong {
-  font-weight: bold;
-}
-
-dfn {
-  font-style: italic;
-}
-
-ins {
-  background: #ff9;
-  color: #000;
-  text-decoration: none;
-}
-
-mark {
-  background: #ff0;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
-
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-td {
-  vertical-align: top;
-}
-*/
-
-
-
-
-
-
 .pg-article {
   margin-bottom: $margin-x-large;
-  @include wrapper();
 
   header {
     margin-bottom: $margin-large;
+  }
+
+  & > section {
+    @include wrapper();
   }
 
   .content {
@@ -151,10 +61,6 @@ td {
         height: 100%;
       }
     }
-
-    .download {
-
-    }
   }
 
   .comments {
@@ -179,6 +85,13 @@ td {
 
       p {
         margin-left: $base-spacing;
+      }
+    }
+
+    @include media($desktop) {
+      form {
+        @include span-columns(6);
+        @include shift(3);
       }
     }
   }

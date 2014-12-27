@@ -14,8 +14,10 @@
         @include omega(2n);
       }
 
-      h4, .description {
-        @include wrapper();
+      .description {
+        @include media($mobile) {
+          @include wrapper();
+        }
       }
 
       figure {

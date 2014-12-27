@@ -9,4 +9,4 @@ logiciel. Chaque année, d’innombrables heures sont perdues par les équipes d
 	</iframe>
 </div>
 
-<a class="download" href="/blog/clean-code/assets/clean-code.zip">Télécharger la présentation</a>
+<a class="icon icon-download" href="/blog/clean-code/assets/clean-code.zip">Télécharger la présentation</a>

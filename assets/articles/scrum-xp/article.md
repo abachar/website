@@ -13,4 +13,4 @@ cherche à atteindre un but, comme c'est le cas en rugby pour avancer avec le ba
 	</iframe>
 </div>
 
-<a class="download" href="/blog/scrum-xp/assets/scrum-xp.zip">Télécharger la présentation</a>
+<a class="icon icon-download" href="/blog/scrum-xp/assets/scrum-xp.zip">Télécharger la présentation</a>

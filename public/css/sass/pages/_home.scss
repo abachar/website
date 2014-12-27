@@ -8,43 +8,76 @@
   }
 
   main {
-    .about {
-      @include wrapper();
-      margin-bottom: $margin-x-large;
-
-      .summary {
-        margin-bottom: $margin-medium;
+    .about-and-projects {
+      @include media($desktop) {
+        @include wrapper();
       }
 
-      .readmore {
-        text-align: right;
-      }
-    }
+      .about {
+        margin-bottom: $margin-x-large;
 
-    .projects {
-      margin-bottom: $margin-x-large;
+        @include media($mobile) {
+          @include wrapper();
+        }
 
-      article {
-        margin-bottom: $margin-large;
+        @include media($desktop) {
+          @include span-columns(4);
+        }
 
-        figure {
+        .summary {
           margin-bottom: $margin-medium;
         }
 
-        .description {
-          @include wrapper();
+        .readmore {
+          text-align: right;
         }
       }
+
+      .projects {
+        margin-bottom: $margin-x-large;
+
+        @include media($desktop) {
+          @include span-columns(8);
+        }
+
+        article {
+          margin-bottom: $margin-large;
+          @include media($desktop) {
+            @include span-columns(4 of 8);
+          }
+
+          figure {
+            margin-bottom: $margin-medium;
+          }
+
+          .description {
+            @include media($mobile) {
+              @include wrapper();
+            }
+          }
+        }
+      }
+
     }
 
     .articles {
       margin-bottom: $margin-x-large;
 
+      @include media($desktop) {
+        @include wrapper();
+      }
+
       article {
         margin-bottom: $margin-large;
+        @include media($desktop) {
+          @include span-columns(4);
+          @include omega(4n);
+        }
 
         h3, p {
-          @include wrapper();
+          @include media($mobile) {
+            @include wrapper();
+          }
         }
 
         figure {

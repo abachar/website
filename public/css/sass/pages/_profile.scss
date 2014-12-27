@@ -37,23 +37,67 @@
     }
   }
 
-  section {
-    @include wrapper();
-    margin-bottom: $margin-x-large;
+  .container {
+    @include media($desktop) {
+      @include outer-container;
+    }
 
-    p {
-      margin-bottom: $margin-xx-small;
+    main {
+      @include media($desktop) {
+        @include span-columns(8);
+      }
 
-      &.description {
-        margin-bottom: $margin-x-small;
+      section {
+        @include wrapper();
+        margin-bottom: $margin-x-large;
+
+        @include media($desktop) {
+          dl {
+            @include outer-container;
+
+            dt {
+              margin-top: 0;
+              @include span-columns(3);
+            }
+
+            dd {
+              @include span-columns(9);
+              @include omega();
+            }
+          }
+        }
+
+        p {
+          margin-bottom: $margin-xx-small;
+
+          &.description {
+            margin-bottom: $margin-x-small;
+          }
+        }
+      }
+
+      //  #competences {
+      //    .level-1, .level-2, .level-3 {
+      //    }
+      //  }
+      //
+      //  #studies { }
+    }
+
+    @include media($mobile) {
+      aside {
+        display: none;
+      }
+    }
+
+    @include media($desktop) {
+      aside {
+        @include span-columns(4);
+
+        ul {
+          margin-bottom: $margin-large;
+        }
       }
     }
   }
-
-  //  #competences {
-  //    .level-1, .level-2, .level-3 {
-  //    }
-  //  }
-  //
-  //  #studies { }
 }

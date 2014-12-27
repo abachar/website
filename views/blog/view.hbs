@@ -1,6 +1,12 @@
 <main class="pg-article">
-	<header>
-		<h1>{{article.title}}</h1>
+    <header class="hero">
+        <div class="wrapper">
+            <img src="/images/abachar.jpg">
+            <h1>{{article.title}}</h1>
+        </div>
+    </header>
+
+	<section class="infos">
 		<p>
 			<small><time>{{formatDate article.created_at "DD MMMM YYYY"}}</time>, par {{article.author}}</small>
 			{{#if article.printable}}
@@ -12,29 +18,29 @@
 			<p class="warning">Cet article est en cours de rédaction, et ne constitue donc pour l’instant qu’une simple introduction.
 				Il fera l’objet d’un redécoupage, d'une refonte et d’un approfondissement conséquent par la suite.</p>
 		{{/if}}
-	</header>
+	</section>
 
-    <section class="content">{{{marked contents}}}</section>
+	<section class="content">{{{marked contents}}}</section>
 
-    <section class="comments">
+	<section class="comments">
 		<h4>Commentaires ({{article.comments.length}})</h4>
-        {{#each article.comments}}
-            <article>
-                <h5>{{author}}<small><time>{{formatDate created_at 'DD/MM/YYYY'}}</time></small></h5>
+		{{#each article.comments}}
+			<article>
+				<h5>{{author}}<small><time>{{formatDate created_at 'DD/MM/YYYY'}}</time></small></h5>
 
-                <p>{{content}}</p>
-            </article>
-        {{/each}}
+				<p>{{content}}</p>
+			</article>
+		{{/each}}
 
 		<h4>Laisser un commentaire</h4>
-        <form id="js-comment-form" action="/blog/{{article.code}}/comments">
+		<form id="js-comment-form" action="/blog/{{article.code}}/comments">
 			<p class="error"></p>
 
-            <input name="author" type="text" maxlength="100" placeholder="Nom complet">
-            <input name="email" type="text" maxlength="100" placeholder="Adresse mail">
-            <textarea name="content" rows="5" placeholder="Commentaire..."></textarea>
+			<input name="author" type="text" maxlength="100" placeholder="Nom complet">
+			<input name="email" type="text" maxlength="100" placeholder="Adresse mail">
+			<textarea name="content" rows="5" placeholder="Commentaire..."></textarea>
 
-            <button type="button" class="button js-btn-send">Ajouter</button>
-        </form>
-    </section>
+			<button type="button" class="button js-btn-send">Ajouter</button>
+		</form>
+	</section>
 </main>

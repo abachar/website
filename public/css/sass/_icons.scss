@@ -20,58 +20,70 @@
 }
 
 
-.icon-close:before {
+.icon-arrow:before {
 	content: "\E001";
 }
 
-.icon-comment:before {
+.icon-close:before {
 	content: "\E002";
 }
 
-.icon-download:before {
+.icon-comment:before {
 	content: "\E003";
 }
 
-.icon-envelope:before {
+.icon-download:before {
 	content: "\E004";
 }
 
-.icon-error:before {
+.icon-envelope:before {
 	content: "\E005";
 }
 
-.icon-facebook:before {
+.icon-error:before {
 	content: "\E006";
 }
 
-.icon-github:before {
+.icon-facebook:before {
 	content: "\E007";
 }
 
-.icon-google:before {
+.icon-github:before {
 	content: "\E008";
 }
 
-.icon-linkedin:before {
+.icon-google:before {
 	content: "\E009";
 }
 
-.icon-phone:before {
+.icon-house:before {
 	content: "\E00A";
 }
 
-.icon-success:before {
+.icon-linkedin:before {
 	content: "\E00B";
 }
 
-.icon-time:before {
+.icon-phone:before {
 	content: "\E00C";
 }
 
-.icon-twitter:before {
+.icon-print:before {
 	content: "\E00D";
 }
 
-.icon-warning:before {
+.icon-success:before {
 	content: "\E00E";
+}
+
+.icon-time:before {
+	content: "\E00F";
+}
+
+.icon-twitter:before {
+	content: "\E010";
+}
+
+.icon-warning:before {
+	content: "\E011";
 }
