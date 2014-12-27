@@ -64,7 +64,7 @@ function createApplication() {
 	var app = express();
 
     // Connect to database
-    mongoose.connect(process.env.WEBSITE_MONGOLAB_URI);
+    mongoose.connect(process.env.WEBSITE_MONGOLAB_URI || 'mongodb://localhost/website');
 
     // view engine setup
     setupHandlebars(app);
