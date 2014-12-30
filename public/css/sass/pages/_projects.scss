@@ -1,7 +1,8 @@
 .pg-projects {
-  margin-bottom: $margin-x-large;
-
   .projects {
+    padding-top: $margin-x-large;
+    padding-bottom: $margin-x-large;
+
     @include media($desktop) {
       @include wrapper();
     }

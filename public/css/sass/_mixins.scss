@@ -1,5 +1,6 @@
 @mixin wrapper() {
-  padding: 0 $base-spacing;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
 
   @include media($desktop) {
     @include outer-container();

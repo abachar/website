@@ -60,7 +60,7 @@ form textarea{resize:vertical}
 .button{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;-webkit-font-smoothing:antialiased;background:#fe5d55;color:#fff;border-radius:3px;display:inline-block;font-family:"Open Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.5rem;padding:.75rem 1rem;text-decoration:none;border:none;cursor:pointer;user-select:none;vertical-align:middle;white-space:nowrap}
 .button:hover{color:#fff;background:#31323a}
 .button:disabled{cursor:not-allowed;opacity:.5}
-header#navbar .wrapper{padding:0 1.5rem}
+header#navbar .wrapper{padding-left:1.5rem;padding-right:1.5rem}
 @media screen and (min-width:768px){header#navbar .wrapper{max-width:1170px;margin-left:auto;margin-right:auto}
 header#navbar .wrapper:after{content:"";display:table;clear:both}}
 @media screen and (min-width:768px){header#navbar .navbar-header{float:left}}
@@ -80,66 +80,69 @@ header#navbar nav ul a,header#navbar nav ul label{font-weight:400;color:#30324d;
 header#navbar nav #navbar-menu-chk{display:none}
 @media screen and (max-width:768px){header#navbar nav #navbar-menu-chk:checked+ul{height:15.75rem}}
 footer#footer{background:#31323a;color:#B7B9DA;font-size:.9rem;text-align:center;padding:3rem 0}
-footer#footer .wrapper{padding:0 1.5rem}
+footer#footer .wrapper{padding-left:1.5rem;padding-right:1.5rem}
 @media screen and (min-width:768px){footer#footer .wrapper{max-width:1170px;margin-left:auto;margin-right:auto}
 footer#footer .wrapper:after{content:"";display:table;clear:both}}
 footer#footer a,footer#footer label{font-weight:400;color:#b7b9da;line-height:1.35rem;border-bottom:1px solid #b7b9da;cursor:pointer}
 footer#footer a:hover,footer#footer label:hover{color:#fe5d55;border-bottom:1px solid #fe5d55}
 footer#footer nav{text-align:center}
-.hero{padding-top:2rem;padding-bottom:1rem;background:#30324d;margin-bottom:3rem;text-align:center}
-.hero .wrapper{padding:0 1.5rem}
+.hero{padding-top:2rem;padding-bottom:1rem;background:#30324d;text-align:center}
+.hero .wrapper{padding-left:1.5rem;padding-right:1.5rem}
 @media screen and (min-width:768px){.hero .wrapper{max-width:1170px;margin-left:auto;margin-right:auto}
 .hero .wrapper:after{content:"";display:table;clear:both}}
 .hero img{border-radius:50%;width:auto;height:100px;margin-bottom:1.5rem;border:5px solid #eee;box-shadow:0 0 15px 0 #30324D}
 .hero h1{color:#fe5d55;font-size:2rem;margin-bottom:1rem;text-align:center;text-transform:capitalize}
 .hero p{color:#eee;font-size:1.2rem;margin-bottom:1rem}
-.pg-home{margin-bottom:3rem}
 .pg-home .hero img{height:10rem}
-@media screen and (min-width:768px){.pg-home main .about-and-projects{padding:0 1.5rem}}
+.pg-home main .about-and-projects{padding-top:3rem;padding-bottom:3rem}
+@media screen and (min-width:768px){.pg-home main .about-and-projects{padding-left:1.5rem;padding-right:1.5rem}}
 @media screen and (min-width:768px) and (min-width:768px){.pg-home main .about-and-projects{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-home main .about-and-projects:after{content:"";display:table;clear:both}}
 .pg-home main .about-and-projects .about{margin-bottom:3rem}
-@media screen and (max-width:768px){.pg-home main .about-and-projects .about{padding:0 1.5rem}}
+@media screen and (max-width:768px){.pg-home main .about-and-projects .about{padding-left:1.5rem;padding-right:1.5rem}}
 @media screen and (max-width:768px) and (min-width:768px){.pg-home main .about-and-projects .about{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-home main .about-and-projects .about:after{content:"";display:table;clear:both}}
 @media screen and (min-width:768px){.pg-home main .about-and-projects .about{float:left;display:block;margin-right:2.35765%;width:31.76157%}
 .pg-home main .about-and-projects .about:last-child{margin-right:0}}
 .pg-home main .about-and-projects .about .summary{margin-bottom:1.5rem}
 .pg-home main .about-and-projects .about .readmore{text-align:right}
-.pg-home main .about-and-projects .projects{margin-bottom:3rem}
 @media screen and (min-width:768px){.pg-home main .about-and-projects .projects{float:left;display:block;margin-right:2.35765%;width:65.88078%}
 .pg-home main .about-and-projects .projects:last-child{margin-right:0}}
-.pg-home main .about-and-projects .projects article{margin-bottom:2rem}
+.pg-home main .about-and-projects .projects article figure{margin-bottom:1.5rem}
+@media screen and (min-width:768px){.pg-home main .about-and-projects .projects article figure img{border-radius:6px}}
 @media screen and (min-width:768px){.pg-home main .about-and-projects .projects article{float:left;display:block;margin-right:3.57866%;width:48.21067%}
 .pg-home main .about-and-projects .projects article:last-child{margin-right:0}}
-.pg-home main .about-and-projects .projects article figure{margin-bottom:1.5rem}
-@media screen and (max-width:768px){.pg-home main .about-and-projects .projects article .description{padding:0 1.5rem}}
+@media screen and (max-width:768px){.pg-home main .about-and-projects .projects article{margin-bottom:2rem}
+.pg-home main .about-and-projects .projects article .description{padding-left:1.5rem;padding-right:1.5rem}}
 @media screen and (max-width:768px) and (min-width:768px){.pg-home main .about-and-projects .projects article .description{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-home main .about-and-projects .projects article .description:after{content:"";display:table;clear:both}}
-.pg-home main .articles{margin-bottom:3rem}
-@media screen and (min-width:768px){.pg-home main .articles{padding:0 1.5rem}}
-@media screen and (min-width:768px) and (min-width:768px){.pg-home main .articles{max-width:1170px;margin-left:auto;margin-right:auto}
-.pg-home main .articles:after{content:"";display:table;clear:both}}
+.pg-home main .articles{background:#efefef}
+.pg-home main .articles .wrapper{padding-top:3rem;padding-bottom:3rem}
+@media screen and (min-width:768px){.pg-home main .articles .wrapper{padding-left:1.5rem;padding-right:1.5rem}}
+@media screen and (min-width:768px) and (min-width:768px){.pg-home main .articles .wrapper{max-width:1170px;margin-left:auto;margin-right:auto}
+.pg-home main .articles .wrapper:after{content:"";display:table;clear:both}}
 .pg-home main .articles article{margin-bottom:2rem}
 @media screen and (min-width:768px){.pg-home main .articles article{float:left;display:block;margin-right:2.35765%;width:31.76157%}
 .pg-home main .articles article:last-child,.pg-home main .articles article:nth-child(4n){margin-right:0}
 .pg-home main .articles article:nth-child(4n+1){clear:left}}
-@media screen and (max-width:768px){.pg-home main .articles article h3,.pg-home main .articles article p{padding:0 1.5rem}}
+@media screen and (max-width:768px){.pg-home main .articles article h3,.pg-home main .articles article p{padding-left:1.5rem;padding-right:1.5rem}}
 @media screen and (max-width:768px) and (min-width:768px){.pg-home main .articles article h3,.pg-home main .articles article p{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-home main .articles article h3:after,.pg-home main .articles article p:after{content:"";display:table;clear:both}}
 .pg-home main .articles article figure{margin-bottom:1.5rem}
-.pg-profile{margin-bottom:3rem}
+@media screen and (min-width:768px){.pg-home main .articles article figure img{border-radius:6px}}
 .pg-profile .hero a.icon{display:inline-block;white-space:nowrap;overflow:hidden;width:2rem;height:2rem;margin:0 .2rem}
 @media screen and (min-width:768px){.pg-profile .hero a.icon{width:3.2rem;height:3.2rem;margin:0 .32rem}}
 .pg-profile .hero a.icon:before{display:inline-block;background:#eee;color:#30324d;border-radius:100%;width:2rem;height:2rem;font-size:1rem;line-height:2rem}
 @media screen and (min-width:768px){.pg-profile .hero a.icon:before{width:3.2rem;height:3.2rem;font-size:1.6rem;line-height:3.2rem}}
+.pg-profile .container{padding-top:3rem;padding-bottom:3rem}
 @media screen and (min-width:768px){.pg-profile .container{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-profile .container:after{content:"";display:table;clear:both}}
 @media screen and (min-width:768px){.pg-profile .container main{float:left;display:block;margin-right:2.35765%;width:65.88078%}
 .pg-profile .container main:last-child{margin-right:0}}
-.pg-profile .container main section{padding:0 1.5rem;margin-bottom:3rem}
+.pg-profile .container main section{padding-left:1.5rem;padding-right:1.5rem;margin-bottom:3rem}
 @media screen and (min-width:768px){.pg-profile .container main section{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-profile .container main section:after{content:"";display:table;clear:both}}
+.pg-profile .container main section:last-child{margin-bottom:0}
 @media screen and (min-width:768px){.pg-profile .container main section dl{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-profile .container main section dl:after{content:"";display:table;clear:both}
 .pg-profile .container main section dl dt{margin-top:0;float:left;display:block;margin-right:2.35765%;width:23.23176%}
@@ -152,39 +155,40 @@ footer#footer nav{text-align:center}
 @media screen and (min-width:768px){.pg-profile .container aside{float:left;display:block;margin-right:2.35765%;width:31.76157%}
 .pg-profile .container aside:last-child{margin-right:0}
 .pg-profile .container aside ul{margin-bottom:2rem}}
-.pg-projects,.pg-projects .projects article{margin-bottom:3rem}
-@media screen and (min-width:768px){.pg-projects .projects{padding:0 1.5rem}}
+.pg-projects .projects{padding-top:3rem;padding-bottom:3rem}
+@media screen and (min-width:768px){.pg-projects .projects{padding-left:1.5rem;padding-right:1.5rem}}
 @media screen and (min-width:768px) and (min-width:768px){.pg-projects .projects{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-projects .projects:after{content:"";display:table;clear:both}}
+.pg-projects .projects article{margin-bottom:3rem}
 @media screen and (min-width:768px){.pg-projects .projects article{float:left;display:block;margin-right:2.35765%;width:48.82117%}
 .pg-projects .projects article:last-child,.pg-projects .projects article:nth-child(2n){margin-right:0}
 .pg-projects .projects article:nth-child(2n+1){clear:left}}
-@media screen and (max-width:768px){.pg-projects .projects article .description{padding:0 1.5rem}}
+@media screen and (max-width:768px){.pg-projects .projects article .description{padding-left:1.5rem;padding-right:1.5rem}}
 @media screen and (max-width:768px) and (min-width:768px){.pg-projects .projects article .description{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-projects .projects article .description:after{content:"";display:table;clear:both}}
 .pg-projects .projects article figure{margin-bottom:1.5rem}
 @media screen and (min-width:768px){.pg-projects .projects article figure img{border-radius:6px}}
-.pg-article,.pg-blog,.pg-blog article{margin-bottom:3rem}
-@media screen and (max-width:768px){.pg-blog article .author,.pg-blog article .readmore,.pg-blog article .summary,.pg-blog article h4{padding:0 1.5rem}}
-@media screen and (max-width:768px) and (min-width:768px){.pg-blog article .author,.pg-blog article .readmore,.pg-blog article .summary,.pg-blog article h4{max-width:1170px;margin-left:auto;margin-right:auto}
-.pg-blog article .author:after,.pg-blog article .readmore:after,.pg-blog article .summary:after,.pg-blog article h4:after{content:"";display:table;clear:both}}
-@media screen and (max-width:768px){.pg-blog article .summary,.pg-blog article figure{margin-bottom:1.5rem}
-.pg-blog article .readmore{text-align:right}}
-@media screen and (min-width:768px){.pg-blog article{padding:0 1.5rem}}
-@media screen and (min-width:768px) and (min-width:768px){.pg-blog article{max-width:1170px;margin-left:auto;margin-right:auto}
-.pg-blog article:after{content:"";display:table;clear:both}}
-@media screen and (min-width:768px){.pg-blog article h1{text-align:left}
-.pg-blog article .article{max-width:1170px;margin-left:auto;margin-right:auto}
-.pg-blog article .article:after{content:"";display:table;clear:both}
-.pg-blog article .article figure{float:left;display:block;margin-right:2.35765%;width:48.82117%}
-.pg-blog article .article figure:last-child{margin-right:0}
-.pg-blog article .article figure img{border-radius:6px}
-.pg-blog article .article .details{float:left;display:block;margin-right:2.35765%;width:48.82117%}
-.pg-blog article .article .details:last-child{margin-right:0}
-.pg-blog article .article .summary{margin-bottom:1.5rem}
-.pg-blog article .article .readmore{text-align:right}}
-.pg-article header{margin-bottom:2rem}
-.pg-article>section{padding:0 1.5rem}
+.pg-blog .container{padding-top:3rem;padding-bottom:3rem}
+.pg-article,.pg-article header,.pg-blog .container article{margin-bottom:3rem}
+@media screen and (max-width:768px){.pg-blog .container article .author,.pg-blog .container article .readmore,.pg-blog .container article .summary,.pg-blog .container article h4{padding-left:1.5rem;padding-right:1.5rem}}
+@media screen and (max-width:768px) and (min-width:768px){.pg-blog .container article .author,.pg-blog .container article .readmore,.pg-blog .container article .summary,.pg-blog .container article h4{max-width:1170px;margin-left:auto;margin-right:auto}
+.pg-blog .container article .author:after,.pg-blog .container article .readmore:after,.pg-blog .container article .summary:after,.pg-blog .container article h4:after{content:"";display:table;clear:both}}
+@media screen and (max-width:768px){.pg-blog .container article .summary,.pg-blog .container article figure{margin-bottom:1.5rem}
+.pg-blog .container article .readmore{text-align:right}}
+@media screen and (min-width:768px){.pg-blog .container article{padding-left:1.5rem;padding-right:1.5rem}}
+@media screen and (min-width:768px) and (min-width:768px){.pg-blog .container article{max-width:1170px;margin-left:auto;margin-right:auto}
+.pg-blog .container article:after{content:"";display:table;clear:both}}
+@media screen and (min-width:768px){.pg-blog .container article h1{text-align:left}
+.pg-blog .container article .article{max-width:1170px;margin-left:auto;margin-right:auto}
+.pg-blog .container article .article:after{content:"";display:table;clear:both}
+.pg-blog .container article .article figure{float:left;display:block;margin-right:2.35765%;width:48.82117%}
+.pg-blog .container article .article figure:last-child{margin-right:0}
+.pg-blog .container article .article figure img{border-radius:6px}
+.pg-blog .container article .article .details{float:left;display:block;margin-right:2.35765%;width:48.82117%}
+.pg-blog .container article .article .details:last-child{margin-right:0}
+.pg-blog .container article .article .summary{margin-bottom:1.5rem}
+.pg-blog .container article .article .readmore{text-align:right}}
+.pg-article>section{padding-left:1.5rem;padding-right:1.5rem}
 @media screen and (min-width:768px){.pg-article>section{max-width:1170px;margin-left:auto;margin-right:auto}
 .pg-article>section:after{content:"";display:table;clear:both}}
 .pg-article .content{margin-bottom:2rem}
@@ -209,14 +213,14 @@ footer#footer nav{text-align:center}
 .dlg-contact{position:fixed;top:0;right:0;bottom:0;left:0;-webkit-transition:opacity .25s ease;-moz-transition:opacity .25s ease;transition:opacity .25s ease;background:rgba(48,50,77,.85);visibility:hidden;opacity:0;z-index:1000}
 .dlg-contact .dialog{background:#f7f7f7;padding:1.5rem 0}
 @media screen and (min-width:768px){.dlg-contact .dialog{max-width:50rem;margin:0 auto;border-bottom-left-radius:6px;border-bottom-right-radius:6px}}
-.dlg-contact .dialog header{padding:0 1.5rem;position:relative}
+.dlg-contact .dialog header{padding-left:1.5rem;padding-right:1.5rem;position:relative}
 @media screen and (min-width:768px){.dlg-contact .dialog header{max-width:1170px;margin-left:auto;margin-right:auto}
 .dlg-contact .dialog header:after{content:"";display:table;clear:both}}
 .dlg-contact .dialog header h1{font-size:2rem;text-transform:uppercase;text-align:left}
 .dlg-contact .dialog header .close{position:absolute;top:0;right:1.2rem;font-size:1.6rem;line-height:1.1;cursor:pointer;background:#f7f7f7}
-.dlg-contact .dialog .content{padding:0 1.5rem}
+.dlg-contact .dialog .content{padding-left:1.5rem;padding-right:1.5rem}
 @media screen and (min-width:768px){.dlg-contact .dialog .content{max-width:1170px;margin-left:auto;margin-right:auto}
 .dlg-contact .dialog .content:after{content:"";display:table;clear:both}}
-.dlg-contact .dialog footer{padding:0 1.5rem;text-align:right}
+.dlg-contact .dialog footer{padding-left:1.5rem;padding-right:1.5rem;text-align:right}
 @media screen and (min-width:768px){.dlg-contact .dialog footer{max-width:1170px;margin-left:auto;margin-right:auto}
 .dlg-contact .dialog footer:after{content:"";display:table;clear:both}}

@@ -1,50 +1,53 @@
 .pg-blog {
-  margin-bottom: $margin-x-large;
+  .container {
+    padding-top: $margin-x-large;
+    padding-bottom: $margin-x-large;
 
-  article {
-    margin-bottom: $margin-x-large;
+    article {
+      margin-bottom: $margin-x-large;
 
-    @include media($mobile) {
-      h4, .author, .summary, .readmore {
-        @include wrapper();
-      }
-
-      figure, .summary {
-        margin-bottom: $margin-medium;
-      }
-
-      .readmore {
-        text-align: right;
-      }
-    }
-
-    @include media($desktop) {
-      @include wrapper();
-
-      h1 {
-        text-align: left;
-      }
-
-      .article {
-        @include outer-container;
-
-        figure {
-          @include span-columns(6);
-          img {
-            border-radius: 2 * $base-border-radius;
-          }
+      @include media($mobile) {
+        h4, .author, .summary, .readmore {
+          @include wrapper();
         }
 
-        .details {
-          @include span-columns(6);
-        }
-
-        .summary {
+        figure, .summary {
           margin-bottom: $margin-medium;
         }
 
         .readmore {
           text-align: right;
+        }
+      }
+
+      @include media($desktop) {
+        @include wrapper();
+
+        h1 {
+          text-align: left;
+        }
+
+        .article {
+          @include outer-container;
+
+          figure {
+            @include span-columns(6);
+            img {
+              border-radius: 2 * $base-border-radius;
+            }
+          }
+
+          .details {
+            @include span-columns(6);
+          }
+
+          .summary {
+            margin-bottom: $margin-medium;
+          }
+
+          .readmore {
+            text-align: right;
+          }
         }
       }
     }

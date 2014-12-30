@@ -1,14 +1,14 @@
 .pg-home {
-  margin-bottom: $margin-x-large;
-
   .hero {
     img {
       height: 10rem;
     }
   }
-
   main {
     .about-and-projects {
+      padding-top: $margin-x-large;
+      padding-bottom: $margin-x-large;
+
       @include media($desktop) {
         @include wrapper();
       }
@@ -34,38 +34,51 @@
       }
 
       .projects {
-        margin-bottom: $margin-x-large;
-
         @include media($desktop) {
           @include span-columns(8);
         }
 
         article {
-          margin-bottom: $margin-large;
+          figure {
+            margin-bottom: $margin-medium;
+
+            @include media($desktop) {
+              img {
+                border-radius: 2 * $base-border-radius;
+              }
+            }
+          }
+
           @include media($desktop) {
             @include span-columns(4 of 8);
           }
 
-          figure {
-            margin-bottom: $margin-medium;
-          }
+          @include media($mobile) {
+            margin-bottom: $margin-large;
 
-          .description {
-            @include media($mobile) {
+            .description {
               @include wrapper();
             }
           }
+
+
         }
       }
 
     }
 
     .articles {
-      margin-bottom: $margin-x-large;
+      background: darken($base-background-color, 3);
 
-      @include media($desktop) {
-        @include wrapper();
+      .wrapper {
+        padding-top: $margin-x-large;
+        padding-bottom: $margin-x-large;
+        @include media($desktop) {
+          @include wrapper();
+        }
       }
+
+
 
       article {
         margin-bottom: $margin-large;
@@ -82,6 +95,12 @@
 
         figure {
           margin-bottom: $margin-medium;
+
+          @include media($desktop) {
+            img {
+              border-radius: 2 * $base-border-radius;
+            }
+          }
         }
       }
     }

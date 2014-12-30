@@ -1,6 +1,4 @@
 .pg-profile {
-  margin-bottom: $margin-x-large;
-
   .hero {
     $desktop-coefficient: 1.6;
 
@@ -38,6 +36,9 @@
   }
 
   .container {
+    padding-top: $margin-x-large;
+    padding-bottom: $margin-x-large;
+
     @include media($desktop) {
       @include outer-container;
     }
@@ -50,6 +51,10 @@
       section {
         @include wrapper();
         margin-bottom: $margin-x-large;
+        &:last-child {
+          margin-bottom: 0;
+        }
+
 
         @include media($desktop) {
           dl {

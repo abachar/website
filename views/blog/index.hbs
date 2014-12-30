@@ -6,19 +6,21 @@
 		</div>
 	</header>
 
-	{{#each articles}}
-		<article>
-			<h1><a href="/blog/{{code}}">{{title}}</a></h1>
-			<p class="author"><time>{{formatDate created_at "DD MMMM YYYY"}}</time>, par {{author}}</p>
-			<div class="article">
-                <figure>
-                    <a href="/blog/{{code}}"><img src="/blog/{{code}}/assets/{{thumbnail}}"/></a>
-                </figure>
-				<div class="details">
-					<div class="summary">{{description}}</div>
-					<div class="readmore"><a class="button" href="/blog/{{code}}">Lire la suite</a></div>
-				</div>
-			</div>
-		</article>
-	{{/each}}
+	<div class="container">
+		{{#each articles}}
+            <article>
+                <h1><a href="/blog/{{code}}">{{title}}</a></h1>
+                <p class="author"><time>{{formatDate created_at "DD MMMM YYYY"}}</time>, par {{author}}</p>
+                <div class="article">
+                    <figure>
+                        <a href="/blog/{{code}}"><img src="/blog/{{code}}/assets/{{thumbnail}}"/></a>
+                    </figure>
+                    <div class="details">
+                        <div class="summary">{{description}}</div>
+                        <div class="readmore"><a class="button" href="/blog/{{code}}">Lire la suite</a></div>
+                    </div>
+                </div>
+            </article>
+		{{/each}}
+	</div>
 </main>
