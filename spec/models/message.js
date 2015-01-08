@@ -25,7 +25,7 @@ describe('Message', function () {
             subject: 'Test subject',
             content: 'Test content'
         }, function (err, doc) {
-            expect(err).to.be.null();
+            expect(!!err).to.be.false();
 
             expect(doc).to.have.property('_id');
             expect(doc).to.have.property('name').and.equal('Test name');

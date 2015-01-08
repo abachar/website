@@ -20,7 +20,7 @@ describe('Competence', function () {
 
     it('should retrieve all competences', function (done) {
         competence.findAll(function (err, competences) {
-            expect(err).to.be.undefined();
+            expect(!!err).to.be.false();
             expect(competences).to.have.length(5);
 
             for (var index = 1; index <= 5; index++) {

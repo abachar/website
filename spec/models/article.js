@@ -20,7 +20,7 @@ describe('Article', function () {
 
     it('should retrieve all articles ordered by created_at desc', function (done) {
         article.findAll(function (err, articles) {
-            expect(err).to.be.null();
+            expect(!!err).to.be.false();
             expectOrdered(articles, 5, 5);
             done();
         });
@@ -29,7 +29,7 @@ describe('Article', function () {
 
     it('should retrieve last three articles ordered by created_at desc', function (done) {
         article.findLastThree(function (err, articles) {
-            expect(err).to.be.null();
+            expect(!!err).to.be.false();
             expectOrdered(articles, 3, 5);
             done();
         });
@@ -37,7 +37,7 @@ describe('Article', function () {
 
     it('should retrieve article by code', function (done) {
         article.findByCode('article-1', function (err, article) {
-            expect(err).to.be.null();
+            expect(!!err).to.be.false();
             expectArticle(article, 1);
 
             // expect comments
@@ -62,10 +62,10 @@ describe('Article', function () {
             created_at: new Date(2001, 1, 3),
             content: 'Comment Content 13'
         }, function (err) {
-            expect(err).to.be.null();
+            expect(!!err).to.be.false();
 
             article.findByCode('article-1', function (err, article) {
-                expect(err).to.be.null();
+                expect(!!err).to.be.false();
                 expect(article).to.have.property('comments').and.to.have.length(3);
 
                 var comment = article.comments[2];

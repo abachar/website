@@ -20,7 +20,7 @@ describe('Project', function () {
 
     it('should retrieve all projects', function (done) {
         project.findAll(function (err, projects) {
-            expect(err).to.be.undefined();
+            expect(!!err).to.be.false();
             expect(projects).to.have.length(3);
 
             expect(projects[0]).to.have.property('code').and.equal('project-1');
@@ -32,7 +32,7 @@ describe('Project', function () {
 
     it('should retrieve last tow projects', function (done) {
         project.findLastTwo(function (err, projects) {
-            expect(err).to.be.null();
+            expect(!!err).to.be.false();
             expect(projects).to.have.length(2);
 
             expect(projects[0]).to.have.property('code').and.equal('project-1');

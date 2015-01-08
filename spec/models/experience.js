@@ -20,7 +20,7 @@ describe('Experience', function () {
 
     it('should retrieve all experiences', function (done) {
         experience.findAll(function (err, experiences) {
-            expect(err).to.be.undefined();
+            expect(!!err).to.be.false();
             expect(experiences).to.have.length(2);
 
             for (var index = 1; index <= 2; index++) {
