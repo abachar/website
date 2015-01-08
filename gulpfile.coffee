@@ -13,6 +13,7 @@ sourcemaps     = require('gulp-sourcemaps')
 uglify         = require('gulp-uglify')
 mainBowerFiles = require('main-bower-files')
 jshint         = require('gulp-jshint')
+mocha          = require('gulp-mocha')
 
 ##
 ## Define paths
@@ -21,6 +22,7 @@ sources =
   scripts    : 'public/js/scripts/*.js'
   svg_icons  : 'public/fonts/svg-icons/*.svg'
   need_reload: ['server.js', 'app.js', 'routes/*', 'models/*', 'views/**/*']
+  tests      : 'spec/**/*.js'
 
 destinations =
   styles : 'public/css'
@@ -96,7 +98,15 @@ gulp.task 'server', ->
     server.listen {path: 'server.js'}
 
 ##
-## Build tasks
+## Task test
+##
+gulp.task 'test', ->
+  gulp.src sources.tests, read: false
+      .pipe mocha(reporter: 'spec')
+      .once 'end', -> process.exit()
+
+##
+## Task test
 ##
 gulp.task 'build', ['jshint', 'styles', 'scripts']
 
