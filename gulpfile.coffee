@@ -22,7 +22,7 @@ sources =
   scripts    : 'public/js/scripts/*.js'
   svg_icons  : 'public/fonts/svg-icons/*.svg'
   need_reload: ['server.js', 'app.js', 'routes/*', 'models/*', 'views/**/*']
-  tests      : 'spec/**/*.js'
+  tests      : 'spec/**/*.spec.js'
 
 destinations =
   styles : 'public/css'

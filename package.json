@@ -36,7 +36,7 @@
     "body-parser": "^1.9.2",
     "cookie-parser": "^1.3.3",
     "express": "^4.10.1",
-    "hbs": "^2.7.0",
+    "express-handlebars": "^1.1.0",
     "highlight.js": "^8.4.0",
     "joi": "^4.9.0",
     "marked": "^0.3.2",
