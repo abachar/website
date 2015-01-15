@@ -86,9 +86,10 @@ Partons de son rôle dans une vue, il faut définir comment ce composant doit ê
 3. quels paramètres il va accepter
 
 Il faut aussi définir son nom. Une directive se crée avec la méthode de module directive :
-
+```
 	angular.module('app').directive('ma-directive', function() {
 	});
+ ```
  
 Cette directive se nomme donc maDirective, et vous constatez que son nom est en camelCase. C’est cette forme qu’il faudra utiliser. Une recommandation est à prendre en compte ici : il faut définir un préfixe pour identifier vos directives. Ceci permet d’éviter les collisions entre des directives de même nom de différentes sources. Par exemple chez Synbioz une directive est préfixée de synbioz ou sz. La précédente directive se nommerait alors szMaDirective.
 
@@ -101,7 +102,7 @@ Une fois ces étapes terminées, on peut attaquer le développement du cœur de 
 We've seen that you can pass in models to a directive using the isolate scope, but sometimes it's desirable to be able to pass in an entire template rather than a string or an object. Let's say that we want to create a "dialog box" component. The dialog box should be able to wrap any arbitrary content.
 
 To do this, we need to use the transclude option.
-
+```
 	angular.module('docsTransclusionDirective', [])
 	.controller('Controller', ['$scope', function($scope) {
 	  $scope.name = 'Tobias';
@@ -118,7 +119,7 @@ To do this, we need to use the transclude option.
 	<div ng-controller="Controller">
 	  <my-dialog>Check out the contents, {{name}}!</my-dialog>
 	</div>
-
+```
 What does this transclude option do, exactly? transclude makes the contents of a directive with this option have access to the scope outside of the directive rather than inside.
 
 http://blog.xebia.fr/2013/11/20/liberer-le-potentiel-des-directives-angularjs/
@@ -133,7 +134,7 @@ Allowing the default transclude in an element in the template.
 Programmatically moving child elements(buttons) to appropriate div.
 Finally, removing the original transcluded element from DOM in compile or link function of the directive.
 
-
+```
 <div ng-controller="parentController">    
     <button-bar>
         <button class="primary" ng-click="onPrimary1Click()">{{primary1Label}}</button>
@@ -191,7 +192,7 @@ testapp.directive('buttonBar', function() {
         }
     };
 });
-
+```
 
 ### Transclude argument to compile function in a directive
 
@@ -203,6 +204,7 @@ And here is what it says about the third argument -
 transclude - A transclude linking function: function(scope, cloneLinkingFn).
 Alright, let's use this function to achieve what we achieved in the last example without the need to transclude into an element and then removing it from DOM.
 
+```
 <div ng-controller="parentController">    
     <button-bar>
         <button class="primary" ng-click="onPrimary1Click()">{{primary1Label}}</button>
@@ -263,6 +265,7 @@ testapp.directive('buttonBar', function() {
         }
     };
 });
+```
 
 Please note there is no scope available in compile function and you'll have to pass the element that compile function received as the first argument to the transclude function. You might want to use this approach if you are already using the compile function (which is quite rare, at least for me) and don't need to work with scope. Otherwise, the next approach of injecting $transclude into Controller is the best bet.
 
@@ -272,6 +275,7 @@ The Angular developer guide for directive states the following for $transclude i
 
 $transclude - A transclude linking function pre-bound to the correct transclusion scope: function(cloneLinkingFn).
 
+```
 <div ng-controller="parentController">    
     <button-bar>
         <button class="primary" ng-click="onPrimary1Click()">{{primary1Label}}</button>
@@ -330,9 +334,7 @@ testapp.directive('buttonBar', function() {
         }],
     };
 });
-
+```
 
 ### Transclude and scope
 The Angular developer guide for directive mentions that a directive isolated scope and transclude scope are siblings (frères et sœurs). Now, what does that mean? If you take a careful look at previous example, you'll notice that parentController creates a scope, the buttonBar directive declares an isolated scope under it and as mentioned in the Angular documentation, transclude creates yet another scope. I have added log statements at appropriate places in the directive to illustrate the relationship between these three scopes.
-
-## Conclusion
