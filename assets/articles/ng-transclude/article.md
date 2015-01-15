@@ -96,31 +96,6 @@ A savoir que les directives seront disponibles dans les vues sous plusieurs form
 
 Une fois ces étapes terminées, on peut attaquer le développement du cœur de la directive. Il n’y a pas de limitation, ce peut être une fonctionnalité entièrement créée par nos soins, mais il est aussi possible d’englober et d’enrichir des composants externes à AngularJS. Notez d’ailleurs que pour utiliser une fonctionnalité extérieure, il est préférable de l’englober dans une directive. Les erreurs pourront ainsi être interceptées et manipulées dans l’application. Dans le cas contraire les erreurs éventuelles seront tout simplement ignorées.
 
-### Cycle de vie
-
-
-There are many options that can be configured and how those options are related to each other is important. Each directive undergoes something similar to a life cycle as AngularJS compiles and links the DOM. The directive lifecycle begins and ends within the AngularJS bootstrapping process, before the page is rendered. In a directive’s life cycle, there are four distinct functions that can execute if they are defined. Each enables the developer to control and customize the directive at different points of the life cycle.
-
-The four functions are: compile, controller, pre-link and post-Link.
-
-In the directive, post-compilation DOM manipulation takes place, event handlers are configured, and so are watches and other things. In the declaration of the directive, the four functions are defined like this.
-
-	angular.module('app').directive("directiveName",function () {
-		return {
-			controller: function() { /* controller code here... */},
-			compile: {
-				/* compile code here... */
-
-				return {
-					pre: function() { /* pre-link code here... */ },
-					post: function() { /* post-link code here... */ }
-				};
-			}
-		}
-	})
-
-
-
 ## Transclude
 
 We've seen that you can pass in models to a directive using the isolate scope, but sometimes it's desirable to be able to pass in an entire template rather than a string or an object. Let's say that we want to create a "dialog box" component. The dialog box should be able to wrap any arbitrary content.
