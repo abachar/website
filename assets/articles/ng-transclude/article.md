@@ -2,6 +2,29 @@
  (Introduction)
 
 ### Cycle de vie
+- Chaque directive subit un cycle quand Angular Compile et link le DOM
+- Le cycle de vie des directives commence et finit dans le process demarrage d'Angular et avant l'affichage de la page
+- Il y a plusieurs options qu'on peut configurer
+- La relation entre ces options et très importante
+- Il y a 4 fonctions qui peuvent etre executé (Si ils sont definis) pendant le cycle de vie de la directive
+- Les quatres fonctios sont: compile, controller, pre-link and post-link.
+- Chaque fonction permet de modifier la directive à tout moment du cycle de vie
+- Exemple de declaration d'un directive avec les quatres fonctions
+
+```
+angular.module('app').directive("name",function () {
+    return {
+        controller: function() { /* Code du contrôleur */ },
+        compile: {
+            /* Code compile */
+            return {
+                pre: function() { /* Code pre-link */ },
+                post: function() { /* Code post-link */ }
+            };
+        }
+    }
+})
+```
 
 ### compile
 - Permet à la directive de manipuler le DOM avant d'être compilé et lié
