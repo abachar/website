@@ -1,4 +1,58 @@
 ## Les directives
+ (Introduction)
+
+### Cycle de vie
+
+### compile
+- Permet à la directive de manipuler le DOM avant d'être compilé et lié
+ - ajouter / supprimer / modifier les directives
+ - ajouter / supprimer / modifier d'autres éléments DOM
+
+### link
+- pre-link: ???
+- post-link:  ???
+- En regle génerale pas toutes les methodes sont nécessaires
+- Dans la plupart des cas on crée le contrôleur et post-link.
+```
+angular.module('app').directive("name",function () {
+	return {
+		controller: function() { /* Code du contrôleur */ },
+		link: function() { /* Code du post-link */ }
+	}
+})
+```
+
+Dans cette configuration le link fait reference à la methode post-link
+### scope
+- Toutes les directives ont un scope qui leur est associé
+- Ils utilisent le scope pour accéder aux données / méthodes à l'intérieur du template ou de la méthode link
+- Par défaut les directive ne créent pas leur propre scope, ils iutilisent celui de leurs parents (Il faut le définir explicitement)
+- Les valeurs possible du scope
+ - false: la directuve utilise le scope du parent
+ - true: la directive crée un nouveau scope hérité **prototypiquement** du scope de son parent
+ - {}: la directive crée un nouveau scope isolé
+
+### controller
+- Expose l'API à d'autres directives
+
+## Transclusion
+
+## La transclusion à plusieurs endroits
+
+### Transcluder à la compilation (Deprecated)
+
+### Transcluder au link
+
+### Injecter $transclude dans le contrôleur
+
+### La transclusion et le scope
+
+## Conclusion
+
+
+-------------------------------------------------
+
+## Les directives
 
 Les directives sont les modules qui servent à la manipulation de DOM, à « binder » des évènements et définir leurs actions. Elles se traduisent par des composants HTML qui vont être réutilisables.
 
@@ -42,45 +96,7 @@ In the directive, post-compilation DOM manipulation takes place, event handlers 
 		}
 	})
 
-### compile
 
-The compile function allows the directive to manipulate the DOM before it is compiled and linked thereby allowing it to add/remove/change directives, as well as, add/remove/change other DOM elements.
-
-### Le scope
-
-All directives have a scope associated with them. They use this scope for accessing data/methods inside the template and link function. By default, unless explicitly set, directives don’t create their own scope. Therefore, directives use their parent scope ( usually a controller ) as their own.
-
-However, AngularJS allows us to change the default scope of directives by passing a configuration object known as directive definition object.
-
-There are a lot of properties of the DDO to learn, but here we’re just going to discuss the scope property, because, the values of scope property decides how the actual scope is created and used inside a directive. These values can be either:
-
-1. “false” : Directive uses its parent scope
-2. “true” : Directive gets a new scope prototypically inherited from its parent scope
-3. “{}” : Directive gets a new isolated scope
-
-### Le contrôleur
-
-The controller function facilitates directive communication. Sibling and child directives can request the controller of their siblings and parents to communicate information.
-
-### Link
-
-The pre-link function allows for private $scope manipulation before the post-link process begins.
-
-The post-link method is the primary workhorse method of the directive.
-
-Commonly, not all of the functions are needed. In most circumstances, developers will simply create a controller and post-link function following the pattern below.
-
-	angular.module('app').directive("directiveName",function () {
-
-   		return {
-      		controller: function() { /* controller code here... */ },
-      		link: function() { /* post-link code here... */ }
-    	}
-  	})
-
-In this configuration, link refers to the post-link function.
-
-Whether all or some of the functions are defined, their execution order is important, especially their execution relative to the rest of the AngularJS application.
 
 ## Transclude
 
@@ -319,6 +335,6 @@ testapp.directive('buttonBar', function() {
 
 
 ### Transclude and scope
-The Angular developer guide for directive mentions that a directive isolated scope and transclude scope are siblings. Now, what does that mean? If you take a careful look at previous example, you'll notice that parentController creates a scope, the buttonBar directive declares an isolated scope under it and as mentioned in the Angular documentation, transclude creates yet another scope. I have added log statements at appropriate places in the directive to illustrate the relationship between these three scopes.
+The Angular developer guide for directive mentions that a directive isolated scope and transclude scope are siblings (frères et sœurs). Now, what does that mean? If you take a careful look at previous example, you'll notice that parentController creates a scope, the buttonBar directive declares an isolated scope under it and as mentioned in the Angular documentation, transclude creates yet another scope. I have added log statements at appropriate places in the directive to illustrate the relationship between these three scopes.
 
 ## Conclusion
