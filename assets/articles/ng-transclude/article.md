@@ -13,7 +13,7 @@
   - Recommandation: Utiliser un préfixe pour identifier vos directives
   - Elle peut etre utiliser dans la vue sous les formes:
    - nom-de-la-directive
-   - nom:de:la:directive
+   - nom: de:la:directive
    - data-nom-de-la-directive
    - x-nom-de-la-directive
 ### Cycle de vie
@@ -67,7 +67,7 @@ Dans cette configuration le link fait reference à la methode post-link
 - Par défaut les directive ne créent pas leur propre scope, ils iutilisent celui de leurs parents (Il faut le définir explicitement)
 - Les valeurs possible du scope
  - false: la directuve utilise le scope du parent
- - true: la directive crée un nouveau scope hérité **prototypiquement** du scope de son parent
+ - true: la directive crée un nouveau scope hérité ~~prototypiquement~~ du scope de son parent
  - {}: la directive crée un nouveau scope isolé
 
 ### controller
@@ -99,30 +99,14 @@ angular.module('docsTransclusionDirective', [])
 - 
 http://blog.xebia.fr/2013/11/20/liberer-le-potentiel-des-directives-angularjs/
 
-## La transclusion à plusieurs endroits
-
-### Transcluder à la compilation (Deprecated)
-
-### Transcluder au link
-
-### Injecter $transclude dans le contrôleur
-
-### La transclusion et le scope
-
-## Conclusion
-
-
--------------------------------------------------
-
-## Transclude at multiple locations
-
-Lets say we would like to enhance our buttonBar directive to have two kinds of buttons - primary and secondary; with primary buttons right-aligned and secondary left-aligned. It would entail picking up the contents(buttons in our example) of the directive and adding them into two separate divs, one for primary buttons and the other for secondary buttons. Transclude into two different locations, if you will. The result should look something like this -
-
-Well, that's not possible with the default mechanism. One approach to achieve this could be -
-
-Allowing the default transclude in an element in the template.
-Programmatically moving child elements(buttons) to appropriate div.
-Finally, removing the original transcluded element from DOM in compile or link function of the directive.
+### La transclusion manuelle
+- Prenant l'exemple d'un bar de button ou les boutons primary sont à droite et les secondary sont à gauche.
+- Il faut transclude les boutons à différents endroits
+- Ceci n'est pas faisable avec un simple ng-transclude
+- Il faut:
+ - utiliser la transclusion par défaut (ng-transclude)
+ - A la main: déplacer les buttons à gauche ou à droite
+ - Supprimer le contenu transcluder par défaut
 
 ```
 <div ng-controller="parentController">    
@@ -184,87 +168,13 @@ testapp.directive('buttonBar', function() {
 });
 ```
 
-### Transclude argument to compile function in a directive
+### Transcluder à la compilation (Deprecated)
 
-The Angular developer guide for directive gives following signature for the compile function of a directive -
+### Transcluder au link
 
-function compile(tElement, tAttrs, transclude) { ... }
-And here is what it says about the third argument -
-
-transclude - A transclude linking function: function(scope, cloneLinkingFn).
-Alright, let's use this function to achieve what we achieved in the last example without the need to transclude into an element and then removing it from DOM.
-
-```
-<div ng-controller="parentController">    
-    <button-bar>
-        <button class="primary" ng-click="onPrimary1Click()">{{primary1Label}}</button>
-        <button class="primary">Primary2</button>
-        <button class="secondary">Secondary1</button>
-    </button-bar>
-</div>
-
-var testapp = angular.module('testapp', []);
-
-testapp.controller('parentController', ['$scope', '$window', function($scope, $window) {
-    $scope.primary1Label = 'Prime1';
-    
-    $scope.onPrimary1Click = function() {
-        $window.alert('Primary 1 clicked');                
-    }
-}]);
-
-testapp.directive('primary', function() {
-    return {
-        restrict: 'C',
-        link: function(scope, element, attrs) {
-            element.addClass('btn btn-primary');
-        }
-    }
-});
-
-testapp.directive('secondary', function() {
-    return {
-        restrict: 'C',
-        link: function(scope, element, attrs) {
-            element.addClass('btn');
-        }
-    }
-});
-
-testapp.directive('buttonBar', function() {
-    return {
-        restrict: 'EA',
-        template: '<div class="span4 well clearfix"><div class="primary-block pull-right"></div><div class="secondary-block"></div></div>',
-        replace: true,
-        transclude: true,
-        compile: function(elem, attrs, transcludeFn) {
-            return function (scope, element, attrs) {
-                transcludeFn(scope, function(clone) {
-                    var primaryBlock = elem.find('div.primary-block');
-                    var secondaryBlock = elem.find('div.secondary-block');
-                    var transcludedButtons = clone.filter(':button'); 
-                    angular.forEach(transcludedButtons, function(e) {
-                        if (angular.element(e).hasClass('primary')) {
-                            primaryBlock.append(e);
-                        } else if (angular.element(e).hasClass('secondary')) {
-                            secondaryBlock.append(e);
-                        }
-                    });
-                });
-            };
-        }
-    };
-});
-```
-
-Please note there is no scope available in compile function and you'll have to pass the element that compile function received as the first argument to the transclude function. You might want to use this approach if you are already using the compile function (which is quite rare, at least for me) and don't need to work with scope. Otherwise, the next approach of injecting $transclude into Controller is the best bet.
-
-### Injecting $transclude in a Controller
-
-The Angular developer guide for directive states the following for $transclude injectable for Controller -
-
-$transclude - A transclude linking function pre-bound to the correct transclusion scope: function(cloneLinkingFn).
-
+### Injecter $transclude dans le contrôleur
+- On peut injecter $transclude dans le contrôleur
+- $transclude est un fonction de link pré-lié au bon scope
 ```
 <div ng-controller="parentController">    
     <button-bar>
@@ -325,6 +235,14 @@ testapp.directive('buttonBar', function() {
     };
 });
 ```
+### La transclusion et le scope
+- Le scope isolé d'une directive et le scope du transclude hérite du même parent
+- Un exemple:
+ - Controleur parent crée un scope
+ - La directive crée un scope isolé
+ - transclude crée un autre scope
 
-### Transclude and scope
-The Angular developer guide for directive mentions that a directive isolated scope and transclude scope are siblings (frères et sœurs). Now, what does that mean? If you take a careful look at previous example, you'll notice that parentController creates a scope, the buttonBar directive declares an isolated scope under it and as mentioned in the Angular documentation, transclude creates yet another scope. I have added log statements at appropriate places in the directive to illustrate the relationship between these three scopes.
+## Conclusion
+
+
+-------------------------------------------------
