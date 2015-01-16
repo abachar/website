@@ -1,6 +1,21 @@
 ## Les directives
- (Introduction)
-
+- Les directives sont des composants HTML réutilisables qui servent:
+ - à la manipulation de DOM
+ - à « binder » des évènements et définir leurs action
+- Chaque directive à un nom
+- La directive se declare avec la methode directive:
+```
+    angular.module('app').directive('nomDeLaDirective', function() {
+    });
+ ```
+ - Dans l'exemple:
+  - La directive se nomme nomDeLaDirective (en camelCase)
+  - Recommandation: Utiliser un préfixe pour identifier vos directives
+  - Elle peut etre utiliser dans la vue sous les formes:
+   - nom-de-la-directive
+   - nom:de:la:directive
+   - data-nom-de-la-directive
+   - x-nom-de-la-directive
 ### Cycle de vie
 - Chaque directive subit un cycle quand Angular Compile et link le DOM
 - Le cycle de vie des directives commence et finit dans le process demarrage d'Angular et avant l'affichage de la page
@@ -12,7 +27,7 @@
 - Exemple de declaration d'un directive avec les quatres fonctions
 
 ```
-angular.module('app').directive("name",function () {
+angular.module('app').directive("nomDeLaDirective",function () {
     return {
         controller: function() { /* Code du contrôleur */ },
         compile: {
@@ -37,7 +52,7 @@ angular.module('app').directive("name",function () {
 - En regle génerale pas toutes les methodes sont nécessaires
 - Dans la plupart des cas on crée le contrôleur et post-link.
 ```
-angular.module('app').directive("name",function () {
+angular.module('app').directive("nomDeLaDirective",function () {
 	return {
 		controller: function() { /* Code du contrôleur */ },
 		link: function() { /* Code du post-link */ }
@@ -59,6 +74,30 @@ Dans cette configuration le link fait reference à la methode post-link
 - Expose l'API à d'autres directives
 
 ## Transclusion
+- La transclusion est permet d'inserer du contenu HTML dans la template de la directive.
+- Des fois on veux passer tout un contenue à la directive et pas seulement un string ou un objet.
+- Exemple: *dialog* avec un contenu arbitraire.
+- Il faut utiliser l'attribut transclude du DDO (directive definition object)
+```
+angular.module('docsTransclusionDirective', [])
+    .controller('Controller', ['$scope', function($scope) {
+        $scope.name = 'Tobias';
+    }])
+    .directive('myDialog', function() {
+        return {
+            restrict: 'E',
+            transclude: true,
+            templateUrl: '<div class="alert" ng-transclude></div>'
+        };
+    });
+
+<div ng-controller="Controller">
+    <my-dialog>Check out the contents, {{name}}!</my-dialog>
+</div>
+```
+- Transclude permet au contenu transcluder d'acceder au scope parent de la directive et non pas au scope de la directive
+- 
+http://blog.xebia.fr/2013/11/20/liberer-le-potentiel-des-directives-angularjs/
 
 ## La transclusion à plusieurs endroits
 
@@ -75,55 +114,6 @@ Dans cette configuration le link fait reference à la methode post-link
 
 -------------------------------------------------
 
-## Les directives
-
-Les directives sont les modules qui servent à la manipulation de DOM, à « binder » des évènements et définir leurs actions. Elles se traduisent par des composants HTML qui vont être réutilisables.
-
-Partons de son rôle dans une vue, il faut définir comment ce composant doit être utilisé :
-
-1. est ce qu’il va prendre place dans la vue comme une balise HTML
-2. est ce qu’il va enrichir une autre balise
-3. quels paramètres il va accepter
-
-Il faut aussi définir son nom. Une directive se crée avec la méthode de module directive :
-```
-	angular.module('app').directive('ma-directive', function() {
-	});
- ```
- 
-Cette directive se nomme donc maDirective, et vous constatez que son nom est en camelCase. C’est cette forme qu’il faudra utiliser. Une recommandation est à prendre en compte ici : il faut définir un préfixe pour identifier vos directives. Ceci permet d’éviter les collisions entre des directives de même nom de différentes sources. Par exemple chez Synbioz une directive est préfixée de synbioz ou sz. La précédente directive se nommerait alors szMaDirective.
-
-A savoir que les directives seront disponibles dans les vues sous plusieurs formes : sz-ma-directive, sz:ma:directive, data-sz-ma-directive et x-sz-ma-directive. AngularJS nous laisse invoquer nos directives sous ces différentes syntaxes pour être compatible avec plusieurs validateurs HTML.
-
-Une fois ces étapes terminées, on peut attaquer le développement du cœur de la directive. Il n’y a pas de limitation, ce peut être une fonctionnalité entièrement créée par nos soins, mais il est aussi possible d’englober et d’enrichir des composants externes à AngularJS. Notez d’ailleurs que pour utiliser une fonctionnalité extérieure, il est préférable de l’englober dans une directive. Les erreurs pourront ainsi être interceptées et manipulées dans l’application. Dans le cas contraire les erreurs éventuelles seront tout simplement ignorées.
-
-## Transclude
-
-We've seen that you can pass in models to a directive using the isolate scope, but sometimes it's desirable to be able to pass in an entire template rather than a string or an object. Let's say that we want to create a "dialog box" component. The dialog box should be able to wrap any arbitrary content.
-
-To do this, we need to use the transclude option.
-```
-	angular.module('docsTransclusionDirective', [])
-	.controller('Controller', ['$scope', function($scope) {
-	  $scope.name = 'Tobias';
-	}])
-	.directive('myDialog', function() {
-	  return {
-	    restrict: 'E',
-	    transclude: true,
-	    templateUrl: '<div class="alert" ng-transclude></div>'
-	  };
-	});
-
-
-	<div ng-controller="Controller">
-	  <my-dialog>Check out the contents, {{name}}!</my-dialog>
-	</div>
-```
-What does this transclude option do, exactly? transclude makes the contents of a directive with this option have access to the scope outside of the directive rather than inside.
-
-http://blog.xebia.fr/2013/11/20/liberer-le-potentiel-des-directives-angularjs/
- 
 ## Transclude at multiple locations
 
 Lets say we would like to enhance our buttonBar directive to have two kinds of buttons - primary and secondary; with primary buttons right-aligned and secondary left-aligned. It would entail picking up the contents(buttons in our example) of the directive and adding them into two separate divs, one for primary buttons and the other for secondary buttons. Transclude into two different locations, if you will. The result should look something like this -
