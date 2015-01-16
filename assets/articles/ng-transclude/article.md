@@ -100,9 +100,9 @@ angular.module('docsTransclusionDirective', [])
     <my-dialog>Check out the contents, {{name}}!</my-dialog>
 </div>
 ```
+
 - Transclude permet au contenu transcluder d'acceder au scope parent de la directive et non pas au scope de la directive
-- 
-http://blog.xebia.fr/2013/11/20/liberer-le-potentiel-des-directives-angularjs/
+- http://blog.xebia.fr/2013/11/20/liberer-le-potentiel-des-directives-angularjs/
 
 ### La transclusion manuelle
 - Prenant l'exemple d'un bar de button ou les boutons primary sont à droite et les secondary sont à gauche.
@@ -181,6 +181,68 @@ testapp.directive('buttonBar', function() {
 
 ### Transcluder au link
 
+```
+<div ng-controller="parentController">    
+    <button-bar>
+        <button class="primary" ng-click="onPrimary1Click()">{{primary1Label}}</button>
+        <button class="primary">Primary2</button>
+        <button class="secondary">Secondary1</button>
+    </button-bar>
+</div>
+```
+
+```
+var testapp = angular.module('testapp', []);
+
+testapp.controller('parentController', ['$scope', '$window', function($scope, $window) {
+    $scope.primary1Label = 'Prime1';
+    
+    $scope.onPrimary1Click = function() {
+        $window.alert('Primary 1 clicked');                
+    }
+}]);
+
+testapp.directive('primary', function() {
+    return {
+        restrict: 'C',
+        link: function(scope, element, attrs) {
+            element.addClass('btn btn-primary');
+        }
+    }
+});
+
+testapp.directive('secondary', function() {
+    return {
+        restrict: 'C',
+        link: function(scope, element, attrs) {
+            element.addClass('btn');
+        }
+    }
+});
+
+testapp.directive('buttonBar', function() {
+    return {
+        restrict: 'EA',
+        template: '<div class="span4 well clearfix"><div class="primary-block pull-right"></div><div class="secondary-block"></div></div>',
+        replace: true,
+        transclude: true,
+        link: function(scope, elem, attrs, ctrl, transcludeFn) {
+            transcludeFn(scope, function(clone) {
+                var primaryBlock = elem.find('div.primary-block');
+                var secondaryBlock = elem.find('div.secondary-block');
+                var transcludedButtons = clone.filter(':button'); 
+                angular.forEach(transcludedButtons, function(e) {
+                    if (angular.element(e).hasClass('primary')) {
+                        primaryBlock.append(e);
+                    } else if (angular.element(e).hasClass('secondary')) {
+                        secondaryBlock.append(e);
+                    }
+                });
+            });
+        }
+    };
+});
+```
 ### Injecter $transclude dans le contrôleur
 - On peut injecter $transclude dans le contrôleur
 - $transclude est un fonction de link pré-lié au bon scope
@@ -255,3 +317,4 @@ testapp.directive('buttonBar', function() {
  - transclude crée un autre scope
 
 ## Conclusion
+
