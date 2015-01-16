@@ -65,7 +65,7 @@ gulp.task 'styles', ['iconfont'], ->
 gulp.task 'scripts', ->
   gulp.src mainBowerFiles()
       .pipe filter('*.js')
-      .pipe uglify()
+      #.pipe uglify()
       .pipe concat('vendor.min.js')
       .pipe gulp.dest destinations.scripts
 
