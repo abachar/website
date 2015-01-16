@@ -4,6 +4,7 @@
  - à « binder » des évènements et définir leurs action
 - Chaque directive à un nom
 - La directive se declare avec la methode directive:
+
 ```
     angular.module('app').directive('nomDeLaDirective', function() {
     });
@@ -16,6 +17,7 @@
    - nom: de:la:directive
    - data-nom-de-la-directive
    - x-nom-de-la-directive
+
 ### Cycle de vie
 - Chaque directive subit un cycle quand Angular Compile et link le DOM
 - Le cycle de vie des directives commence et finit dans le process demarrage d'Angular et avant l'affichage de la page
@@ -51,6 +53,7 @@ angular.module('app').directive("nomDeLaDirective",function () {
 - post-link:  ???
 - En regle génerale pas toutes les methodes sont nécessaires
 - Dans la plupart des cas on crée le contrôleur et post-link.
+
 ```
 angular.module('app').directive("nomDeLaDirective",function () {
 	return {
@@ -78,6 +81,7 @@ Dans cette configuration le link fait reference à la methode post-link
 - Des fois on veux passer tout un contenue à la directive et pas seulement un string ou un objet.
 - Exemple: *dialog* avec un contenu arbitraire.
 - Il faut utiliser l'attribut transclude du DDO (directive definition object)
+
 ```
 angular.module('docsTransclusionDirective', [])
     .controller('Controller', ['$scope', function($scope) {
@@ -90,7 +94,8 @@ angular.module('docsTransclusionDirective', [])
             templateUrl: '<div class="alert" ng-transclude></div>'
         };
     });
-
+```
+```
 <div ng-controller="Controller">
     <my-dialog>Check out the contents, {{name}}!</my-dialog>
 </div>
@@ -116,7 +121,8 @@ http://blog.xebia.fr/2013/11/20/liberer-le-potentiel-des-directives-angularjs/
         <button class="secondary">Secondary1</button>
     </button-bar>
 </div>
-
+```
+```
 var testapp = angular.module('testapp', []);
 
 testapp.controller('parentController', ['$scope', '$window',function($scope, $window) {
@@ -169,12 +175,16 @@ testapp.directive('buttonBar', function() {
 ```
 
 ### Transcluder à la compilation (Deprecated)
+- On peut passer la fonction de transclusion à la fonction compile mais c'est obsolète
+ - Car: à la compilation le scope n'est pas encore disponible
+- Il faut utiliser la fonction de transclusion dans le scope
 
 ### Transcluder au link
 
 ### Injecter $transclude dans le contrôleur
 - On peut injecter $transclude dans le contrôleur
 - $transclude est un fonction de link pré-lié au bon scope
+
 ```
 <div ng-controller="parentController">    
     <button-bar>
@@ -183,7 +193,9 @@ testapp.directive('buttonBar', function() {
         <button class="secondary">Secondary1</button>
     </button-bar>
 </div>
+```
 
+```
 var testapp = angular.module('testapp', []);
 
 testapp.controller('parentController', ['$scope', '$window', function($scope, $window) {
@@ -243,6 +255,3 @@ testapp.directive('buttonBar', function() {
  - transclude crée un autre scope
 
 ## Conclusion
-
-
--------------------------------------------------
