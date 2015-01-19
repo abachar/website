@@ -27,7 +27,7 @@
 
                     {{#each projects}}
                         <article>
-                            <figure>
+                            <figure class="animate-in">
                                 {{#if thumbnail}}
                                     <img src="/projects/{{code}}/assets/{{thumbnail}}"/>
                                 {{else}}
@@ -35,8 +35,8 @@
                                 {{/if}}
                             </figure>
                             <div class="description">
-                              <h3>{{name}}</h3>
-                              <p>{{description}}</p>
+                              <h3 class="animate-in">{{name}}</h3>
+                              <p class="animate-in">{{description}}</p>
                             </div>
                         </article>
                     {{/each}}
@@ -46,15 +46,15 @@
 
         <section class="articles">
             <div class="wrapper">
-                <h1>Derniers articles</h1>
+                <h1 class="animate-in">Derniers articles</h1>
 
                 {{#each articles}}
                     <article>
-                        <h3><a href="/blog/{{code}}">{{title}}</a></h3>
-                        <figure>
+                        <h3 class="animate-in"><a href="/blog/{{code}}">{{title}}</a></h3>
+                        <figure class="animate-in">
                             <a href="/blog/{{code}}"><img src="/blog/{{code}}/assets/{{thumbnail}}" /></a>
                         </figure>
-                        <p>{{description}}</p>
+                        <p class="animate-in">{{description}}</p>
                     </article>
                 {{/each}}
             </div>

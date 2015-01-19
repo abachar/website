@@ -224,3 +224,5 @@ footer#footer nav{text-align:center}
 .dlg-contact .dialog footer{padding-left:1.5rem;padding-right:1.5rem;text-align:right}
 @media screen and (min-width:768px){.dlg-contact .dialog footer{max-width:1170px;margin-left:auto;margin-right:auto}
 .dlg-contact .dialog footer:after{content:"";display:table;clear:both}}
+.animate-in{-webkit-transition:all .6s ease-in-out 0s;-moz-transition:all .6s ease-in-out 0s;transition:all .6s ease-in-out 0s;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}
+.pre-animate{opacity:0;-webkit-transform:translateX(25px);-moz-transform:translateX(25px);transform:translateX(25px)}
