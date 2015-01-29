@@ -10,6 +10,7 @@ module.exports = (function () {
         created_at: {type: Date},
         printable: {type: Boolean, default: false},
         draft: {type: Boolean, default: true},
+        published: {type: Boolean, default: true},
         author: String,
         title: {type: String, required: true},
         description: String,
@@ -24,15 +25,15 @@ module.exports = (function () {
 
     // API
     var _findLastThree = function (callback) {
-        _model.find({}).sort({created_at: 'desc'}).limit(3).exec(callback);
+        _model.find({published: true}).sort({created_at: 'desc'}).limit(3).exec(callback);
     };
 
     var _findAll = function (callback) {
-        _model.find({}).sort({created_at: 'desc'}).exec(callback);
+        _model.find({published: true}).sort({created_at: 'desc'}).exec(callback);
     };
 
     var _findByCode = function (code, callback) {
-        _model.findOne({code: code}, callback);
+        _model.findOne({published: true, code: code}, callback);
     };
 
     var _pushComment = function (code, comment, callback) {
