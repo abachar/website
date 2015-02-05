@@ -4,9 +4,9 @@
 
 ## CSS
 ### Les Selecteurs
-##### Les Selecteurs: ::after et ::before
-##### Les Selecteurs: :checked
-##### Les Selecteurs: element+element
+##### ::after et ::before
+##### :checked
+##### element+element
 ### Les Transitions
 ### Compatibilité
 
