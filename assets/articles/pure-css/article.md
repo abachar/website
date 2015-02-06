@@ -7,13 +7,12 @@
 - Un langage qui permet de gérer la présentation d'une page Web
 - Permettent de définir des règles appliquées à un ou plusieurs documents HTML (positionnement, alignement, font, couleurs...)
 - Séparer la structure d'un document HTML et sa présentation
-
 - CSS1: des implémentations difficiles pendant la guerre des navigateurs
 - CSS2
 - CSS 2.1
 - CSS3
 - CSS4: L'écriture a débuté dès 2010
--
+
 ### Les Selecteurs
 
 - Un sélecteur est un "nom" qui indique à quels éléments d'une page HTML on desire appliquer une règle.
