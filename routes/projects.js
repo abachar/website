@@ -35,7 +35,7 @@ router.get('/:code/assets/:filename', function (request, response) {
 
     fs.exists(filename, function (exists) {
         if (exists) {
-            response.sendfile(filename);
+            response.sendfile(filename, {maxAge: 86400});
         } else {
             response.status(404).end("File: <" + filename + "> not found!");
         }
