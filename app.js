@@ -43,6 +43,7 @@ require('./routes/profile')(app);
 require('./routes/projects')(app);
 require('./routes/blog')(app);
 require('./routes/contact')(app);
+require('./routes/proxy')(app);
 
 // catch 404 and forward to error handler
 app.use(function (request, response, next) {
