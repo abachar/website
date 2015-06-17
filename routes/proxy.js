@@ -6,7 +6,8 @@ var express = require('express'),
 /**
  * GET /
  */
-router.get('/', function (request, response) {
+router.get('/:url', function (request, response) {
+    var url = new Buffer(request.params.url, 'base64').toString('ascii');
 });
 
 /**
