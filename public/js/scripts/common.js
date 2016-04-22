@@ -1,20 +1,6 @@
 (function ($) {
     $(document).ready(function () {
 
-        var $animateIn      = $(".animate-in").addClass("pre-animate"),
-            animateInOffset = 100;
-
-        $(window).scroll(function() {
-            var bsPosition = $(window).height() + $(window).scrollTop();
-
-            $animateIn.each(function(i, element) {
-                if ($(element).offset().top + animateInOffset < bsPosition) {
-                    $(element).removeClass('pre-animate');
-                }
-            });
-        });
-
-
 
         // Block not available links
 //        $('a.feature-not-available').click(function(event) {
